@@ -25,6 +25,7 @@ jobs:
             ${{ runner.os }}-node-
 
       - name: Install dependencies
+        run: npm ci
         run: npm install
         working-directory: ${{ env.working-directory }}
 
@@ -35,5 +36,5 @@ jobs:
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+          github_token: ${{ secrets.GIT_TOKEN }}
           publish_dir: ./frontend/build
