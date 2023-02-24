@@ -9,6 +9,7 @@ const App = () => {
   useEffect(() => {
     dispatch(helloWorld());
   }, []);
+
   return <div>App {hello}</div>;
 };
 
