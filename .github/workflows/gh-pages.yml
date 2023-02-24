@@ -6,6 +6,8 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-18.04
+    env:
+      working-directory: ./frontend
     steps:
       - uses: actions/checkout@v2
 
@@ -22,11 +24,16 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-node-
 
-      - run: npm ci
-      - run: npm run build
+      - name: Install dependencies
+        run: npm install
+        working-directory: ${{ env.working-directory }}
+
+      - name: Build
+        run: npm run build
+        working-directory: ${{ env.working-directory }}
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./build
+          publish_dir: ./frontend/build
