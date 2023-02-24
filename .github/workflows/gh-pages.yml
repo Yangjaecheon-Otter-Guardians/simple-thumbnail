@@ -7,7 +7,7 @@ jobs:
   deploy:
     runs-on: ubuntu-18.04
     steps:
-      - run: cd frontend/
+      - run: cd ./frontend/
       - uses: actions/checkout@v2
 
       - name: Setup Node
