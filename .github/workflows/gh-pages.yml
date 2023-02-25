@@ -6,8 +6,9 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-18.04
+    env:
+      working-directory: ./frontend
     steps:
-      - run: cd ./frontend/
       - uses: actions/checkout@v2
 
       - name: Setup Node
@@ -25,12 +26,14 @@ jobs:
 
       - name: Install dependencies
         run: npm install
+        working-directory: ${{ env.working-directory }}
 
       - name: Build
         run: npm run build
+        working-directory: ${{ env.working-directory }}
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GIT_TOKEN }}
-          publish_dir: ./build
+          publish_dir: ./frontend/build
