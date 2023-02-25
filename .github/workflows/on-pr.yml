@@ -23,6 +23,7 @@ jobs:
         run: cd frontend
       - name: npm install, build, and test
         run: |
+          ls
           npm ci
           npm run lint
         env:
