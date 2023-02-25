@@ -1,6 +1,6 @@
-import React, { useEffect } from "react";
-import { useAppDispatch, useAppSelector } from "../app/hooks";
-import { helloWorld, selectHello } from "./appSlice";
+import React, { useEffect } from 'react';
+import { useAppDispatch, useAppSelector } from '../app/hooks';
+import { helloWorld, selectHello } from './appSlice';
 
 const App = () => {
   const dispatch = useAppDispatch();
