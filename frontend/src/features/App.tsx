@@ -17,7 +17,7 @@ const App = () => {
     dispatch(helloWorld());
   }, []);
 
-  return (
+return (
     <InteractiveContainer>
       <Header />
       <Preview />
