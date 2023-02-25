@@ -8,6 +8,8 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    env:
+      working-directory: ./frontend
 
     strategy:
       matrix:
@@ -22,8 +24,6 @@ jobs:
 
       - name: npm install, build, and test
         run: |
-          cd frontend
-          npm ci
-          npm run lint
-        env:
-          CI: true
+          npm install
+          CI="false" npm run lint
+        working-directory: ${{ env.working-directory }}
