@@ -1,7 +1,7 @@
-import { atom } from "recoil";
+import { atom } from 'recoil';
 
 const testAtom = atom({
-  key: "testAtom",
+  key: 'testAtom',
   default: 1,
 });
 

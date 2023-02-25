@@ -3,9 +3,8 @@
 @tailwind utilities;
 
 @font-face {
-  font-family: "SUIT";
-  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_suit@1.0/SUIT-Regular.woff2")
-    format("woff2");
+  font-family: 'SUIT';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_suit@1.0/SUIT-Regular.woff2') format('woff2');
   font-weight: normal;
   font-style: normal;
 }
@@ -13,14 +12,15 @@
 @layer base {
   html,
   body {
-    font-family: "SUIT";
+    font-family: 'SUIT';
   }
 
-  body {
+  body,
+  #root {
     display: flex;
-    justify-content: center;
-    width: 60%;
-    min-width: 375px;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
   }
 }
 
@@ -36,4 +36,33 @@
   .flex-center-x {
     @apply flex justify-center;
   }
+}
+
+:root {
+  /* Neutral */
+  --grey-100: #0a0a0a;
+  --grey-80: #484848;
+  --grey-60: #7d7d7d;
+  --grey-40: #a0a0a0;
+  --grey-20: #d0d0d0;
+  --grey-10: #cecece;
+  --grey-00: #fbfbfb;
+  /* Text */
+  --text-active: #0d0d0d;
+  --text-darken: #303030;
+  --text-default: #565656;
+  --text-muted: #929292;
+  --text-disabled: #c5c5c5;
+  --text-lighten: #fbfbfb;
+  /* background */
+  --bg-surface: #ffffff;
+  --bg-on-surface: #f0f0f0;
+  --bg-divider: #ededed;
+  --bg-input: #fafafa;
+  --bg-input-border-default: #e2e2e2;
+  --bg-input-border-focus: #1b1b1c;
+  /* etc */
+  --border-selected: #30b5ff;
+}
+@media screen {
 }

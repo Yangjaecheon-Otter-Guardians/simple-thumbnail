@@ -1,9 +1,9 @@
 name: eslint check
 
 on:
-  push:
+  pull_request:
     branches:
-      - init/auto-lint
+      - develop
 
 jobs:
   build:
