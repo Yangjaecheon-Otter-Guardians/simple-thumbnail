@@ -18,14 +18,16 @@ const App = () => {
   }, []);
 
   return (
-    <InteractiveContainer>
+    <>
       <Header />
-      <Preview />
-      <BackgroundTool />
-      <LayoutTool />
-      <TextTool />
+      <InteractiveContainer>
+        <Preview />
+        <BackgroundTool />
+        <LayoutTool />
+        <TextTool />
+      </InteractiveContainer>
       <Footer />
-    </InteractiveContainer>
+    </>
   );
 };
 
