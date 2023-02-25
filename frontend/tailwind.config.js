@@ -41,6 +41,13 @@ module.exports = {
       accentColor: {
         "always-red": "#FF3040",
       },
+      fontSize: {
+        lg: "21px",
+        md1: "18px",
+        md2: "16px",
+        sm: "14px",
+        xsm: "12px",
+      },
     },
   },
   plugins: [],
