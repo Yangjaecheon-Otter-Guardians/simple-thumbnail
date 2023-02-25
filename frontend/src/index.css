@@ -16,11 +16,11 @@
     font-family: "SUIT";
   }
 
-  body {
+  body, #root {
     display: flex;
-    justify-content: center;
-    width: 60%;
-    min-width: 375px;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
   }
 }
 
@@ -36,4 +36,8 @@
   .flex-center-x {
     @apply flex justify-center;
   }
+}
+
+@media screen {
+  
 }

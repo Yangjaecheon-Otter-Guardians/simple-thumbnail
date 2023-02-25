@@ -1,9 +1,5 @@
 function BackgroundTool() {
-  return (
-    <div style={{ border: 'solid 1px blue', width: '375px' }}>
-      BackgroundTool
-    </div>
-  );
+  return <div className="w-full border-solid border-2 border-indigo-600">BackgroundTool</div>;
 }
 
 export default BackgroundTool;
