@@ -1,7 +1,7 @@
 {
   "name": "frontend",
   "version": "0.1.0",
-  "homepage": "https://yangjaecheon-otter-guardians.github.io/simple-thumbnail/",
+  "homepage": "https://simple-thumbnail.com",
   "private": true,
   "dependencies": {
     "@reduxjs/toolkit": "^1.9.3",
