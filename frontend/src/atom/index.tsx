@@ -5,4 +5,9 @@ const testAtom = atom({
   default: 1,
 });
 
-export { testAtom };
+const previewImage = atom({
+  key: "previewImage",
+  default: "",
+});
+
+export { testAtom, previewImage };
