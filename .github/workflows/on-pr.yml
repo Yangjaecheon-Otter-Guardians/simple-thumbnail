@@ -22,8 +22,7 @@ jobs:
       - name: npm install, build, and test
         run: |
           cd frontend
-          npm ci
-          ls
+          npm i
           npm run lint
         env:
           CI: true
