@@ -4,7 +4,9 @@ interface Props {
 
 function InteractiveContainer({ children }: Props) {
   return (
-    <div style={{ border: 'solid 3px red', width: '375px' }}>{children}</div>
+    <div className="px-5 w-full flex flex-col items-center justify-center sm:w-[640px] md:px-10 md:w-[768px]">
+      {children}
+    </div>
   );
 }
 

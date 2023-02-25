@@ -7,7 +7,7 @@ function BackgroundTool() {
     console.log((e.target as HTMLInputElement).value);
   };
   return (
-    <div className="">
+    <div className="w-full border-solid border-2 border-indigo-600">
       <div>배경</div>
       <div className="w-full flex justify-around">
         <button value="1" onClick={(e) => tabChanger(e)}>
