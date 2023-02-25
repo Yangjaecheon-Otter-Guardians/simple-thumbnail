@@ -1,5 +1,3 @@
-import InteractiveContainer from "../components/InteractiveContainer";
-
 function Footer() {
   return (
     <div className="w-full flex-center border-t-2 py-[25px] text-disabled text-[12px]">
