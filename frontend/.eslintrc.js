@@ -19,5 +19,5 @@ module.exports = {
   },
   plugins: ["react", "@typescript-eslint"],
   rules: {},
-  ignorePatterns: [".eslintrc.js"],
+  ignorePatterns: [".eslintrc.js", "tailwind.config.js"],
 };
