@@ -10,7 +10,7 @@ const App = () => {
     dispatch(helloWorld());
   }, []);
 
-  return <div>App {hello}</div>;
+  return <div>App {hello} ~</div>;
 };
 
 export default App;
