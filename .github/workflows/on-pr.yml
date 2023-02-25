@@ -23,6 +23,7 @@ jobs:
         run: |
           cd frontend
           npm ci
+          ls
           npm run lint
         env:
           CI: true
