@@ -2,6 +2,15 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  body {
+    display: flex;
+    justify-content: center;
+    width: 60%;
+    min-width: 375px;
+  }
+}
+
 @layer components {
   .flex-center {
     @apply flex justify-center items-center;
@@ -9,5 +18,9 @@
 
   .transform-center {
     @apply absolute w-4/5 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2;
+  }
+
+  .flex-center-x {
+    @apply flex justify-center;
   }
 }
