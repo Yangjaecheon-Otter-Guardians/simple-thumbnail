@@ -1,16 +1,16 @@
-import { createSlice } from "@reduxjs/toolkit";
-import { RootState } from "../app/store";
+import { createSlice } from '@reduxjs/toolkit';
+import { RootState } from '../app/store';
 
 export interface AppConfig {
   hello: string;
 }
 
 const initialState: AppConfig = {
-  hello: "Hello World",
+  hello: 'Hello World',
 };
 
 export const appSlice = createSlice({
-  name: "app",
+  name: 'app',
   initialState,
   reducers: {
     helloWorld: (state) => {
