@@ -3,7 +3,7 @@ name: eslint check
 on:
   push:
     branches:
-      - init/auto-lint
+      - init/lint-check
 
 jobs:
   build:
