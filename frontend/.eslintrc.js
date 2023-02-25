@@ -1,15 +1,19 @@
 module.exports = {
-  parser: '@typescript-eslint/parser',
-  plugins: ['@typescript-eslint', 'react-hooks'],
   env: {
     browser: true,
     es2021: true,
   },
-  extends: ['plugin:react/recommended', 'standard-with-typescript', 'prettier'],
+  extends: ["prettier", "plugin:prettier/recommended"],
   overrides: [],
+  parser: "@typescript-eslint/parser",
   parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
+    ecmaVersion: "latest",
+    sourceType: "module",
+    project: "tsconfig.json",
+    tsconfigRootDir: __dirname,
+    sourceType: "module",
   },
-  rules: { 'prettier/prettier': 0 },
+  plugins: ["react", "@typescript-eslint", "prettier"],
+  rules: { "prettier/prettier": 0 },
+  ignorePatterns: [".eslintrc.js", "tailwind.config.js"],
 };
