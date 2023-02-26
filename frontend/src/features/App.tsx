@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import { ToastContainer } from 'react-toastify';
 import RatioTool from 'sections/RatioTool';
 import { useAppDispatch, useAppSelector } from '../app/hooks';
 import InteractiveContainer from '../components/InteractiveContainer';
@@ -18,6 +19,7 @@ const App = () => {
         <BackgroundTool />
         <TextTool />
       </InteractiveContainer>
+      <ToastContainer />
       <Footer />
     </>
   );
