@@ -26,7 +26,7 @@ export default function Preview({ previewRef }: Props) {
 
   return (
     <>
-      <div className="w-full h-[188px] tablet:h-[300px] flex justify-center items-center">
+      <div className="w-full h-[188px] tablet:h-[300px] flex justify-center items-center" ref={previewRef}>
         <div
           ref={preview}
           style={{
