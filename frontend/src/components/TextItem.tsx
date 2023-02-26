@@ -131,7 +131,9 @@ const TextItem = ({ id, texts, setTexts, colors, setColors }: TextItemProps) => 
                   <BsCheck style={{ position: 'absolute', zIndex: 1, color: 'black' }} />
                 </>
               ) : (
-                <IoMdClose />
+                <p>
+                  <IoMdClose className={styles.closeBtn} />
+                </p>
               )}
             </button>
             {colorModal && (

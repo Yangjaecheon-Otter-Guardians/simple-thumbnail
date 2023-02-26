@@ -26,13 +26,14 @@
   justify-content: center;
   align-items: center;
 }
-.colorButton svg {
+.colorButton > svg {
   display: none;
 }
 .selectedColorButton {
   border: 2px solid var(--border-selected);
 }
-.selectedColorButton svg {
+.selectedColorButton svg,
+.closeBtn {
   display: flex;
 }
 
