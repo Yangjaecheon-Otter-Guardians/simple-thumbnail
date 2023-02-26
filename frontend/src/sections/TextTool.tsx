@@ -1,5 +1,10 @@
+import { previewFont } from 'atom';
+import Dropdown from 'components/common/Dropdown';
+import { FONT_LIST } from 'constants/fonts';
 import { useState } from 'react';
+import { useSetRecoilState } from 'recoil';
 import styles from 'styles/TextTool.module.css';
+import { convertFontNameToValue } from 'utils/convertFontNameToValue';
 import TextItem from '../components/TextItem';
 
 export const layoutHandler = (type: string) => {
@@ -17,6 +22,7 @@ function TextTool() {
   // text 갯수 선택
   const [count, setCount] = useState(1);
   const textCount = ['없음', '1개', '2개', '3개'];
+  const setPreviewFont = useSetRecoilState(previewFont);
 
   const CountGroup = () => {
     return textCount.map((item, index) => {
@@ -61,6 +67,11 @@ function TextTool() {
     });
   };
 
+  const changeFont = (selectedFont: string) => {
+    const fontValue = convertFontNameToValue(selectedFont);
+    setPreviewFont(fontValue);
+  };
+
   return (
     <div className={styles.container}>
       <h1 className={styles.title}>텍스트</h1>
@@ -68,7 +79,8 @@ function TextTool() {
       <div className={styles.buttonGroup}>{CountGroup()}</div>
       <h2 className={styles.subtitle}>텍스트 레이아웃</h2>
       <div className={styles.buttonGroup}>{LayoutGroup()}</div>
-      {count != 0 && <h2 className={styles.subtitle}>텍스트</h2>}
+      {count != 0 && <h2 className={styles.subtitle}>텍스트 내용</h2>}
+      <Dropdown list={FONT_LIST.map((font, idx) => font.name)} handleChange={changeFont} />
       {TextItemGroup()}
     </div>
   );

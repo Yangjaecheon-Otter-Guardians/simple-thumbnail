@@ -15,17 +15,9 @@ type TextItemProps = {
   setColors: React.Dispatch<React.SetStateAction<string[]>>;
 };
 
-const fontList = ['AAA', 'BBB', 'CCC', 'DDDD', 'EEEE'];
-
 const TextItem = ({ id, texts, setTexts, colors, setColors }: TextItemProps) => {
-  const setPreviewFont = useSetRecoilState(previewFont);
-  const changeFont = (selectedFont: string) => {
-    setPreviewFont(selectedFont);
-  };
-
   return (
     <>
-      <Dropdown list={fontList} handleChange={changeFont} />
       <input
         className={styles.input}
         type="text"
