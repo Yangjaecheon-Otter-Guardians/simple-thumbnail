@@ -19,6 +19,10 @@ import { FaFont } from 'react-icons/fa';
 import { IoMdClose } from 'react-icons/io';
 import styles from 'styles/TextItem.module.css';
 import { toast } from 'react-toastify';
+import Dropdown from './common/Dropdown';
+import { useSetRecoilState } from 'recoil';
+import { previewFont } from 'atom';
+
 
 type TextItemProps = {
   id: number;
@@ -27,6 +31,8 @@ type TextItemProps = {
   colors: RGBColor[];
   setColors: React.Dispatch<React.SetStateAction<RGBColor[]>>;
 };
+
+const fontList = ['AAA', 'BBB', 'CCC', 'DDDD', 'EEEE'];
 
 const TextItem = ({ id, texts, setTexts, colors, setColors }: TextItemProps) => {
   const [contents, setContents] = useRecoilState(textsAll(id));
@@ -61,10 +67,14 @@ const TextItem = ({ id, texts, setTexts, colors, setColors }: TextItemProps) => 
       fontColor: contents.fontColor,
     };
     setContents(tmp);
+  const setPreviewFont = useSetRecoilState(previewFont);
+  const changeFont = (selectedFont: string) => {
+    setPreviewFont(selectedFont);
   };
 
   return (
     <>
+      <Dropdown list={fontList} handleChange={changeFont} />
       <input
         className={styles.input}
         type="text"
