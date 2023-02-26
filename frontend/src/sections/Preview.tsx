@@ -1,27 +1,30 @@
-import { ChangeEvent, useEffect, useState } from 'react';
+import { ChangeEvent, useRef, useState } from 'react';
 
 export default function Preview() {
-  const [previewRatio, setPreviewRatio] = useState(PREVIEWRATIOOPTIONS[INITIALRATIO]);
-  const [previewWidth, setPreviewWidth] = useState<number>(INITIALHEIGHT);
+  const preview = useRef<HTMLDivElement>(null);
+  const previewRatio = useRef(PREVIEWRATIOOPTIONS[INITIALRATIO]);
+  const [previewWidth, setPreviewWidth] = useState<number>(
+    window.innerWidth >= 764 ? INITIALHEIGHT.table : INITIALHEIGHT.mobile,
+  );
 
   const calculatePreviewWidth = (ratio: number) => {
-    const preview = document.querySelector('#preview') as HTMLDivElement;
-    return preview.clientHeight * ratio;
+    if (preview && preview.current) {
+      return preview.current.clientHeight * ratio;
+    }
+    return previewWidth;
   };
 
   const handleSelectChange = (event: ChangeEvent<HTMLSelectElement>) => {
     const key = event.target.value as keyof PreviewRatioOptionsType;
-    setPreviewRatio(PREVIEWRATIOOPTIONS[key]);
+    previewRatio.current = PREVIEWRATIOOPTIONS[key];
+    setPreviewWidth(calculatePreviewWidth(previewRatio.current));
   };
-
-  useEffect(() => {
-    setPreviewWidth(calculatePreviewWidth(previewRatio));
-  }, [previewRatio]);
 
   return (
     <>
-      <div id="preview" className="w-full h-[188px] tablet:h-[300px] flex justify-center items-center">
+      <div className="w-full h-[188px] tablet:h-[300px] flex justify-center items-center">
         <div
+          ref={preview}
           style={{
             width: `${previewWidth}px`,
             height: '100%',
@@ -57,7 +60,7 @@ interface PreviewRatioOptionsType {
 }
 
 const INITIALRATIO = '1 : 1';
-const INITIALHEIGHT = 188;
+const INITIALHEIGHT = { mobile: 188, table: 300 };
 const PREVIEWRATIOOPTIONS: PreviewRatioOptionsType = {
   '1 : 1': 1,
   '4 : 3': 4 / 3,
