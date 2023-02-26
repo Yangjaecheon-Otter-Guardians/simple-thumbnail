@@ -49,6 +49,9 @@ module.exports = {
         sm: '14px',
         xsm: '12px',
       },
+      borderWidth: {
+        1: '1px',
+      },
     },
   },
   plugins: [],

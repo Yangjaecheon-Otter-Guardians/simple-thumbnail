@@ -3,6 +3,7 @@ import React from 'react';
 import styles from 'styles/TextItem.module.css';
 import PICKER from 'assets/color_picker.png';
 import { BsCheck } from 'react-icons/bs';
+import Dropdown from './common/Dropdown';
 
 type TextItemProps = {
   id: number;
@@ -12,9 +13,12 @@ type TextItemProps = {
   setColors: React.Dispatch<React.SetStateAction<string[]>>;
 };
 
+const fontList = ['AAA', 'BBB', 'CCC', 'DDDD', 'EEEE'];
+
 const TextItem = ({ id, texts, setTexts, colors, setColors }: TextItemProps) => {
   return (
     <>
+      <Dropdown list={fontList} />
       <input
         className={styles.input}
         type="text"
