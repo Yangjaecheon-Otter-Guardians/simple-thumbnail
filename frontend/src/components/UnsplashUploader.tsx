@@ -2,7 +2,16 @@ import { useRecoilState, useSetRecoilState } from "recoil";
 import { isImageBright, previewImage } from "../atom";
 import { Icon } from "@iconify/react";
 
-const ImageUploader = () => {
+const images = async () => {
+  const response = await fetch("https://api.unsplash.com/", {
+    method: "GET",
+    headers: {
+      Authorization: process.env.UNSPLASH_ACCESS!,
+    },
+  });
+};
+
+const UnsplashUploader = () => {
   const setImageSrc = useSetRecoilState(previewImage);
   const [isBright, setIsBright] = useRecoilState(isImageBright);
   const insertImage = async (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -22,7 +31,6 @@ const ImageUploader = () => {
   const brigthControl = () => {
     setIsBright((prev) => !prev);
   };
-
   return (
     <label className="w-full h-12">
       <div className="w-full h-12 border-input-border-default border-2 rounded-lg flex justify-center items-center">
@@ -31,7 +39,7 @@ const ImageUploader = () => {
           <Icon className="ml-2 w-6 h-6" icon="ph:upload-simple" />
         </div>
       </div>
-      <input className="hidden" type="file" onChange={(e) => insertImage(e)} />
+      <input className="hidden" type="file" />
       <label className={`${isBright ? "text-darken" : "text-muted"}`}>
         <input type="checkbox" onClick={brigthControl} />
         <span className="ml-[10px]">배경 어둡게</span>
@@ -40,4 +48,4 @@ const ImageUploader = () => {
   );
 };
 
-export default ImageUploader;
+export default UnsplashUploader;

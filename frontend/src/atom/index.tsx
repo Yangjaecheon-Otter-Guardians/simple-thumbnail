@@ -10,4 +10,9 @@ const previewImage = atom({
   default: "",
 });
 
-export { testAtom, previewImage };
+const isImageBright = atom({
+  key: "isImageBright",
+  default: false,
+});
+
+export { testAtom, previewImage, isImageBright };
