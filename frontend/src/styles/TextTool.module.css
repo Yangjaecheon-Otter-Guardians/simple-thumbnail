@@ -1,5 +1,6 @@
 .container {
-  width: fit-content;
+  width: 100%;
+  max-width: 1024px;
   display: flex;
   flex-direction: column;
   gap: 16px;
@@ -18,6 +19,16 @@
   justify-content: space-between;
   align-items: center;
   gap: 0.4rem;
+}
+.layoutWrap {
+  width: 100%;
+  overflow-x: scroll;
+}
+.layoutButtonGroup {
+  width: fit-content;
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
 }
 .countButton,
 .selectedCountButton {
@@ -38,21 +49,103 @@
   border-radius: 5px;
   background-color: var(--bg-on-surface);
   color: var(--text-active);
-  padding: 0.4rem;
+  padding: 10px;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  gap: 4px;
 }
+.commonStyle div,
+.selectedStyle div {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
 .selectedStyle {
   background-color: var(--bg-input-border-focus);
   color: var(--text-lighten);
 }
+
+.greyBar {
+  width: 52px;
+  height: 12px;
+  border-radius: 3px;
+  background-color: var(--grey-40);
+}
+.selectedStyle .greyBar {
+  background-color: var(--grey-00);
+}
+.layoutTopLeft {
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+.layoutTopLeft div {
+  align-items: flex-start;
+}
 .layoutTop {
   justify-content: flex-start;
+  align-items: center;
+}
+.layoutTopRight {
+  justify-content: flex-start;
+  align-items: flex-end;
+}
+.layoutLeft {
+  justify-content: center;
+  align-items: flex-start;
 }
 .layoutCenter {
   justify-content: center;
+  align-items: center;
+}
+.layoutCenter div {
+  align-items: center;
+}
+.layoutRight {
+  justify-content: center;
+  align-items: flex-end;
+}
+.layoutBottomLeft {
+  justify-content: flex-end;
+  align-items: flex-start;
 }
 .layoutBottom {
   justify-content: flex-end;
+  align-items: center;
+}
+.layoutBottomRight {
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+.layoutSpaceBetweenLeft {
+  justify-content: space-between;
+  align-items: flex-start;
+}
+.layoutSpaceBetweenCenter {
+  justify-content: space-between;
+  align-items: center;
+}
+.layoutSpaceBetweenCenter div {
+  align-items: center;
+}
+.layoutSpaceBetweenRight {
+  justify-content: space-between;
+  align-items: flex-end;
+}
+.layoutTitleAuthor {
+  justify-content: space-between;
+}
+.layoutTitleAuthor div {
+  align-items: flex-end;
+}
+@media only screen and (max-width: 1024px) {
+  .container {
+    max-width: 800px;
+  }
+}
+@media only screen and (max-width: 667px) {
+  .container {
+    width: 100%;
+  }
 }

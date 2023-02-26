@@ -1,5 +1,5 @@
 import { RGBColor } from 'react-color';
-import { atom, atomFamily } from 'recoil';
+import { atom, atomFamily, useResetRecoilState } from 'recoil';
 
 export const TEXT_WHITE: RGBColor = { r: 251, g: 251, b: 251, a: 1 };
 export const TEXT_BLACK: RGBColor = { r: 10, g: 10, b: 10, a: 1 };
@@ -25,6 +25,7 @@ type LayoutPositionType = {
     | 'justify-around'
     | 'justify-evenly';
   alignItems: 'items-start' | 'items-end' | 'items-center' | 'items-baseline' | 'items-stretch';
+  subAlignItems: 'items-start' | 'items-end' | 'items-center';
 };
 
 const texts: TextType[] = [
@@ -65,22 +66,10 @@ const textsAll = atomFamily({
   },
 });
 
-const firstText = atom({
-  key: 'firstText',
-  default: texts[0],
-});
-const secondText = atom({
-  key: 'secondText',
-  default: texts[1],
-});
-const thirdText = atom({
-  key: 'thirdText',
-  default: texts[2],
-});
-
 const initialPosition: LayoutPositionType = {
   justifyContent: 'justify-end',
   alignItems: 'items-start',
+  subAlignItems: 'items-start',
 };
 
 const LayoutPosition = atom({
@@ -92,4 +81,4 @@ export const getRGB = (color: RGBColor) => {
   return `rgba(${color.r}, ${color.g}, ${color.b}, ${color.a ?? 1})`;
 };
 
-export { textCountState, textsAll, firstText, secondText, thirdText, LayoutPosition };
+export { textCountState, textsAll, LayoutPosition };
