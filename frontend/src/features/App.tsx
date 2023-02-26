@@ -20,7 +20,7 @@ const App = () => {
         <RatioTool />
         <BackgroundTool />
         <TextTool />
-        {/* <DownloadButton previewRef={previewRef} /> */}
+        <DownloadButton previewRef={previewRef} />
       </InteractiveContainer>
       <ToastContainer />
       <Footer />

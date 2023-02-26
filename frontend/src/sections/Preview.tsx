@@ -44,7 +44,7 @@ export default function Preview({ previewRef }: Props) {
               height: '100%',
               backgroundColor: `${currentColor}`,
               backgroundImage: `url(${imageSrc})`,
-              backgroundSize: 'auto 100%',
+              backgroundSize: 'cover',
               backgroundRepeat: 'no-repeat',
               backgroundPosition: 'center',
             }}
