@@ -1,4 +1,7 @@
+import { textCountState, TEXT_WHITE } from 'atom/textAtom';
 import { useState } from 'react';
+import { RGBColor } from 'react-color';
+import { useRecoilState } from 'recoil';
 import styles from 'styles/TextTool.module.css';
 import TextItem from '../components/TextItem';
 
@@ -15,7 +18,9 @@ export const layoutHandler = (type: string) => {
 
 function TextTool() {
   // text 갯수 선택
-  const [count, setCount] = useState(1);
+  // const [count, setCount] = useState(1);
+  const [count, setCount] = useRecoilState(textCountState);
+
   const textCount = ['없음', '1개', '2개', '3개'];
 
   const CountGroup = () => {
@@ -51,7 +56,7 @@ function TextTool() {
   };
   // text input 갯수 동적 렌더
   const [texts, setTexts] = useState<string[]>([]);
-  const [colors, setColors] = useState<string[]>([]);
+  const [colors, setColors] = useState<RGBColor[]>([TEXT_WHITE, TEXT_WHITE, TEXT_WHITE]);
 
   const TextItemGroup = () => {
     return [...Array(count)].map((_, index) => {

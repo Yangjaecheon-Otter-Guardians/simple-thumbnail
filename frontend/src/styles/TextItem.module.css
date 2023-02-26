@@ -8,13 +8,16 @@
   box-sizing: border-box;
   text-shadow: 0.1px 0.1px 0.1px var(--grey-40);
 }
-.buttonGroup{
+.buttonGroup {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  
+  gap: 1rem;
 }
-.colorButton,.selectedColorButton{
+.colorButton,
+.selectedColorButton,
+.sizeButton,
+.selectedSizeButton {
   width: 24px;
   aspect-ratio: 1/1;
   border: 1px solid var(--grey-10);
@@ -23,12 +26,20 @@
   justify-content: center;
   align-items: center;
 }
-.colorButton svg{
+.colorButton svg {
   display: none;
 }
-.selectedColorButton{  
-  border: 2px solid var(--border-selected);  
+.selectedColorButton {
+  border: 2px solid var(--border-selected);
 }
-.selectedColorButton svg{
-  display:flex;
+.selectedColorButton svg {
+  display: flex;
+}
+
+.selectedSizeButton {
+  background-color: var(--grey-100);
+}
+
+.selectedSizeButton svg {
+  color: white;
 }
