@@ -33,8 +33,8 @@ const ImageUploader = () => {
         </div>
       </div>
       <input className="hidden" type="file" onChange={(e) => insertImage(e)} />
-      <label className={`${isBright ? "text-darken" : "text-muted"}`}>
-        <input type="checkbox" onClick={brigthControl} />
+      <label className={`${isBright ? "text-darken" : "text-muted"} flex justify-start items-center`}>
+        <input defaultChecked={!isBright} className="h-4 w-4" type="checkbox" onClick={brigthControl} />
         <span className="ml-[10px]">배경 어둡게</span>
       </label>
     </label>
