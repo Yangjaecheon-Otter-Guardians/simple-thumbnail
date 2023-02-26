@@ -16,7 +16,7 @@ export type TextType = {
   fontColor: RGBColor;
 };
 
-type LayoutPositionType = {
+export type LayoutPositionType = {
   justifyContent:
     | 'justify-start'
     | 'justify-end'
@@ -72,7 +72,7 @@ const initialPosition: LayoutPositionType = {
   subAlignItems: 'items-start',
 };
 
-const LayoutPosition = atom({
+const layoutPositionState = atom({
   key: 'position',
   default: initialPosition,
 });
@@ -81,4 +81,4 @@ export const getRGB = (color: RGBColor) => {
   return `rgba(${color.r}, ${color.g}, ${color.b}, ${color.a ?? 1})`;
 };
 
-export { textCountState, textsAll, LayoutPosition };
+export { textCountState, textsAll, layoutPositionState };

@@ -3,15 +3,16 @@
   max-width: 1024px;
   display: flex;
   flex-direction: column;
-  gap: 16px;
 }
 .title {
   font-size: 16px;
   font-weight: 900;
+  margin-bottom: 10px;
 }
 .subtitle {
   font-size: 14px;
   font-weight: 600;
+  margin-bottom: 12px;
 }
 .buttonGroup {
   width: 100%;
@@ -22,8 +23,21 @@
 }
 .layoutWrap {
   width: 100%;
-  overflow-x: scroll;
+  overflow-x: auto;
+  margin-bottom: 32px;
 }
+.layoutWrap::-webkit-scrollbar {
+  width: 90%;
+  height: 8px;
+}
+.layoutWrap::-webkit-scrollbar-thumb {
+  background: var(--grey-40);
+  border-radius: 10px;
+}
+.layoutWrap::-webkit-scrollbar-track {
+  background: transparent;
+}
+
 .layoutButtonGroup {
   width: fit-content;
   display: flex;
@@ -37,6 +51,7 @@
   border-radius: 50px;
   background-color: var(--bg-on-surface);
   color: var(--text-active);
+  margin-bottom: 16px;
 }
 .selectedCountButton {
   background-color: var(--bg-input-border-focus);
@@ -49,7 +64,7 @@
   border-radius: 5px;
   background-color: var(--bg-on-surface);
   color: var(--text-active);
-  padding: 10px;
+  padding: 12px;
   display: flex;
   flex-direction: column;
   gap: 4px;
@@ -76,6 +91,8 @@
 .selectedStyle .greyBar {
   background-color: var(--grey-00);
 }
+
+/* 레이아웃 버튼용 정렬 */
 .layoutTopLeft {
   justify-content: flex-start;
   align-items: flex-start;
@@ -87,8 +104,14 @@
   justify-content: flex-start;
   align-items: center;
 }
+.layoutTop div {
+  align-items: center;
+}
 .layoutTopRight {
   justify-content: flex-start;
+  align-items: flex-end;
+}
+.layoutTopRight div {
   align-items: flex-end;
 }
 .layoutLeft {
@@ -106,16 +129,31 @@
   justify-content: center;
   align-items: flex-end;
 }
+.layoutRight div {
+  align-items: flex-end;
+}
 .layoutBottomLeft {
   justify-content: flex-end;
+  align-items: flex-start;
+}
+.layoutBottomLeft div {
   align-items: flex-start;
 }
 .layoutBottom {
   justify-content: flex-end;
   align-items: center;
 }
+.layoutBottom div {
+  align-items: center;
+}
+.layoutBottomLeft div {
+  align-items: flex-start;
+}
 .layoutBottomRight {
   justify-content: flex-end;
+  align-items: flex-end;
+}
+.layoutBottomRight div {
   align-items: flex-end;
 }
 .layoutSpaceBetweenLeft {
@@ -133,11 +171,21 @@
   justify-content: space-between;
   align-items: flex-end;
 }
+.layoutSpaceBetweenRight div {
+  align-items: flex-end;
+}
 .layoutTitleAuthor {
   justify-content: space-between;
 }
 .layoutTitleAuthor div {
   align-items: flex-end;
+}
+.layoutTitleReAuthor {
+  justify-content: space-between;
+  align-items: flex-end;
+}
+.layoutTitleReAuthor div {
+  align-items: flex-start;
 }
 @media only screen and (max-width: 1024px) {
   .container {
