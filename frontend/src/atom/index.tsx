@@ -1,3 +1,4 @@
+import { FONT_LIST } from 'constants/fonts';
 import { atom } from 'recoil';
 
 export const testAtom = atom({
@@ -32,3 +33,7 @@ const previewColor = atom({
 });
 
 export { previewImage, isImageBright, isEditState, previewColor };
+export const previewFont = atom({
+  key: 'previewFont',
+  default: FONT_LIST[0].value,
+});
