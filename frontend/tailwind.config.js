@@ -50,6 +50,10 @@ module.exports = {
         xsm: '12px',
       },
     },
+    screens: {
+      desktop: '1024px',
+      tablet: '764px',
+    },
   },
   plugins: [],
 };
