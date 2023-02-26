@@ -20,7 +20,7 @@ const TextPreview = () => {
   };
 
   return (
-    <div className={styles.container}>
+    <div style={{ position: 'relative', zIndex: 98 }} className={styles.container}>
       <div className={styles.pos}>
         {cnt > 0 && (
           <span className={styles.first} style={{ color: getRGB(first.fontColor) }}>
