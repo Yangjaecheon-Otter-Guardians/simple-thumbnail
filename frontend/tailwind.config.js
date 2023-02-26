@@ -53,6 +53,10 @@ module.exports = {
         1: '1px',
       },
     },
+    screens: {
+      desktop: '1024px',
+      tablet: '764px',
+    },
   },
   plugins: [],
 };
