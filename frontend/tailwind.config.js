@@ -38,6 +38,15 @@ module.exports = {
         input: '#FAFAFA',
         'input-border-default': '#E2E2E2',
         'input-border-focus': '#1B1B1C',
+        backRed: '#FF3737',
+        backOrange: '#FF9549',
+        backYellow: '#FFE03C',
+        backGreen: '#4FCF00',
+        backBlue: '#30CDFF',
+        backPurple: '#A873FF',
+        backWhite: '#FFFFFF',
+        backPicker:
+          'onic-gradient(from 180deg at 50% 50%, #FF5151 0deg, #FFF850 115.5deg, #50FFA1 218.62deg, #6950FF 360deg)',
       },
       accentColor: {
         'always-red': '#FF3040',
