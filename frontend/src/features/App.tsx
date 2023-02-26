@@ -5,19 +5,10 @@ import InteractiveContainer from '../components/InteractiveContainer';
 import BackgroundTool from '../sections/BackgroundTool';
 import Footer from '../sections/Footer';
 import Header from '../sections/Header';
-import LayoutTool from '../sections/LayoutTool';
 import Preview from '../sections/Preview';
 import TextTool from '../sections/TextTool';
-import { helloWorld, selectHello } from './appSlice';
 
 const App = () => {
-  const dispatch = useAppDispatch();
-  const hello = useAppSelector(selectHello);
-
-  useEffect(() => {
-    dispatch(helloWorld());
-  }, []);
-
   return (
     <>
       <Header />
@@ -25,7 +16,6 @@ const App = () => {
         <Preview />
         <RatioTool />
         <BackgroundTool />
-        <LayoutTool />
         <TextTool />
       </InteractiveContainer>
       <Footer />

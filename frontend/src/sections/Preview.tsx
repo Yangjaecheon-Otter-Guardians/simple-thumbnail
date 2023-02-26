@@ -1,3 +1,4 @@
+import TextPreview from 'components/TextPreview';
 import { useEffect, useRef, useState } from 'react';
 import { ratioAtom } from 'atom';
 import { useRecoilValue } from 'recoil';
@@ -30,7 +31,9 @@ export default function Preview() {
             backgroundRepeat: 'no-repeat',
             backgroundPosition: 'center',
           }}
-        ></div>
+        >
+          <TextPreview />
+        </div>
       </div>
     </>
   );
