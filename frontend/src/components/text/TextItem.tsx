@@ -22,7 +22,7 @@ import { IoMdClose } from 'react-icons/io';
 import { toast } from 'react-toastify';
 import { useSetRecoilState } from 'recoil';
 import styles from 'styles/TextItem.module.css';
-import Dropdown from './common/Dropdown';
+import Dropdown from '../common/Dropdown';
 
 type TextItemProps = {
   id: number;
@@ -66,10 +66,6 @@ const TextItem = ({ id, texts, setTexts, colors, setColors }: TextItemProps) => 
     };
     setContents(tmp);
   };
-  const setPreviewFont = useSetRecoilState(previewFont);
-  const changeFont = (selectedFont: string) => {
-    setPreviewFont(selectedFont);
-  };
 
   return (
     <>
@@ -81,10 +77,10 @@ const TextItem = ({ id, texts, setTexts, colors, setColors }: TextItemProps) => 
           texts[id] = e.target.value ?? '';
           setTexts([...texts]);
           handleTextChage(e.target.value ?? '');
-          if (texts[id].length > 30) toast('📣 너무 길지 않을까요?', { autoClose: 2000, theme: 'colored' });
+          if (texts[id].length > 36) toast('📣 너무 길지 않을까요?', { autoClose: 2000, theme: 'colored' });
         }}
         placeholder={contents.content}
-        style={{ color: getRGB(colors[id]) }}
+        // style={{ color: getRGB(colors[id]) }}
       />
       <div className={styles.buttonGroup}>
         <div className={styles.buttonGroup}>
