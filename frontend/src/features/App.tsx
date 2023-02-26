@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import RatioTool from 'sections/RatioTool';
 import { useAppDispatch, useAppSelector } from '../app/hooks';
 import InteractiveContainer from '../components/InteractiveContainer';
 import BackgroundTool from '../sections/BackgroundTool';
@@ -22,6 +23,7 @@ const App = () => {
       <Header />
       <InteractiveContainer>
         <Preview />
+        <RatioTool />
         <BackgroundTool />
         <LayoutTool />
         <TextTool />
