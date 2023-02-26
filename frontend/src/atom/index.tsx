@@ -5,4 +5,9 @@ const testAtom = atom({
   default: 1,
 });
 
+export const isEditState = atom({
+  key: 'isEditState',
+  default: false,
+});
+
 export { testAtom };
