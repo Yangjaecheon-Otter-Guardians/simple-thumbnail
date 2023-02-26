@@ -4,7 +4,7 @@ import { useState } from "react";
 import ImageUploader from "../components/ImageUploader";
 
 function BackgroundTool() {
-  const [tab, setTab] = useState("3");
+  const [tab, setTab] = useState("1");
   const tabChanger = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
     const currentTab = (e.target as HTMLInputElement).value;
     setTab(currentTab);

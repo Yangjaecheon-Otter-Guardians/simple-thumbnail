@@ -33,19 +33,20 @@ const UnsplashUploader = () => {
     setIsBright((prev) => !prev);
   };
   return (
-    <label className="w-full h-12">
-      <div className="w-full h-12 border-input-border-default border-2 rounded-lg flex justify-center items-center">
-        <div>Unsplash 랜덤 이미지 삽입</div>
-        <div>
-          <Icon className="ml-2 w-6 h-6" icon="tabler:refresh" vFlip={true} />
+    <div className="w-full h-fit">
+      <label className="cursor-pointer">
+        <div className="w-full h-12 border-input-border-default border-2 rounded-lg flex justify-center items-center">
+          <div>Unsplash 랜덤 이미지 삽입</div>
+          <div>
+            <Icon className="ml-2 w-6 h-6" icon="tabler:refresh" vFlip={true} />
+          </div>
         </div>
-      </div>
-      <input className="hidden" type="file" />
+      </label>
       <label className={`${isBright ? "text-darken" : "text-muted"} flex justify-start items-center`}>
         <input defaultChecked={!isBright} className="h-4 w-4" type="checkbox" onClick={brigthControl} />
         <span className="ml-[10px]">배경 어둡게</span>
       </label>
-    </label>
+    </div>
   );
 };
 
