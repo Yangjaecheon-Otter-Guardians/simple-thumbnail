@@ -1,3 +1,4 @@
+import TextPreview from 'components/TextPreview';
 import { ChangeEvent, useEffect, useState } from 'react';
 
 export default function Preview() {
@@ -30,7 +31,9 @@ export default function Preview() {
             backgroundRepeat: 'no-repeat',
             backgroundPosition: 'center',
           }}
-        ></div>
+        >
+          <TextPreview />
+        </div>
       </div>
       <div className="w-full my-[10px]">
         <div className="mb-[10px] font-bold">레이아웃</div>
