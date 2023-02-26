@@ -38,7 +38,7 @@ function Dropdown<T extends string>({ list, handleChange }: Props<T>) {
         <IoIosArrowDown />
       </div>
       {isOpen && (
-        <div className="absolute top-full bg-white w-full border-1 border-black mt-2 flex flex-col rounded-md ">
+        <div className="absolute top-full bg-white w-full border-1 border-black mt-2 flex flex-col rounded-md z-10">
           <ul className="[&>*]:px-4 [&>*]:h-11 [&>*]:flex [&>*]:items-center">
             {dropdownList.map((option) => (
               <li
