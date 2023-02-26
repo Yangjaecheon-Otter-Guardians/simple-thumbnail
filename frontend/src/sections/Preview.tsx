@@ -1,6 +1,6 @@
 import TextPreview from 'components/TextPreview';
 import { useEffect, useRef, useState } from 'react';
-import { ratioAtom, previewImage, isImageBright } from 'atom';
+import { ratioAtom, previewImage, isImageBright, previewColor } from 'atom';
 import { useRecoilValue } from 'recoil';
 import { previewFont } from 'atom';
 interface Props {
@@ -10,6 +10,7 @@ interface Props {
 export default function Preview({ previewRef }: Props) {
   const imageSrc = useRecoilValue(previewImage);
   const isBright = useRecoilValue(isImageBright);
+  const currentColor = useRecoilValue(previewColor);
   const preview = useRef<HTMLDivElement>(null);
   const previewRatio = useRecoilValue(ratioAtom);
   const font = useRecoilValue(previewFont);
@@ -41,6 +42,7 @@ export default function Preview({ previewRef }: Props) {
             style={{
               width: `${previewWidth}px`,
               height: '100%',
+              backgroundColor: `${currentColor}`,
               backgroundImage: `url(${imageSrc})`,
               backgroundSize: 'auto 100%',
               backgroundRepeat: 'no-repeat',

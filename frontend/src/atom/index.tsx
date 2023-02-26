@@ -21,14 +21,18 @@ const isEditState = atom({
   default: false,
 });
 
-export { previewImage, isImageBright, isEditState };
-
 const INITIALRATIO = 1;
 export const ratioAtom = atom({
   key: 'previewRatio',
   default: INITIALRATIO,
 });
 
+const previewColor = atom({
+  key: 'previewColor',
+  default: '',
+});
+
+export { previewImage, isImageBright, isEditState, previewColor };
 export const previewFont = atom({
   key: 'previewFont',
   default: FONT_LIST[0].value,
