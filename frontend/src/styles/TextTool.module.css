@@ -93,7 +93,7 @@
   background-color: var(--grey-00);
 }
 
-@media not screen and (max-width: 667px) {
+/* @media not screen and (max-width: 667px) {
   .title {
     font-size: 24px;
   }
@@ -104,7 +104,7 @@
   .selectedCountButton {
     font-size: 18px;
   }
-}
+} */
 
 /* 레이아웃 버튼용 정렬 */
 .layoutTopLeft {
