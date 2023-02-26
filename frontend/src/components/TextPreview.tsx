@@ -15,12 +15,8 @@ const TextPreview = () => {
   const second = useRecoilValue(textsAll(1));
   const third = useRecoilValue(textsAll(2));
 
-  const fontToTailwind = useMemo(() => {
-    return `font-${font}`;
-  }, [font]);
-
   const styles = {
-    container: ` w-full h-full grid grid-cols-1 place-content-cneter p-4 ${fontToTailwind}`,
+    container: `w-full h-full grid grid-cols-1 place-content-cneter p-4`,
     pos: `flex flex-col ${pos.justifyContent} ${pos.alignItems}`,
     first: `${first.fontColor} ${first.fontSize}`,
     second: `${second.fontColor} ${second.fontSize}`,
@@ -28,7 +24,7 @@ const TextPreview = () => {
   };
 
   return (
-    <div className={styles.container}>
+    <div className={styles.container} style={{ fontFamily: font }}>
       <div className={styles.pos}>
         {cnt > 0 && (
           <span className={styles.first} style={{ color: getRGB(first.fontColor) }}>
