@@ -15,3 +15,9 @@ export const ratioAtom = atom({
   key: 'previewRatio',
   default: INITIALRATIO,
 });
+
+export const previewImage = atom({
+  key: "previewImage",
+  default: "",
+});
+

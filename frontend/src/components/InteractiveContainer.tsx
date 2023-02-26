@@ -4,7 +4,7 @@ interface Props {
 
 function InteractiveContainer({ children }: Props) {
   return (
-    <div className="w-11/12 flex flex-col items-center justify-center sm:w-[640px] md:w-[768px] lg:w-1024">
+    <div className="px-5 w-full flex flex-col items-center justify-center sm:w-[640px] md:px-10 md:w-[768px]">
       {children}
     </div>
   );
