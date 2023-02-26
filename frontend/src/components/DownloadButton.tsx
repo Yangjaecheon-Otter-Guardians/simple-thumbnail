@@ -14,7 +14,7 @@ function DownloadButton({ previewRef }: Props) {
   }, [previewRef?.current]);
   return (
     <button
-      className="bg-primary-100 text-lighten text-md2 px-[20px] py-[10px] rounded-[100px] w-[335px]"
+      className="mt-4 mb-4 bg-primary-100 text-lighten text-md2 px-[20px] py-[10px] rounded-[100px] w-[335px]"
       onClick={handleClick}
     >
       이미지 다운로드

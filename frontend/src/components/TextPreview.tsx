@@ -1,16 +1,12 @@
+import { getRGB, LayoutPosition, textCountState, textsAll } from 'atom/textAtom';
 import { previewFont } from 'atom';
-import { firstText, getRGB, LayoutPosition, secondText, textCountState, textsAll, thirdText } from 'atom/textAtom';
-import { useMemo } from 'react';
-import { useRecoilState, useRecoilValue } from 'recoil';
+import { useRecoilValue } from 'recoil';
 
 const TextPreview = () => {
   const font = useRecoilValue(previewFont);
   const cnt = useRecoilValue(textCountState);
 
   const pos = useRecoilValue(LayoutPosition);
-  // const first = useRecoilValue(firstText);
-  // const second = useRecoilValue(secondText);
-  // const third = useRecoilValue(thirdText);
   const first = useRecoilValue(textsAll(0));
   const second = useRecoilValue(textsAll(1));
   const third = useRecoilValue(textsAll(2));
