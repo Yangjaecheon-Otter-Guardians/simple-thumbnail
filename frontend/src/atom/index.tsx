@@ -1,6 +1,6 @@
 import { atom } from 'recoil';
 
-const testAtom = atom({
+export const testAtom = atom({
   key: 'testAtom',
   default: 1,
 });
@@ -10,4 +10,8 @@ export const isEditState = atom({
   default: false,
 });
 
-export { testAtom };
+const INITIALRATIO = 1;
+export const ratioAtom = atom({
+  key: 'previewRatio',
+  default: INITIALRATIO,
+});
