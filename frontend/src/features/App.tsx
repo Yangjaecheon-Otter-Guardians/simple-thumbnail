@@ -1,6 +1,5 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useRef } from 'react';
 import RatioTool from 'sections/RatioTool';
-import { useAppDispatch, useAppSelector } from '../app/hooks';
 import InteractiveContainer from '../components/InteractiveContainer';
 import BackgroundTool from '../sections/BackgroundTool';
 import Footer from '../sections/Footer';
