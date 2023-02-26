@@ -1,5 +1,5 @@
 import { layoutPositionState, LayoutPositionType, textCountState } from 'atom/textAtom';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useRecoilValue, useSetRecoilState } from 'recoil';
 
 import styles from 'styles/TextTool.module.css';
@@ -8,6 +8,12 @@ const TextLayoutGroup = () => {
   const count = useRecoilValue(textCountState);
   const [layoutType, setLayoutType] = useState<string>('center');
   const setLayoutPosition = useSetRecoilState(layoutPositionState);
+
+  useEffect(() => {
+    setLayoutType('top');
+    setLayoutPosition(getLayoutTailwind('top'));
+  }, [count]);
+
   return (
     <div className={styles.layoutButtonGroup}>
       {getLayoutGroupList(count).map((item, index) => {
