@@ -7,7 +7,7 @@ interface Props<T> {
   handleChange: (selectedValue: T) => void;
 }
 
-function Dropdown<T extends string | number>({ list, handleChange }: Props<T>) {
+function Dropdown<T extends string>({ list, handleChange }: Props<T>) {
   const [isOpen, setIsOpen] = useState(false);
   const [title, setTitle] = useState(list[0]);
   const [dropdownList, setDropdownList] = useState(

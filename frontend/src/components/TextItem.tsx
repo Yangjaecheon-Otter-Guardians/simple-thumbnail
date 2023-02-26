@@ -4,6 +4,8 @@ import styles from 'styles/TextItem.module.css';
 import PICKER from 'assets/color_picker.png';
 import { BsCheck } from 'react-icons/bs';
 import Dropdown from './common/Dropdown';
+import { useSetRecoilState } from 'recoil';
+import { previewFont } from 'atom';
 
 type TextItemProps = {
   id: number;
@@ -16,8 +18,9 @@ type TextItemProps = {
 const fontList = ['AAA', 'BBB', 'CCC', 'DDDD', 'EEEE'];
 
 const TextItem = ({ id, texts, setTexts, colors, setColors }: TextItemProps) => {
+  const setPreviewFont = useSetRecoilState(previewFont);
   const changeFont = (selectedFont: string) => {
-    console.log(selectedFont);
+    setPreviewFont(selectedFont);
   };
 
   return (
