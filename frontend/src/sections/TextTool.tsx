@@ -72,7 +72,6 @@ function TextTool() {
       {TextItemGroup()}
     </div>
   );
-
 }
 
 export default TextTool;
