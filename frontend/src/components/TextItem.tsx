@@ -10,7 +10,7 @@ import {
   TEXT_LG,
   TEXT_MD,
   TEXT_SM,
-  TEXT_WHITE
+  TEXT_WHITE,
 } from 'atom/textAtom';
 import { ChromePicker, RGBColor } from 'react-color';
 import { useRecoilState } from 'recoil';
@@ -35,7 +35,6 @@ type TextItemProps = {
 const fontList = ['AAA', 'BBB', 'CCC', 'DDDD', 'EEEE'];
 
 const TextItem = ({ id, texts, setTexts, colors, setColors }: TextItemProps) => {
-
   const [contents, setContents] = useRecoilState(textsAll(id));
   const [rgb, setRgb] = useState<RGBColor>();
   const [colorModal, setColorModal] = useState(false);
@@ -68,6 +67,7 @@ const TextItem = ({ id, texts, setTexts, colors, setColors }: TextItemProps) => 
       fontColor: contents.fontColor,
     };
     setContents(tmp);
+  };
   const setPreviewFont = useSetRecoilState(previewFont);
   const changeFont = (selectedFont: string) => {
     setPreviewFont(selectedFont);
