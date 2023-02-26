@@ -1,9 +1,10 @@
 import { ChangeEvent, useRef, useState } from "react";
 import { useRecoilValue } from "recoil";
-import { previewImage } from "../atom";
+import { isImageBright, previewImage } from "../atom";
 
 export default function Preview() {
   const imageSrc = useRecoilValue(previewImage);
+  const isBright = useRecoilValue(isImageBright);
   const preview = useRef<HTMLDivElement>(null);
   const previewRatio = useRef(PREVIEWRATIOOPTIONS[INITIALRATIO]);
   const [previewWidth, setPreviewWidth] = useState<number>(
@@ -31,10 +32,11 @@ export default function Preview() {
           style={{
             width: `${previewWidth}px`,
             height: "100%",
-            backgroundImage: `url(${DEMOPICTURE})`,
+            backgroundImage: `url(${imageSrc})`,
             backgroundSize: "auto 100%",
             backgroundRepeat: "no-repeat",
             backgroundPosition: "center",
+            filter: `${isBright ? "brightness(100%)" : "brightness(70%)"}`,
           }}
         ></div>
       </div>
