@@ -52,6 +52,11 @@ module.exports = {
       borderWidth: {
         1: '1px',
       },
+      fontFamily: {
+        suit: 'suit',
+        agro: 'agro',
+        samlip: 'samlip',
+      },
     },
     screens: {
       desktop: '1024px',

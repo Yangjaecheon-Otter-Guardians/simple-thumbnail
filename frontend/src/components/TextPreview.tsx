@@ -1,8 +1,12 @@
+import { previewFont } from 'atom';
 import { firstText, getRGB, LayoutPosition, secondText, textCountState, textsAll, thirdText } from 'atom/textAtom';
+import { useMemo } from 'react';
 import { useRecoilState, useRecoilValue } from 'recoil';
 
 const TextPreview = () => {
+  const font = useRecoilValue(previewFont);
   const cnt = useRecoilValue(textCountState);
+
   const pos = useRecoilValue(LayoutPosition);
   // const first = useRecoilValue(firstText);
   // const second = useRecoilValue(secondText);
@@ -12,7 +16,7 @@ const TextPreview = () => {
   const third = useRecoilValue(textsAll(2));
 
   const styles = {
-    container: ' w-full h-full grid grid-cols-1 place-content-cneter p-4',
+    container: `w-full h-full grid grid-cols-1 place-content-cneter p-4`,
     pos: `flex flex-col ${pos.justifyContent} ${pos.alignItems}`,
     first: `${first.fontColor} ${first.fontSize}`,
     second: `${second.fontColor} ${second.fontSize}`,
@@ -20,7 +24,7 @@ const TextPreview = () => {
   };
 
   return (
-    <div style={{ position: 'relative', zIndex: 98 }} className={styles.container}>
+    <div style={{ position: 'relative', zIndex: 98, fontFamily: font }} className={styles.container}>
       <div className={styles.pos}>
         {cnt > 0 && (
           <span className={styles.first} style={{ color: getRGB(first.fontColor) }}>

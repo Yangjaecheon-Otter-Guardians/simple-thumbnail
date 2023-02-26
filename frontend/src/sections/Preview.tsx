@@ -2,7 +2,7 @@ import TextPreview from 'components/TextPreview';
 import { useEffect, useRef, useState } from 'react';
 import { ratioAtom, previewImage, isImageBright } from 'atom';
 import { useRecoilValue } from 'recoil';
-
+import { previewFont } from 'atom';
 interface Props {
   previewRef: React.RefObject<HTMLDivElement>;
 }
@@ -12,6 +12,7 @@ export default function Preview({ previewRef }: Props) {
   const isBright = useRecoilValue(isImageBright);
   const preview = useRef<HTMLDivElement>(null);
   const previewRatio = useRecoilValue(ratioAtom);
+  const font = useRecoilValue(previewFont);
   const [previewWidth, setPreviewWidth] = useState<number>(
     window.innerWidth >= 764 ? INITIALHEIGHT.table : INITIALHEIGHT.mobile,
   );
