@@ -1,9 +1,11 @@
 import TextPreview from 'components/TextPreview';
 import { useEffect, useRef, useState } from 'react';
-import { ratioAtom } from 'atom';
+import { ratioAtom, previewImage, isImageBright } from 'atom';
 import { useRecoilValue } from 'recoil';
 
 export default function Preview() {
+  const imageSrc = useRecoilValue(previewImage);
+  const isBright = useRecoilValue(isImageBright);
   const preview = useRef<HTMLDivElement>(null);
   const previewRatio = useRecoilValue(ratioAtom);
   const [previewWidth, setPreviewWidth] = useState<number>(
@@ -26,10 +28,11 @@ export default function Preview() {
           style={{
             width: `${previewWidth}px`,
             height: '100%',
-            backgroundImage: `url(${DEMOPICTURE})`,
+            backgroundImage: `url(${imageSrc})`,
             backgroundSize: 'auto 100%',
             backgroundRepeat: 'no-repeat',
             backgroundPosition: 'center',
+            filter: `${isBright ? 'brightness(100%)' : 'brightness(70%)'}`,
           }}
         >
           <TextPreview />
@@ -40,6 +43,3 @@ export default function Preview() {
 }
 
 const INITIALHEIGHT = { mobile: 188, table: 300 };
-
-const DEMOPICTURE =
-  'https://s3.us-west-2.amazonaws.com/secure.notion-static.com/00e7a483-4bef-4505-b81b-599c1955b0cc/1.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20230226%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20230226T045054Z&X-Amz-Expires=86400&X-Amz-Signature=08e7eb2e267581bae7216db112629951ff332f4894e2f6597b290c9aef48e9af&X-Amz-SignedHeaders=host&response-content-disposition=filename%3D%221.jpg%22&x-id=GetObject';

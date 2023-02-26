@@ -5,19 +5,24 @@ export const testAtom = atom({
   default: 1,
 });
 
-export const isEditState = atom({
+const previewImage = atom({
+  key: 'previewImage',
+  default: '',
+});
+
+const isImageBright = atom({
+  key: 'isImageBright',
+  default: false,
+});
+
+const isEditState = atom({
   key: 'isEditState',
   default: false,
 });
 
+export { previewImage, isImageBright, isEditState };
 const INITIALRATIO = 1;
 export const ratioAtom = atom({
   key: 'previewRatio',
   default: INITIALRATIO,
 });
-
-export const previewImage = atom({
-  key: "previewImage",
-  default: "",
-});
-
