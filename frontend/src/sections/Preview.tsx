@@ -3,7 +3,11 @@ import { useEffect, useRef, useState } from 'react';
 import { ratioAtom, previewImage, isImageBright } from 'atom';
 import { useRecoilValue } from 'recoil';
 
-export default function Preview() {
+interface Props {
+  previewRef: React.RefObject<HTMLDivElement>;
+}
+
+export default function Preview({ previewRef }: Props) {
   const imageSrc = useRecoilValue(previewImage);
   const isBright = useRecoilValue(isImageBright);
   const preview = useRef<HTMLDivElement>(null);
