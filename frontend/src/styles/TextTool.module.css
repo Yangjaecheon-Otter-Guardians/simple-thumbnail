@@ -1,58 +1,151 @@
-.container{
-  width: fit-content;
+.container {
+  width: 100%;
+  max-width: 1024px;
   display: flex;
-  flex-direction: column;  
-  padding: 0 20px ;
-  gap:16px;
+  flex-direction: column;
+  gap: 16px;
 }
-.title{
+.title {
   font-size: 16px;
   font-weight: 900;
 }
-.subtitle{
+.subtitle {
   font-size: 14px;
   font-weight: 600;
 }
-.buttonGroup{
+.buttonGroup {
   width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap:0.4rem;
+  gap: 0.4rem;
 }
-.countButton,.selectedCountButton{
+.layoutWrap {
+  width: 100%;
+  overflow-x: scroll;
+}
+.layoutButtonGroup {
+  width: fit-content;
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+}
+.countButton,
+.selectedCountButton {
   width: 72px;
   aspect-ratio: 2/1;
   border-radius: 50px;
   background-color: var(--bg-on-surface);
-  color:var(--text-active)
+  color: var(--text-active);
 }
-.selectedCountButton{
+.selectedCountButton {
   background-color: var(--bg-input-border-focus);
-  color:var(--text-lighten);  
+  color: var(--text-lighten);
 }
 .commonStyle,
-.selectedStyle{
-  width:106px;
+.selectedStyle {
+  width: 106px;
   aspect-ratio: 1/1;
   border-radius: 5px;
   background-color: var(--bg-on-surface);
-  color:var(--text-active);
-  padding: 0.4rem;
+  color: var(--text-active);
+  padding: 10px;
   display: flex;
   flex-direction: column;
+  gap: 4px;
+}
+.commonStyle div,
+.selectedStyle div {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.selectedStyle {
+  background-color: var(--bg-input-border-focus);
+  color: var(--text-lighten);
+}
+
+.greyBar {
+  width: 52px;
+  height: 12px;
+  border-radius: 3px;
+  background-color: var(--grey-40);
+}
+.selectedStyle .greyBar {
+  background-color: var(--grey-00);
+}
+.layoutTopLeft {
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+.layoutTopLeft div {
+  align-items: flex-start;
+}
+.layoutTop {
+  justify-content: flex-start;
   align-items: center;
 }
-.selectedStyle{
-  background-color: var(--bg-input-border-focus);
-  color:var(--text-lighten);
-}
-.layoutTop{
+.layoutTopRight {
   justify-content: flex-start;
+  align-items: flex-end;
 }
-.layoutCenter{
+.layoutLeft {
   justify-content: center;
+  align-items: flex-start;
 }
-.layoutBottom{
+.layoutCenter {
+  justify-content: center;
+  align-items: center;
+}
+.layoutCenter div {
+  align-items: center;
+}
+.layoutRight {
+  justify-content: center;
+  align-items: flex-end;
+}
+.layoutBottomLeft {
   justify-content: flex-end;
+  align-items: flex-start;
+}
+.layoutBottom {
+  justify-content: flex-end;
+  align-items: center;
+}
+.layoutBottomRight {
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+.layoutSpaceBetweenLeft {
+  justify-content: space-between;
+  align-items: flex-start;
+}
+.layoutSpaceBetweenCenter {
+  justify-content: space-between;
+  align-items: center;
+}
+.layoutSpaceBetweenCenter div {
+  align-items: center;
+}
+.layoutSpaceBetweenRight {
+  justify-content: space-between;
+  align-items: flex-end;
+}
+.layoutTitleAuthor {
+  justify-content: space-between;
+}
+.layoutTitleAuthor div {
+  align-items: flex-end;
+}
+@media only screen and (max-width: 1024px) {
+  .container {
+    max-width: 800px;
+  }
+}
+@media only screen and (max-width: 667px) {
+  .container {
+    width: 100%;
+  }
 }

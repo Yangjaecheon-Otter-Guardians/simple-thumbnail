@@ -14,7 +14,10 @@ function Header() {
   };
 
   return (
-    <div className="w-full flex-center bg-surface drop-shadow-md py-[12px]">
+    <div
+      style={{ position: 'sticky', top: 0, zIndex: 99, boxShadow: '0px 1px 2px rgba(0, 0, 0, 0.05)' }}
+      className="w-full flex-center bg-surface py-[12px]"
+    >
       <div className="w-11/12 flex flex-row justify-between sm:w-[640px] md:w-[768px] lg:w-1024">
         <button
           className="w-[100px] text-left disabled:opacity-50 hover:font-bold"
