@@ -1,8 +1,8 @@
-import React from "react";
+import React from 'react';
 
-import styles from "styles/TextItem.module.css";
-import PICKER from "assets/color_picker.png";
-import { BsCheck } from "react-icons/bs";
+import styles from 'styles/TextItem.module.css';
+import PICKER from 'assets/color_picker.png';
+import { BsCheck } from 'react-icons/bs';
 
 type TextItemProps = {
   id: number;
@@ -18,16 +18,16 @@ const TextItem = ({ id, texts, setTexts, colors, setColors }: TextItemProps) => 
       <input
         className={styles.input}
         type="text"
-        value={texts[id] || ""}
+        value={texts[id] || ''}
         onChange={(e) => {
-          texts[id] = e.target.value ?? "";
+          texts[id] = e.target.value ?? '';
           setTexts([...texts]);
         }}
         style={{ color: `var(${colors[id]})` }}
       />
       <div className={styles.buttonGroup}>
         {colorlist.map((item, index) => {
-          const border = index === colorlist.length - 1 && colors[id] !== item ? "1px solid var(--grey-10)" : ``;
+          const border = index === colorlist.length - 1 && colors[id] !== item ? '1px solid var(--grey-10)' : ``;
           return (
             <button
               key={index}
@@ -41,7 +41,7 @@ const TextItem = ({ id, texts, setTexts, colors, setColors }: TextItemProps) => 
                 setColors([...colors]);
               }}
             >
-              <BsCheck style={{ color: index < 4 ? "white" : "black" }} />
+              <BsCheck style={{ color: index < 4 ? 'white' : 'black' }} />
             </button>
           );
         })}
@@ -55,4 +55,4 @@ const TextItem = ({ id, texts, setTexts, colors, setColors }: TextItemProps) => 
 
 export default TextItem;
 
-const colorlist = ["--grey-100", "--grey-80", "--grey-60", "--grey-40", "--grey-20", "--grey-10", "--grey-00"];
+const colorlist = ['--grey-100', '--grey-80', '--grey-60', '--grey-40', '--grey-20', '--grey-10', '--grey-00'];

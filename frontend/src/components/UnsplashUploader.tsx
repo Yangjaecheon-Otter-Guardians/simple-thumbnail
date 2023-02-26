@@ -1,10 +1,10 @@
-import { useRecoilState, useSetRecoilState } from "recoil";
-import { isImageBright, previewImage } from "../atom";
-import { Icon } from "@iconify/react";
+import { useRecoilState, useSetRecoilState } from 'recoil';
+import { isImageBright, previewImage } from '../atom';
+import { Icon } from '@iconify/react';
 
 const images = async () => {
-  const response = await fetch("https://api.unsplash.com/", {
-    method: "GET",
+  const response = await fetch('https://api.unsplash.com/', {
+    method: 'GET',
     headers: {
       Authorization: process.env.UNSPLASH_ACCESS!,
     },
@@ -42,7 +42,7 @@ const UnsplashUploader = () => {
           </div>
         </div>
       </label>
-      <label className={`${isBright ? "text-darken" : "text-muted"} flex justify-start items-center`}>
+      <label className={`${isBright ? 'text-darken' : 'text-muted'} flex justify-start items-center`}>
         <input defaultChecked={!isBright} className="h-4 w-4" type="checkbox" onClick={brigthControl} />
         <span className="ml-[10px]">배경 어둡게</span>
       </label>

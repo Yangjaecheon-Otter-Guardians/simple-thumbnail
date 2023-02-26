@@ -1,7 +1,7 @@
-import { isImageBright, previewImage } from "../atom";
-import { useEffect, useRef, useState } from "react";
-import { ratioAtom } from "atom";
-import { useRecoilValue } from "recoil";
+import TextPreview from 'components/TextPreview';
+import { useEffect, useRef, useState } from 'react';
+import { ratioAtom, previewImage, isImageBright } from 'atom';
+import { useRecoilValue } from 'recoil';
 
 export default function Preview() {
   const imageSrc = useRecoilValue(previewImage);
@@ -27,14 +27,16 @@ export default function Preview() {
           ref={preview}
           style={{
             width: `${previewWidth}px`,
-            height: "100%",
+            height: '100%',
             backgroundImage: `url(${imageSrc})`,
-            backgroundSize: "auto 100%",
-            backgroundRepeat: "no-repeat",
-            backgroundPosition: "center",
-            filter: `${isBright ? "brightness(100%)" : "brightness(70%)"}`,
+            backgroundSize: 'auto 100%',
+            backgroundRepeat: 'no-repeat',
+            backgroundPosition: 'center',
+            filter: `${isBright ? 'brightness(100%)' : 'brightness(70%)'}`,
           }}
-        ></div>
+        >
+          <TextPreview />
+        </div>
       </div>
     </>
   );

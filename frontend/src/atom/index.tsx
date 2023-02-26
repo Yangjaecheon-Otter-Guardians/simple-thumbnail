@@ -1,28 +1,28 @@
-import { atom } from "recoil";
+import { atom } from 'recoil';
 
 export const testAtom = atom({
-  key: "testAtom",
+  key: 'testAtom',
   default: 1,
 });
 
 const previewImage = atom({
-  key: "previewImage",
-  default: "",
+  key: 'previewImage',
+  default: '',
 });
 
 const isImageBright = atom({
-  key: "isImageBright",
+  key: 'isImageBright',
   default: false,
 });
 
 const isEditState = atom({
-  key: "isEditState",
+  key: 'isEditState',
   default: false,
 });
 
 export { previewImage, isImageBright, isEditState };
 const INITIALRATIO = 1;
 export const ratioAtom = atom({
-  key: "previewRatio",
+  key: 'previewRatio',
   default: INITIALRATIO,
 });

@@ -1,7 +1,7 @@
-import { useState } from "react";
+import { useState } from 'react';
 
 const ColorUploader = () => {
-  const [tab, setTab] = useState("1");
+  const [tab, setTab] = useState('1');
   return (
     <div>
       <div className="flex">
