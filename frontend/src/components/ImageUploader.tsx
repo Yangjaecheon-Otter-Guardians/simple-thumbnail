@@ -6,6 +6,7 @@ const ImageUploader = () => {
   const setImageSrc = useSetRecoilState(previewImage);
   const [isBright, setIsBright] = useRecoilState(isImageBright);
   const insertImage = async (e: React.ChangeEvent<HTMLInputElement>) => {
+    // eslint-disable-next-line prefer-const
     let reader = new FileReader();
 
     if (e.target.files![0]) {

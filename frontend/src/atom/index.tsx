@@ -15,4 +15,9 @@ const isImageBright = atom({
   default: false,
 });
 
-export { testAtom, previewImage, isImageBright };
+const isEditState = atom({
+  key: "isEditState",
+  default: false,
+});
+
+export { testAtom, previewImage, isImageBright, isEditState };

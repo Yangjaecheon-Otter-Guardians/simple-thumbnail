@@ -1,14 +1,14 @@
-import { useState } from 'react';
-import styles from 'styles/TextTool.module.css';
-import TextItem from '../components/TextItem';
+import { useState } from "react";
+import styles from "styles/TextTool.module.css";
+import TextItem from "../components/TextItem";
 
 export const layoutHandler = (type: string) => {
   switch (type) {
-    case 'top':
+    case "top":
       return styles.layoutTop;
-    case 'center':
+    case "center":
       return styles.layoutCenter;
-    case 'bottom':
+    case "bottom":
       return styles.layoutBottom;
   }
 };
@@ -16,7 +16,7 @@ export const layoutHandler = (type: string) => {
 function TextTool() {
   // text 갯수 선택
   const [count, setCount] = useState(1);
-  const textCount = ['없음', '1개', '2개', '3개'];
+  const textCount = ["없음", "1개", "2개", "3개"];
 
   const CountGroup = () => {
     return textCount.map((item, index) => {
@@ -32,10 +32,10 @@ function TextTool() {
     });
   };
   // 레이아웃 정렬 형태 정보 동적 렌더
-  const [layoutType, setLayoutType] = useState<string>('center');
+  const [layoutType, setLayoutType] = useState<string>("center");
 
   const LayoutGroup = () => {
-    return ['top', 'center', 'bottom'].map((item, index) => {
+    return ["top", "center", "bottom"].map((item, index) => {
       return (
         <button
           key={index}
@@ -43,7 +43,7 @@ function TextTool() {
           onClick={() => setLayoutType(item)}
         >
           {[...Array(count)].map((_, index) => (
-            <p key={index}>{texts[index] ? texts[index].substring(0, 5) : '텍스트'}</p>
+            <p key={index}>{texts[index] ? texts[index].substring(0, 5) : "텍스트"}</p>
           ))}
         </button>
       );
@@ -72,7 +72,6 @@ function TextTool() {
       {TextItemGroup()}
     </div>
   );
-
 }
 
 export default TextTool;
