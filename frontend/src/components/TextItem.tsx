@@ -32,8 +32,6 @@ type TextItemProps = {
   setColors: React.Dispatch<React.SetStateAction<RGBColor[]>>;
 };
 
-const fontList = ['AAA', 'BBB', 'CCC', 'DDDD', 'EEEE'];
-
 const TextItem = ({ id, texts, setTexts, colors, setColors }: TextItemProps) => {
   const [contents, setContents] = useRecoilState(textsAll(id));
   const [rgb, setRgb] = useState<RGBColor>();
@@ -75,7 +73,6 @@ const TextItem = ({ id, texts, setTexts, colors, setColors }: TextItemProps) => 
 
   return (
     <>
-      <Dropdown list={fontList} handleChange={changeFont} />
       <input
         className={styles.input}
         type="text"

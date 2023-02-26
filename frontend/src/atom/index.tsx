@@ -1,3 +1,4 @@
+import { FONT_LIST } from 'constants/fonts';
 import { atom } from 'recoil';
 
 export const testAtom = atom({
@@ -20,16 +21,19 @@ const isEditState = atom({
   default: false,
 });
 
-export { previewImage, isImageBright, isEditState };
-
 const INITIALRATIO = 1;
 export const ratioAtom = atom({
   key: 'previewRatio',
   default: INITIALRATIO,
 });
 
-const INITIALFONT = 'AAA';
+const previewColor = atom({
+  key: 'previewColor',
+  default: '',
+});
+
+export { previewImage, isImageBright, isEditState, previewColor };
 export const previewFont = atom({
   key: 'previewFont',
-  default: INITIALFONT,
+  default: FONT_LIST[0].value,
 });
