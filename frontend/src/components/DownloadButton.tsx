@@ -7,20 +7,19 @@ interface Props {
 }
 
 function DownloadButton({ previewRef }: Props) {
-  const handleClick = useCallback(async () => {
-    if (previewRef.current) {
-      download(await toPng(previewRef.current), 'thumbnail.png');
-    }
-  }, [previewRef?.current]);
-
-  return (
-    <button
-      className="bg-primary-100 text-lighten text-md2 px-[20px] py-[10px] rounded-[100px] w-[335px]"
-      onClick={handleClick}
-    >
-      이미지 다운로드
-    </button>
-  );
+  // const handleClick = useCallback(async () => {
+  //   if (previewRef.current) {
+  //     download(await toPng(previewRef.current), 'thumbnail.png');
+  //   }
+  // }, [previewRef?.current]);
+  // return (
+  //   <button
+  //     className="bg-primary-100 text-lighten text-md2 px-[20px] py-[10px] rounded-[100px] w-[335px]"
+  //     onClick={handleClick}
+  //   >
+  //     이미지 다운로드
+  //   </button>
+  // );
 }
 
 export default DownloadButton;

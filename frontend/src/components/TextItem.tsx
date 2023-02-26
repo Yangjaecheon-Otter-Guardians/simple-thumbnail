@@ -3,6 +3,9 @@ import React from 'react';
 import styles from 'styles/TextItem.module.css';
 import PICKER from 'assets/color_picker.png';
 import { BsCheck } from 'react-icons/bs';
+import Dropdown from './common/Dropdown';
+import { useSetRecoilState } from 'recoil';
+import { previewFont } from 'atom';
 
 type TextItemProps = {
   id: number;
@@ -12,9 +15,17 @@ type TextItemProps = {
   setColors: React.Dispatch<React.SetStateAction<string[]>>;
 };
 
+const fontList = ['AAA', 'BBB', 'CCC', 'DDDD', 'EEEE'];
+
 const TextItem = ({ id, texts, setTexts, colors, setColors }: TextItemProps) => {
+  const setPreviewFont = useSetRecoilState(previewFont);
+  const changeFont = (selectedFont: string) => {
+    setPreviewFont(selectedFont);
+  };
+
   return (
     <>
+      <Dropdown list={fontList} handleChange={changeFont} />
       <input
         className={styles.input}
         type="text"
