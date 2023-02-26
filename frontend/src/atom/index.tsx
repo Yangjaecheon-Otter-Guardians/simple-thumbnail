@@ -1,12 +1,12 @@
-import { atom } from "recoil";
+import { atom } from 'recoil';
 
 const testAtom = atom({
-  key: "testAtom",
+  key: 'testAtom',
   default: 1,
 });
 
 export const isEditState = atom({
-  key: "isEditState",
+  key: 'isEditState',
   default: false,
 });
 

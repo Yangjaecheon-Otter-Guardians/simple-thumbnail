@@ -1,12 +1,12 @@
-import { isEditState } from "atom";
-import { useRecoilState } from "recoil";
-import InteractiveContainer from "../components/InteractiveContainer";
+import { isEditState } from 'atom';
+import { useRecoilState } from 'recoil';
+import InteractiveContainer from '../components/InteractiveContainer';
 
 function Header() {
   const [isEdit, setIsEdit] = useRecoilState(isEditState);
 
   const handleInitial = () => {
-    const isDoInitial = window.confirm("정말로 초기화하시겠습니까?");
+    const isDoInitial = window.confirm('정말로 초기화하시겠습니까?');
     if (isDoInitial) {
       setIsEdit(false);
       // TODO : 썸네일 상태 모두 초기화하기
