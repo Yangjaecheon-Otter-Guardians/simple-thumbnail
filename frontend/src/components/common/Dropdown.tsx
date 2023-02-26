@@ -1,12 +1,32 @@
-import { useState } from 'react';
+import React, { useState, MouseEvent } from 'react';
 import { IoIosArrowDown } from 'react-icons/io';
+import { BsCheck2 } from 'react-icons/bs';
 
-interface Props {
-  list: string[];
+interface Props<T> {
+  list: T[];
+  handleChange: (selectedValue: T) => void;
 }
 
-function Dropdown({ list }: Props) {
+function Dropdown<T extends string | number>({ list, handleChange }: Props<T>) {
   const [isOpen, setIsOpen] = useState(false);
+  const [title, setTitle] = useState(list[0]);
+  const [dropdownList, setDropdownList] = useState(
+    list.map((elem, idx) => {
+      return { content: elem, checked: idx === 0 ? true : false };
+    }),
+  );
+
+  const handleLabelClose = (e: MouseEvent<HTMLLIElement>) => {
+    const selectedContent = e.currentTarget.dataset.content as T;
+    setIsOpen(false);
+    setDropdownList(
+      dropdownList.map((elem) => {
+        return { content: elem.content, checked: elem.content === selectedContent ? true : false };
+      }),
+    );
+    setTitle(selectedContent);
+    handleChange(selectedContent);
+  };
 
   return (
     <div className="relative">
@@ -14,14 +34,22 @@ function Dropdown({ list }: Props) {
         className="flex justify-between items-center px-4 border-1 border-black rounded-md h-11 text-sm"
         onClick={() => setIsOpen((prev) => !prev)}
       >
-        <div>text</div>
+        <div>{title}</div>
         <IoIosArrowDown />
       </div>
       {isOpen && (
         <div className="absolute top-full bg-white w-full border-1 border-black mt-2 flex flex-col rounded-md ">
           <ul className="[&>*]:px-4 [&>*]:h-11 [&>*]:flex [&>*]:items-center">
-            {list.map((elem, idx) => (
-              <li>aa</li>
+            {dropdownList.map((option) => (
+              <li
+                className="flex justify-between"
+                key={option.content}
+                data-content={option.content}
+                onClick={handleLabelClose}
+              >
+                <span>{option.content}</span>
+                {option.checked && <BsCheck2 />}
+              </li>
             ))}
           </ul>
         </div>

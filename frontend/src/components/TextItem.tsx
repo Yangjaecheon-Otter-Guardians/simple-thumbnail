@@ -16,9 +16,13 @@ type TextItemProps = {
 const fontList = ['AAA', 'BBB', 'CCC', 'DDDD', 'EEEE'];
 
 const TextItem = ({ id, texts, setTexts, colors, setColors }: TextItemProps) => {
+  const changeFont = (selectedFont: string) => {
+    console.log(selectedFont);
+  };
+
   return (
     <>
-      <Dropdown list={fontList} />
+      <Dropdown list={fontList} handleChange={changeFont} />
       <input
         className={styles.input}
         type="text"
