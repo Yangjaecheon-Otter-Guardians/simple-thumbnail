@@ -46,8 +46,9 @@
 }
 .countButton,
 .selectedCountButton {
-  width: 72px;
-  aspect-ratio: 2/1;
+  min-width: 72px;
+  height: 36px;
+  flex-grow: 1;
   border-radius: 50px;
   background-color: var(--bg-on-surface);
   color: var(--text-active);
@@ -90,6 +91,19 @@
 }
 .selectedStyle .greyBar {
   background-color: var(--grey-00);
+}
+
+@media not screen and (max-width: 667px) {
+  .title {
+    font-size: 24px;
+  }
+  .subtitle {
+    font-size: 21px;
+  }
+  .countButton,
+  .selectedCountButton {
+    font-size: 18px;
+  }
 }
 
 /* 레이아웃 버튼용 정렬 */
@@ -186,14 +200,4 @@
 }
 .layoutTitleReAuthor div {
   align-items: flex-start;
-}
-@media only screen and (max-width: 1024px) {
-  .container {
-    max-width: 800px;
-  }
-}
-@media only screen and (max-width: 667px) {
-  .container {
-    width: 100%;
-  }
 }
