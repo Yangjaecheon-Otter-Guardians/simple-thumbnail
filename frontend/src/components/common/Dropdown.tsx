@@ -49,7 +49,7 @@ function Dropdown<T extends string>({ defaultValue: value, list, handleChange, s
                 data-content={option.content}
                 onClick={handleLabelClose}
               >
-                <span>{option.content}</span>
+                <span className={'text-sm'}>{option.content}</span>
                 {option.checked && <BsCheck2 />}
               </li>
             ))}

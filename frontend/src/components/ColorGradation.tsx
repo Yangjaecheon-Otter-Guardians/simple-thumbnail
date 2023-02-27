@@ -61,14 +61,17 @@ export const ColorGradation = () => {
           id={String(color[0])}
           key={idx}
           value={color[1]}
-          className={`flex justify-center items-center rounded border w-8 h-8 mr-2`}
+          className={`flex justify-center items-center rounded border w-8 h-8 mr-2 tablet:w-[48px] tablet:h-[48px]`}
           style={{ background: `${color[1]}` }}
           onClick={(e) => onClick(e)}
         >
-          {currentIndex === idx && <BsCheck style={{ color: 'black' }} />}
+          {currentIndex === idx && <BsCheck className={'tablet:text-[32px]'} style={{ color: 'black' }} />}
         </button>
       ))}
-      <button className="w-8 h-8 rounded border-2 flex justify-center items-center" onClick={generateRandom}>
+      <button
+        className="w-8 h-8 rounded border-2 flex justify-center items-center  tablet:w-[48px] tablet:h-[48px]"
+        onClick={generateRandom}
+      >
         <Icon icon="vaadin:random" vFlip={true} />
       </button>
     </div>
