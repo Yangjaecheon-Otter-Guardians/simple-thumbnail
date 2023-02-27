@@ -27,6 +27,7 @@ const App = () => {
         <DownloadButton previewRef={previewRef} />
       </InteractiveContainer>
       <ToastContainer />
+      <DivideLine />
       <Footer />
     </>
   );
