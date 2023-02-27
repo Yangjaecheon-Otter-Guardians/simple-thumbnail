@@ -12,9 +12,9 @@ function BackgroundTool() {
   return (
     <div className="w-full">
       <div className="font-bold py-3">배경</div>
-      <div className="w-full flex justify-between">
+      <div className="w-full flex gap-[12px] justify-between text-sm">
         <button
-          className={`w-[106px] h-[36px] rounded-[50px] ${tab === '1' ? 'bg-primary-100' : 'bg-on-surface'} ${
+          className={`grow h-[36px] rounded-[50px] ${tab === '1' ? 'bg-primary-100' : 'bg-on-surface'} ${
             tab === '1' ? 'text-lighten' : 'text-darken'
           }`}
           value="1"
@@ -23,7 +23,7 @@ function BackgroundTool() {
           색상 배경
         </button>
         <button
-          className={`w-[106px] h-[36px] rounded-[50px] ${tab === '2' ? 'bg-primary-100' : 'bg-on-surface'} ${
+          className={`h-[36px] grow rounded-[50px] ${tab === '2' ? 'bg-primary-100' : 'bg-on-surface'} ${
             tab === '2' ? 'text-lighten' : 'text-darken'
           }`}
           value="2"
@@ -32,7 +32,7 @@ function BackgroundTool() {
           랜덤 이미지
         </button>
         <button
-          className={`font-SUIT w-[106px] h-[36px] rounded-[50px] ${tab === '3' ? 'bg-primary-100' : 'bg-on-surface'} ${
+          className={`font-SUIT grow h-[36px] rounded-[50px] ${tab === '3' ? 'bg-primary-100' : 'bg-on-surface'} ${
             tab === '3' ? 'text-lighten' : 'text-darken'
           }`}
           value="3"

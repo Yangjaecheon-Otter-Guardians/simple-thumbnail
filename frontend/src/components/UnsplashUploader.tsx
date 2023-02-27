@@ -43,7 +43,7 @@ const UnsplashUploader = () => {
           }
         >
           <Icon className={'w-6 h-6 ' + `${isLoading && `animate-spinner`}`} icon="tabler:refresh" vFlip={true} />
-          <div>Unsplash 랜덤 이미지 삽입</div>
+          <div className="text-sm">Unsplash 랜덤 이미지 삽입</div>
         </div>
       </button>
       <label className={`${isBright ? 'text-darken' : 'text-muted'} flex justify-start items-center mt-3`}>
