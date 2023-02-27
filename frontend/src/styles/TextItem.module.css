@@ -12,7 +12,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 9px;
+  gap: 12px;
 }
 .colorButton,
 .selectedColorButton,

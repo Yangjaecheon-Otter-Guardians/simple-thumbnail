@@ -55,13 +55,13 @@ export const ColorGradation = () => {
     setIsBright(true);
   }, []);
   return (
-    <div className="flex justify-between">
+    <div className="flex justify-between tablet:justify-start " style={{ gap: '12px' }}>
       {singleColorArray.map((color, idx) => (
         <button
           id={String(color[0])}
           key={idx}
           value={color[1]}
-          className={`flex justify-center items-center rounded border w-8 h-8 mr-2 tablet:w-[48px] tablet:h-[48px]`}
+          className={`flex justify-center items-center rounded border w-8 h-8 tablet:w-[48px] tablet:h-[48px]`}
           style={{ background: `${color[1]}` }}
           onClick={(e) => onClick(e)}
         >
