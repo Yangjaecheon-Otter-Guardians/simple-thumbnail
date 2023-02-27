@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 
-import PICKER from 'assets/color_picker.png';
 import {
   getRGB,
   textsAll,
@@ -15,14 +14,11 @@ import {
 import { ChromePicker, RGBColor } from 'react-color';
 import { useRecoilState } from 'recoil';
 
-import { previewFont } from 'atom';
 import { BsCheck } from 'react-icons/bs';
 import { FaFont } from 'react-icons/fa';
 import { IoMdClose } from 'react-icons/io';
 import { toast } from 'react-toastify';
-import { useSetRecoilState } from 'recoil';
 import styles from 'styles/TextItem.module.css';
-import Dropdown from '../common/Dropdown';
 
 type TextItemProps = {
   id: number;

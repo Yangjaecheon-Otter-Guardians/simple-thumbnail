@@ -1,20 +1,17 @@
+import { Icon } from '@iconify/react';
 import { useRecoilState, useSetRecoilState } from 'recoil';
 import { isImageBright, previewImage } from '../atom';
-import { Icon } from '@iconify/react';
 
 const ImageUploader = () => {
   const setImageSrc = useSetRecoilState(previewImage);
   const [isBright, setIsBright] = useRecoilState(isImageBright);
   const insertImage = async (e: React.ChangeEvent<HTMLInputElement>) => {
-    // eslint-disable-next-line prefer-const
-    let reader = new FileReader();
-
-    if (e.target.files![0]) {
-      reader.readAsDataURL(e.target.files![0]);
+    const reader = new FileReader();
+    if (e.target?.files?.[0]) {
+      reader.readAsDataURL(e.target.files[0]);
     }
     reader.onloadend = () => {
       const previewImgUrl = reader.result as string;
-
       if (previewImgUrl) {
         setImageSrc(previewImgUrl);
       }
