@@ -3,17 +3,18 @@ import { IoIosArrowDown } from 'react-icons/io';
 import { BsCheck2 } from 'react-icons/bs';
 
 interface Props<T> {
+  defaultValue?: number;
   list: T[];
   handleChange: (selectedValue: T) => void;
   styleList?: string[];
 }
 
-function Dropdown<T extends string>({ list, handleChange, styleList }: Props<T>) {
+function Dropdown<T extends string>({ defaultValue: value, list, handleChange, styleList }: Props<T>) {
   const [isOpen, setIsOpen] = useState(false);
-  const [title, setTitle] = useState(list[0]);
+  const [title, setTitle] = useState(list[value ?? 0]);
   const [dropdownList, setDropdownList] = useState(
     list.map((elem, idx) => {
-      return { content: elem, checked: idx === 0 ? true : false };
+      return { content: elem, checked: idx === value ?? 0 ? true : false };
     }),
   );
 
