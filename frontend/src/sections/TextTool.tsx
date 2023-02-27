@@ -2,7 +2,7 @@ import { previewFont } from 'atom';
 import { textCountState, TEXT_WHITE } from 'atom/textAtom';
 import Dropdown from 'components/common/Dropdown';
 import TextLayoutGroup from 'components/text/TextLayoutGroup';
-import { FONT_LIST } from 'constants/fonts';
+import { FONT_LIST, FONT_LIST_TO_TAILWIND } from 'constants/fonts';
 import { useState } from 'react';
 import { RGBColor } from 'react-color';
 import { useRecoilState, useSetRecoilState } from 'recoil';
@@ -61,7 +61,11 @@ function TextTool() {
             <TextLayoutGroup />
           </div>
           <h2 className={styles.subtitle}>텍스트 내용</h2>
-          <Dropdown list={FONT_LIST.map((font) => font.name)} handleChange={changeFont} />
+          <Dropdown
+            list={FONT_LIST.map((font) => font.name)}
+            handleChange={changeFont}
+            styleList={FONT_LIST_TO_TAILWIND}
+          />
           {TextItemGroup()}
         </>
       )}
