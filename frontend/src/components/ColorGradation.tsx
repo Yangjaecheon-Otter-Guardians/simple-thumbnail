@@ -55,7 +55,7 @@ export const ColorGradation = () => {
     setIsBright(true);
   }, []);
   return (
-    <div className="flex justify-start" style={{ gap: '12px' }}>
+    <div className="flex justify-between tablet:justify-start " style={{ gap: '12px' }}>
       {singleColorArray.map((color, idx) => (
         <button
           id={String(color[0])}

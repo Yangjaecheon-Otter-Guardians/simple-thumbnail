@@ -69,7 +69,7 @@ const ColorSingle = () => {
   //   }
   // }, [isPop]);
   return (
-    <div className="flex justify-start relative" style={{ gap: '12px' }}>
+    <div className="flex justify-between tablet:justify-start relative" style={{ gap: '12px' }}>
       {singleColorArray.map((color, idx) => (
         <button
           id={String(color[0])}
