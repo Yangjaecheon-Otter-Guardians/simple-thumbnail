@@ -11,7 +11,7 @@ function BackgroundTool() {
   };
   return (
     <div className="w-full border-solid border-2 border-indigo-600">
-      <div>배경</div>
+      <div className="font-bold py-3">배경</div>
       <div className="w-full flex justify-between">
         <button
           className={`w-[106px] h-[36px] rounded-[50px] ${tab === '1' ? 'bg-primary-100' : 'bg-on-surface'} ${
