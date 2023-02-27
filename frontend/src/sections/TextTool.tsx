@@ -1,14 +1,14 @@
 import { previewFont } from 'atom';
-import Dropdown from 'components/common/Dropdown';
-import { FONT_LIST } from 'constants/fonts';
-import { useRecoilState, useSetRecoilState } from 'recoil';
 import { textCountState, TEXT_WHITE } from 'atom/textAtom';
+import Dropdown from 'components/common/Dropdown';
+import TextLayoutGroup from 'components/text/TextLayoutGroup';
+import { FONT_LIST } from 'constants/fonts';
 import { useState } from 'react';
 import { RGBColor } from 'react-color';
+import { useRecoilState, useSetRecoilState } from 'recoil';
 import styles from 'styles/TextTool.module.css';
 import { convertFontNameToValue } from 'utils/convertFontNameToValue';
 import TextItem from '../components/text/TextItem';
-import TextLayoutGroup from 'components/text/TextLayoutGroup';
 
 function TextTool() {
   // text 갯수 선택
@@ -61,7 +61,7 @@ function TextTool() {
             <TextLayoutGroup />
           </div>
           <h2 className={styles.subtitle}>텍스트 내용</h2>
-          <Dropdown list={FONT_LIST.map((font, idx) => font.name)} handleChange={changeFont} />
+          <Dropdown list={FONT_LIST.map((font) => font.name)} handleChange={changeFont} />
           {TextItemGroup()}
         </>
       )}

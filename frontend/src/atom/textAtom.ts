@@ -1,5 +1,5 @@
 import { RGBColor } from 'react-color';
-import { atom, atomFamily, useResetRecoilState } from 'recoil';
+import { atom, atomFamily } from 'recoil';
 
 export const TEXT_WHITE: RGBColor = { r: 251, g: 251, b: 251, a: 1 };
 export const TEXT_BLACK: RGBColor = { r: 10, g: 10, b: 10, a: 1 };

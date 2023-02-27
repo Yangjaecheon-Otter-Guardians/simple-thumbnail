@@ -16,10 +16,7 @@ const App = () => {
   return (
     <>
       <Header />
-      <InteractiveContainer>
-        <Preview previewRef={previewRef} />
-      </InteractiveContainer>
-      <DivideLine />
+      <Preview previewRef={previewRef} />
       <InteractiveContainer>
         <RatioTool />
         <BackgroundTool />
