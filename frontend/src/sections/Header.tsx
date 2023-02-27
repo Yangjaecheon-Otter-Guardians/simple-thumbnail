@@ -1,15 +1,11 @@
-import { isEditState } from 'atom';
-import { useRecoilState } from 'recoil';
 import { ReactComponent as TEXT_LOGO } from 'assets/logo_black.svg';
 
 function Header() {
-  const [isEdit, setIsEdit] = useRecoilState(isEditState);
-
   const handleInitial = () => {
     const isDoInitial = window.confirm('정말로 초기화하시겠습니까?');
     if (isDoInitial) {
-      setIsEdit(false);
-      // TODO : 썸네일 상태 모두 초기화하기
+      // TODO : reload말고 다른 초기화방식 고민해보기
+      window.location.reload();
     }
   };
 
@@ -19,11 +15,7 @@ function Header() {
       className="w-full flex-center bg-surface py-[12px]"
     >
       <div className="w-full px-5 flex flex-row justify-between align-items-center tablet:w-[768px] tablet:px-10">
-        <button
-          className="w-[100px] text-left disabled:opacity-50 hover:font-bold"
-          onClick={handleInitial}
-          disabled={!isEdit}
-        >
+        <button className="w-[100px] text-left disabled:opacity-50 hover:font-bold" onClick={handleInitial}>
           초기화
         </button>
         <TEXT_LOGO style={{ height: '24px' }} />

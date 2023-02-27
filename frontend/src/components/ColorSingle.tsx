@@ -1,10 +1,9 @@
-import { useState } from 'react';
-import { BsCheck } from 'react-icons/bs';
-import { ChromePicker } from 'react-color';
-import { useRecoilState, useSetRecoilState } from 'recoil';
 import { isImageBright, previewColor, previewGradation } from 'atom';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
+import { ChromePicker } from 'react-color';
+import { BsCheck } from 'react-icons/bs';
 import { IoMdClose } from 'react-icons/io';
+import { useRecoilState, useSetRecoilState } from 'recoil';
 
 const singleColorArray = [
   [0, '#ff3737', 'bg-backRed'],
@@ -16,10 +15,11 @@ const singleColorArray = [
   [6, '#ffffff', 'bg-bakcWhite'],
 ];
 
-export const ColorSingle = () => {
+const ColorSingle = () => {
   const [currentColor, setCurrentColor] = useRecoilState(previewColor);
   const [currentIndex, setCurrentIndex] = useState<number>(0);
   const [isPop, setIsPop] = useState(false);
+  const [isPicker, setIsPicker] = useState(false);
   const setIsBright = useSetRecoilState(isImageBright);
   const setCurrentGradation = useSetRecoilState(previewGradation);
 
@@ -33,6 +33,9 @@ export const ColorSingle = () => {
     if (currentIndex !== pickedIndex) {
       setCurrentIndex(pickedIndex);
     }
+    if (isPicker) {
+      setIsPicker(false);
+    }
   };
   const onChange = (color: string) => {
     // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
@@ -40,6 +43,7 @@ export const ColorSingle = () => {
       setCurrentIndex(NaN);
     }
     setCurrentColor(color);
+    setIsPicker(true);
   };
   const pop = () => {
     setIsPop((prev) => !prev);
@@ -51,8 +55,21 @@ export const ColorSingle = () => {
     setCurrentColor('#ff3737');
     setIsBright(true);
   }, []);
+  // useEffect(() => {
+  //   function handleTitleClick() {
+  //     setIsPop((prev) => !prev);
+  //   }
+  //   if (isPop) {
+  //     const prompt = document.getElementById('notMove');
+  //     prompt.style.overflow = 'hidden';
+  //     document.body.style.overflow = 'hidden';
+  //     const prompt2 = document.body;
+  //     prompt2.addEventListener('click', handleTitleClick);
+  //     // document.body.onclick(setIsPop((prev) => !prev));
+  //   }
+  // }, [isPop]);
   return (
-    <div className="flex justify-between">
+    <div className="flex justify-between relative">
       {singleColorArray.map((color, idx) => (
         <button
           id={String(color[0])}
