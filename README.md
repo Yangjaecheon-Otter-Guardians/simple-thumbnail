@@ -1,12 +1,31 @@
 ![banner](https://user-images.githubusercontent.com/76866137/221538427-c0b8389c-b005-426c-a1b4-619d3de3b4a7.png)
 
 # Simple-Thumbnail
-## 프로젝트 소개
-- 기간 : 2023.02.22 ~ 2023.02.27
-- [배포 주소](https://simple-thumbnail.com/)
-- [피그마 주소](https://www.figma.com/file/2fT3EcHIqzjbRBanGEX2Wi/%ED%85%8C%EC%98%A4%EC%9D%98-%EC%8A%A4%ED%94%84%EB%A6%B0%ED%8A%B8-14%EA%B8%B0---5%EC%A1%B0?node-id=0%3A1&t=3BrDUU8ogWxoWpiV-0)
-- [회의록 (Notion)](https://pirateturtle.notion.site/14-5-7505931dad8e473097e215967aabc759)
 
+## 📌 Summary
+
+<table>
+    <tr>
+        <th>기간</th>
+        <td>2023.02.22 ~ 2023.02.27</td>
+    </tr>
+    <tr>
+        <th>배포</th>
+        <td><a href="https://simple-thumbnail.com">simple thumbnail</a></td>
+    </tr>
+    <tr>
+        <th>디자인</th>
+        <td><a href="https://www.figma.com/file/2fT3EcHIqzjbRBanGEX2Wi/%ED%85%8C%EC%98%A4%EC%9D%98-%EC%8A%A4%ED%94%84%EB%A6%B0%ED%8A%B8-14%EA%B8%B0---5%EC%A1%B0?node-id=0%3A1&t=3BrDUU8ogWxoWpiV-0">figma</a></td>
+    </tr>
+    <tr>
+        <th>회의록</th>
+        <td><a href="https://pirateturtle.notion.site/14-5-7505931dad8e473097e215967aabc759">Team Notion</a></td>
+    </tr>
+</table>
+
+<br/>
+
+## 📌 Team
 
 |**[자몽](https://github.com/se-chive)**|**[맥스](https://github.com/wogha95)**|**[수달](https://github.com/headring)**|**[운터](https://github.com/anveloper)**|**[원효](https://github.com/caseBread)** |**[체다](https://github.com/da-in)** |**[현](https://github.com/hey210056)** |
 |:----:|:----:|:----:|:----:|:----:|:----:|:----:|
