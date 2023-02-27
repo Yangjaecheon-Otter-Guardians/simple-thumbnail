@@ -10,7 +10,7 @@ const isImageBright = atom({
   default: false,
 });
 
-const INITIALRATIO = 1;
+const INITIALRATIO = 4 / 3;
 export const ratioAtom = atom({
   key: 'previewRatio',
   default: INITIALRATIO,
