@@ -10,7 +10,7 @@ const ColorUploader = () => {
   };
   return (
     <div>
-      <div className="flex">
+      <div className="flex text-sm font-medium">
         <button
           className={`text-sm ${tab === '1' ? 'text-darken' : 'text-muted'}`}
           value="1"
