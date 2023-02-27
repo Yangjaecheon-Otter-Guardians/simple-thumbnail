@@ -19,7 +19,7 @@ function DownloadButton({ previewRef }: Props) {
   return (
     <>
       <button
-        className="bg-primary-100 text-lighten text-md2 px-[20px] py-[10px] rounded-[100px] w-[335px] flex flex-row justify-center gap-[5px] items-center my-6"
+        className="bg-primary-100 text-lighten text-md2 px-[20px] py-[10px] rounded-[100px] w-full flex flex-row justify-center gap-[5px] items-center my-6"
         onClick={handleClick}
       >
         {isLoad ? <Loading /> : null}
