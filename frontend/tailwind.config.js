@@ -72,10 +72,19 @@ module.exports = {
         agro: 'agro',
         samlip: 'samlip',
       },
+      animation: {
+        spinner: 'spin 1000ms infinite linear reverse',
+      },
+      keyframes: {
+        spin: { '100%': { transform: 'rotate(360deg)' } },
+      },
+      backgroundImage: {
+        spinImg: "url('./assets/loading_reverse.png')",
+      },
     },
     screens: {
       desktop: '1024px',
-      tablet: '764px',
+      tablet: '768px',
     },
   },
   plugins: [],

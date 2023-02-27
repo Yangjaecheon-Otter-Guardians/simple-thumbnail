@@ -11,8 +11,8 @@ function BackgroundTool() {
   };
   return (
     <div className="w-full">
-      <div className="mb-3 font-bold">배경</div>
-      <div className="w-full flex justify-between text-sm">
+      <div className="font-bold py-3">배경</div>
+      <div className="w-full flex justify-between">
         <button
           className={`w-[106px] h-[36px] rounded-[50px] ${tab === '1' ? 'bg-primary-100' : 'bg-on-surface'} ${
             tab === '1' ? 'text-lighten' : 'text-darken'

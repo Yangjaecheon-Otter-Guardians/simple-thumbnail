@@ -1,16 +1,18 @@
 .container {
-  width: fit-content;
+  width: 100%;
+  max-width: 1024px;
   display: flex;
   flex-direction: column;
-  gap: 16px;
 }
 .title {
   font-size: 16px;
   font-weight: 900;
+  margin-bottom: 10px;
 }
 .subtitle {
   font-size: 14px;
-  font-weight: 600;
+  font-weight: 500;
+  margin-bottom: 12px;
 }
 .buttonGroup {
   width: 100%;
@@ -19,13 +21,38 @@
   align-items: center;
   gap: 0.4rem;
 }
+.layoutWrap {
+  width: 100%;
+  overflow-x: auto;
+  margin-bottom: 32px;
+}
+.layoutWrap::-webkit-scrollbar {
+  width: 90%;
+  height: 8px;
+}
+.layoutWrap::-webkit-scrollbar-thumb {
+  background: var(--grey-40);
+  border-radius: 10px;
+}
+.layoutWrap::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.layoutButtonGroup {
+  width: fit-content;
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+}
 .countButton,
 .selectedCountButton {
-  width: 72px;
-  aspect-ratio: 2/1;
+  min-width: 72px;
+  height: 36px;
+  flex-grow: 1;
   border-radius: 50px;
   background-color: var(--bg-on-surface);
   color: var(--text-active);
+  margin-bottom: 16px;
 }
 .selectedCountButton {
   background-color: var(--bg-input-border-focus);
@@ -38,21 +65,139 @@
   border-radius: 5px;
   background-color: var(--bg-on-surface);
   color: var(--text-active);
-  padding: 0.4rem;
+  padding: 12px;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  gap: 4px;
 }
+.commonStyle div,
+.selectedStyle div {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
 .selectedStyle {
   background-color: var(--bg-input-border-focus);
   color: var(--text-lighten);
 }
+
+.greyBar {
+  width: 52px;
+  height: 12px;
+  border-radius: 3px;
+  background-color: var(--grey-40);
+}
+.selectedStyle .greyBar {
+  background-color: var(--grey-00);
+}
+
+/* @media not screen and (max-width: 667px) {
+  .title {
+    font-size: 24px;
+  }
+  .subtitle {
+    font-size: 21px;
+  }
+  .countButton,
+  .selectedCountButton {
+    font-size: 18px;
+  }
+} */
+
+/* 레이아웃 버튼용 정렬 */
+.layoutTopLeft {
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+.layoutTopLeft div {
+  align-items: flex-start;
+}
 .layoutTop {
   justify-content: flex-start;
+  align-items: center;
+}
+.layoutTop div {
+  align-items: center;
+}
+.layoutTopRight {
+  justify-content: flex-start;
+  align-items: flex-end;
+}
+.layoutTopRight div {
+  align-items: flex-end;
+}
+.layoutLeft {
+  justify-content: center;
+  align-items: flex-start;
 }
 .layoutCenter {
   justify-content: center;
+  align-items: center;
+}
+.layoutCenter div {
+  align-items: center;
+}
+.layoutRight {
+  justify-content: center;
+  align-items: flex-end;
+}
+.layoutRight div {
+  align-items: flex-end;
+}
+.layoutBottomLeft {
+  justify-content: flex-end;
+  align-items: flex-start;
+}
+.layoutBottomLeft div {
+  align-items: flex-start;
 }
 .layoutBottom {
   justify-content: flex-end;
+  align-items: center;
+}
+.layoutBottom div {
+  align-items: center;
+}
+.layoutBottomLeft div {
+  align-items: flex-start;
+}
+.layoutBottomRight {
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+.layoutBottomRight div {
+  align-items: flex-end;
+}
+.layoutSpaceBetweenLeft {
+  justify-content: space-between;
+  align-items: flex-start;
+}
+.layoutSpaceBetweenCenter {
+  justify-content: space-between;
+  align-items: center;
+}
+.layoutSpaceBetweenCenter div {
+  align-items: center;
+}
+.layoutSpaceBetweenRight {
+  justify-content: space-between;
+  align-items: flex-end;
+}
+.layoutSpaceBetweenRight div {
+  align-items: flex-end;
+}
+.layoutTitleAuthor {
+  justify-content: space-between;
+}
+.layoutTitleAuthor div {
+  align-items: flex-end;
+}
+.layoutTitleReAuthor {
+  justify-content: space-between;
+  align-items: flex-end;
+}
+.layoutTitleReAuthor div {
+  align-items: flex-start;
 }
