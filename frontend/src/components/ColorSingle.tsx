@@ -69,7 +69,7 @@ const ColorSingle = () => {
   //   }
   // }, [isPop]);
   return (
-    <div className="flex justify-between relative">
+    <div className="flex justify-start relative" style={{ gap: '12px' }}>
       {singleColorArray.map((color, idx) => (
         <button
           id={String(color[0])}
@@ -77,7 +77,7 @@ const ColorSingle = () => {
           value={color[1]}
           className={`flex justify-center items-center rounded border w-8 h-8 tablet:w-[48px] tablet:h-[48px] ${
             color[2]
-          } mr-2 ${currentIndex === color[0] && 'border'}`}
+          } ${currentIndex === color[0] && 'border'}`}
           onClick={(e) => onClick(e)}
         >
           {currentIndex === idx && (
