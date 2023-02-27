@@ -39,7 +39,7 @@ export default function Preview({ previewRef }: Props) {
           padding: '16px 0 0 0',
         }}
       >
-        <div className="w-full h-[188px] tablet:h-[300px] flex justify-center items-center" ref={previewRef}>
+        <div className="w-full h-[200px] tablet:h-[320px] flex justify-center items-center" ref={previewRef}>
           <div
             ref={preview}
             style={{

@@ -15,9 +15,9 @@ const TextPreview = () => {
     container: `w-full h-full grid grid-cols-1 place-content-cneter p-5 overflow-hidden font-bold`,
     pos: `flex flex-col ${pos.justifyContent} ${pos.alignItems}`,
     sub: `flex flex-col w-full ${pos.justifyContent} ${pos.subAlignItems} `,
-    first: `break-all ${first.fontColor} ${first.fontSize}`,
-    second: `break-all ${second.fontColor} ${second.fontSize}`,
-    third: `break-all ${third.fontColor} ${third.fontSize}`,
+    first: `break-all ${first.fontSize}`,
+    second: `break-all ${second.fontSize}`,
+    third: `break-all ${third.fontSize}`,
   };
 
   return (
