@@ -1,14 +1,29 @@
 import { Icon } from '@iconify/react';
 import { useRecoilState, useSetRecoilState } from 'recoil';
 import { isImageBright, previewImage } from '../atom';
+import heic2jpeg from 'heic2any';
+import heic2any from 'heic2any';
 
 const ImageUploader = () => {
   const setImageSrc = useSetRecoilState(previewImage);
   const [isBright, setIsBright] = useRecoilState(isImageBright);
   const insertImage = async (e: React.ChangeEvent<HTMLInputElement>) => {
     const reader = new FileReader();
-    if (e.target?.files?.[0]) {
-      reader.readAsDataURL(e.target.files[0]);
+    const file = e.target?.files?.[0] as File;
+    if (file.name.split('.')[1] === 'heic') {
+      const blob = file;
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      heic2any({ blob: blob, toType: 'image/jpeg' }).then(function (resultBlob: any) {
+        const newFile = new File([resultBlob], file.name.split('.')[0] + '.jpg', {
+          type: 'image/jpeg',
+          lastModified: new Date().getTime(),
+        });
+        reader.readAsDataURL(newFile);
+      });
+    } else {
+      if (e.target?.files?.[0]) {
+        reader.readAsDataURL(e.target.files[0]);
+      }
     }
     reader.onloadend = () => {
       const previewImgUrl = reader.result as string;
