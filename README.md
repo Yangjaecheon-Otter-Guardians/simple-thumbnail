@@ -57,28 +57,30 @@ npm start
 
 ## 📌 Stack
 
-[package.json 바로가기](https://github.com/Yangjaecheon-Otter-Guardians/simple-thumbnail/blob/main/frontend/package.json)
-
-- TypeScript, eslint, prettier
-  코드의 안전성과 유지보수를 위해 채택하였습니다.
+- TypeScript
+    - 타입의 안정성을 이용하고자 채택하였습니다.
 - React
-  선언적 프로그래밍 방식이며 SPA 구축하는데 용이하여 채택하였습니다.
+    - 선언적 프로그래밍 방식이며 SPA 구축하는데 용이하여 채택하였습니다.
 - Tailwind CSS
-  웹 페이지 로딩 속도를 향상 시키고 유지 보수가 쉬워 채택하였습니다.
+    - 웹 페이지 로딩 속도를 향상 시키고 유지 보수가 쉬워 채택하였습니다.
 - Recoil
-  Preview 설정 내용을 저장하기 위해 상태 관리 라이브러리를 채택하였습니다.
+    - Preview 설정 내용을 저장하기 위해 상태 관리 라이브러리를 채택하였습니다.
 - Axios
-  HTTP 비동기 통신을 하기 위한 라이브러리입니다.
+    - HTTP 비동기 통신을 하기 위한 라이브러리입니다.
+- eslint, prettier
+    - 코드 정렬 및 효율적인 유지보수를 위해 채택하였습니다.
 - downloadjs, html-to-image
-  이미지를 다운 받기 위한 라이브러리입니다.
+    - 이미지를 다운 받기 위한 라이브러리입니다.
 - react-color
-  컬러 픽커 라이브러리입니다.
+    - 컬러 픽커 라이브러리입니다.
 - react-toastify
-  다양한 알림 메시지를 제공하는 라이브러리입니다.
+    - 다양한 알림 메시지를 제공하는 라이브러리입니다.
 - react-icons
-  여러 아이콘을 제공하는 라이브러리입니다.
+    - 여러 아이콘을 제공하는 라이브러리입니다.
 - react-helmet-async
-  HTML의 head 태그를 관리하기 위한 라이브러리입니다.
+    - HTML의 head 태그를 관리하기 위한 라이브러리입니다.
+
+[package.json 바로가기](https://github.com/Yangjaecheon-Otter-Guardians/simple-thumbnail/blob/main/frontend/package.json)
 
 <br />
 
@@ -147,7 +149,7 @@ https://user-images.githubusercontent.com/76866137/221535397-a2de724e-2f54-488c-
 - 썸네일을 저장하고 싶다.
   - [x] 미리보기에 나온 화면을 `downloadjs`와 `html-to-image` 라이브러리를 이용하여 자동저장하도록 구현했습니다. 저장하는 작업이 길어질 경우 사용자 경험을 위해 로딩처리를 추가했습니다.
 - 작업 내용을 초기화하고싶다.
-  - [ ] 각 설정된 모든 recoil값을 기본값으로 돌려놓아 초기화하도록 구현했습니다.
+  - [x] 각 설정된 모든 recoil값을 기본값으로 돌려놓아 초기화하도록 구현했습니다.
 
 ### 서비스
 
@@ -157,7 +159,7 @@ https://user-images.githubusercontent.com/76866137/221535397-a2de724e-2f54-488c-
 - 반응형 웹 적용
   - [x] `Mobile`, `Tablet`, `Desktop`으로 나눠 범위에 속하는 사이즈에 맞게 미디어쿼리를 적용했습니다.
 - SEO 최적화
-  - [ ] meta태그, title, description 등을 이용하여 Open Graph, 구조화된 마크업으로 구현했습니다.
+  - [x] meta태그, title, description 등을 이용하여 Open Graph, 구조화된 마크업으로 구현했습니다.
 - Google Search Console에 페이지 등록
   - [x] 구글 검색 엔진에 웹사이트가 검색되도록 등록해주고, 구글 검색 결과가 어떻게 이뤄지고 있는지 모니터링 결과도 알기위해 등록했습니다.
 - GA(구글 애널리틱스)
@@ -187,12 +189,12 @@ https://user-images.githubusercontent.com/76866137/221535397-a2de724e-2f54-488c-
 
 ### Day 2
 
-> **지도 그리기 |**  
+> **지도 그리기**  
 > 서로의 아이디어를 **확장** 하고 **발산** 하고 **구체화** 하는 시간
 
 좋은 협업의 시작은 서로의 **생각의 주파수**를 맞추는 것입니다. 서비스의 궁극적인 목적과 대상을 바탕으로 **워드 클라우드**를 만들었습니다. 일방적인 의견 주장이 아닌 **어떻게 하면 ~ 할 수 있을까**라는 질문과 **레퍼런스**를 이용하여 답변하는 것이 아이디어를 구체화하는데 많은 도움이 되는 것을 느꼈습니다.
 
-![테오의 스프린트 14기 5조 2일차](https://i.imgur.com/P4dgEQl.png)
+![테오의 스프린트 14기 5조 지도 그리기](https://i.imgur.com/P4dgEQl.png)
 
 ### Day 3
 
@@ -210,6 +212,5 @@ https://user-images.githubusercontent.com/76866137/221535397-a2de724e-2f54-488c-
 
 **BDD(behavior driven development)**  
 사용자의 행동을 중심으로 개발을 진행하는 방식
-<br/>
 
 ![테오의 스프린트 14기 5조 BDD 설계](https://i.imgur.com/DQPVSwj.jpg)
