@@ -48,6 +48,7 @@ export default function Preview({ previewRef }: Props) {
               backgroundSize: 'cover',
               backgroundRepeat: 'no-repeat',
               backgroundPosition: 'center',
+              borderRadius: '5px',
             }}
           >
             <TextPreview />
