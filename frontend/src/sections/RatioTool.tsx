@@ -1,6 +1,6 @@
 import { ratioAtom } from 'atom';
-import { useSetRecoilState } from 'recoil';
 import Dropdown from 'components/common/Dropdown';
+import { useSetRecoilState } from 'recoil';
 
 export default function RatioTool() {
   const setPreviewRatio = useSetRecoilState(ratioAtom);
@@ -13,6 +13,7 @@ export default function RatioTool() {
     <div className="w-full my-[10px]">
       <div className="mb-[10px] font-bold">레이아웃</div>
       <Dropdown
+        defaultValue={1}
         list={Object.keys(PREVIEWRATIOOPTIONS) as (keyof PreviewRatioOptionsType)[]}
         handleChange={handleSelectChange}
       />
