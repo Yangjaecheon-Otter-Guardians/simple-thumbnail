@@ -12,7 +12,7 @@ function BackgroundTool() {
   return (
     <div className="w-full">
       <div className="font-bold py-3">배경</div>
-      <div className="w-full flex gap-[12px] justify-between text-sm">
+      <div className="w-full flex gap-[9px] justify-between text-sm">
         <button
           className={`grow h-[36px] rounded-[50px] ${tab === '1' ? 'bg-primary-100' : 'bg-on-surface'} ${
             tab === '1' ? 'text-lighten' : 'text-darken'
@@ -41,7 +41,7 @@ function BackgroundTool() {
           직접 업로드
         </button>
       </div>
-      <div className="py-3">
+      <div className="pt-[20px] pb-[32px]">
         {/* tab 구현 공간 */}
         {tab === '1' && <ColorUploader />}
         {tab === '2' && <UnsplashUploader />}
