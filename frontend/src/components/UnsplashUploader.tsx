@@ -14,10 +14,11 @@ const UnsplashUploader = () => {
   const mounted = useRef(false);
   const getRandomImage = async () => {
     if (!timer) {
+      const response = await fetch('https://source.unsplash.com/random');
       setIsLoading(true);
       timer = setTimeout(function () {
         timer = null;
-        setImageSrc('https://source.unsplash.com/random/?time=' + new Date().getTime());
+        setImageSrc(response.url);
         setIsLoading(false);
       }, 1100);
     }
