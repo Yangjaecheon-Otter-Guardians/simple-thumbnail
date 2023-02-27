@@ -1,12 +1,11 @@
-import { previewImage } from 'atom';
+import { colorUploaderTab, previewImage } from 'atom';
 import { useEffect } from 'react';
-import { useState } from 'react';
-import { useSetRecoilState } from 'recoil';
+import { useRecoilState, useSetRecoilState } from 'recoil';
 import ColorGradation from './ColorGradation';
 import ColorSingle from './ColorSingle';
 
 const ColorUploader = () => {
-  const [tab, setTab] = useState('1');
+  const [tab, setTab] = useRecoilState(colorUploaderTab);
   const setImageSrc = useSetRecoilState(previewImage);
   const tabChanger = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
     const currentTab = (e.target as HTMLInputElement).value;
