@@ -1,5 +1,5 @@
+![banner](https://user-images.githubusercontent.com/76866137/221538427-c0b8389c-b005-426c-a1b4-619d3de3b4a7.png)
 # Simple-Thumbnail
-
 ## 프로젝트 소개
 - 기간 : 2023.02.22 ~ 2023.02.27
 - [배포 주소](https://simple-thumbnail.com/)
