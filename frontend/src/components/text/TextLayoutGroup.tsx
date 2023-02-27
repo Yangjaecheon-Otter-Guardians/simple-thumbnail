@@ -1,5 +1,5 @@
 import { layoutPositionState, LayoutPositionType, textCountState } from 'atom/textAtom';
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useRecoilValue, useSetRecoilState } from 'recoil';
 
 import styles from 'styles/TextTool.module.css';
