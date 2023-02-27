@@ -27,19 +27,23 @@ export const ColorSingle = () => {
     const pickedIndex = Number((e.target as HTMLInputElement).id);
     console.log(pickedIndex);
     setCurrentColor(pickedColor);
+    if (isPop) {
+      setIsPop((prev) => !prev);
+    }
     if (currentIndex !== pickedIndex) {
       setCurrentIndex(pickedIndex);
     }
   };
   const onChange = (color: string) => {
     // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-    if (currentIndex! >= 0) {
+    if (currentIndex >= 0) {
       setCurrentIndex(NaN);
     }
     setCurrentColor(color);
   };
   const pop = () => {
     setIsPop((prev) => !prev);
+    setCurrentIndex(NaN);
   };
 
   useEffect(() => {
@@ -62,17 +66,31 @@ export const ColorSingle = () => {
           {currentIndex === idx && <BsCheck style={{ color: idx === 5 ? 'white' : 'black' }} />}
         </button>
       ))}
-      <button
-        className="w-8 h-8 rounded"
-        style={{
-          background:
-            'conic-gradient(from 180deg at 50% 50%, #FF5151 0deg, #FFF850 115.5deg, #50FFA1 218.62deg, #6950FF 360deg)',
-        }}
-        onClick={pop}
-      ></button>
+      {!isPop && (
+        <button
+          className="w-8 h-8 rounded"
+          style={{
+            background:
+              'conic-gradient(from 180deg at 50% 50%, #FF5151 0deg, #FFF850 115.5deg, #50FFA1 218.62deg, #6950FF 360deg)',
+          }}
+          onClick={pop}
+        ></button>
+      )}
       {isPop && (
-        <div className="absolute z-10">
-          <ChromePicker color={currentColor} onChange={(color) => onChange(color.hex)} />
+        <div>
+          <button
+            className="w-8 h-8 rounded flex justify-center items-center"
+            style={{
+              background:
+                'conic-gradient(from 180deg at 50% 50%, #FF5151 0deg, #FFF850 115.5deg, #50FFA1 218.62deg, #6950FF 360deg)',
+            }}
+            onClick={pop}
+          >
+            <BsCheck style={{ color: 'black' }} />
+          </button>
+          <div className="absolute z-10 right-12 ">
+            <ChromePicker color={currentColor} onChange={(color) => onChange(color.hex)} />
+          </div>
         </div>
       )}
     </div>
