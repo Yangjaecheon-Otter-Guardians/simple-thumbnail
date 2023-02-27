@@ -24,7 +24,6 @@ export const ColorGradation = () => {
   const onClick = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
     const pickedColor = (e.target as HTMLInputElement).value;
     const pickedIndex = Number((e.target as HTMLInputElement).id);
-    console.log(pickedIndex);
     setCurrentGradation(pickedColor);
     if (currentIndex !== pickedIndex) {
       setCurrentIndex(pickedIndex);

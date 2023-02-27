@@ -1,6 +1,6 @@
 import TextPreview from 'components/TextPreview';
 import { useEffect, useRef, useState } from 'react';
-import { ratioAtom, previewImage, isImageBright, previewColor, previewGradation } from 'atom';
+import { ratioAtom, previewImage, isImageBright, previewColor, previewGradation, colorUploaderTab } from 'atom';
 import { useRecoilValue } from 'recoil';
 import { previewFont } from 'atom';
 interface Props {
@@ -12,6 +12,7 @@ export default function Preview({ previewRef }: Props) {
   const isBright = useRecoilValue(isImageBright);
   const currentColor = useRecoilValue(previewColor);
   const currentGradation = useRecoilValue(previewGradation);
+  const tab = useRecoilValue(colorUploaderTab);
   const preview = useRef<HTMLDivElement>(null);
   const previewRatio = useRecoilValue(ratioAtom);
   const font = useRecoilValue(previewFont);
@@ -24,7 +25,6 @@ export default function Preview({ previewRef }: Props) {
       setPreviewWidth(preview.current.clientHeight * previewRatio);
     }
   }, [previewRatio]);
-
   return (
     <>
       <div
@@ -44,9 +44,9 @@ export default function Preview({ previewRef }: Props) {
             style={{
               width: `${previewWidth}px`,
               height: '100%',
-              background: `${currentGradation}`,
+              // background: `${currentGradation}`,
               backgroundColor: `${currentColor}`,
-              backgroundImage: `url(${imageSrc})`,
+              backgroundImage: tab === '1' ? `url(${imageSrc})` : `${currentGradation}`,
               backgroundSize: 'cover',
               backgroundRepeat: 'no-repeat',
               backgroundPosition: 'center',
