@@ -11,7 +11,7 @@
 }
 .subtitle {
   font-size: 14px;
-  font-weight: 600;
+  font-weight: 500;
   margin-bottom: 12px;
 }
 .buttonGroup {
@@ -53,6 +53,7 @@
   background-color: var(--bg-on-surface);
   color: var(--text-active);
   margin-bottom: 16px;
+  font-size: 14px;
 }
 .selectedCountButton {
   background-color: var(--bg-input-border-focus);

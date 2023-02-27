@@ -4,6 +4,7 @@
   padding: 12px 16px;
   border-radius: 6px;
   font-size: 14px;
+  font-weight: 500;
   box-sizing: border-box;
   margin: 12px 0;
 }
@@ -11,7 +12,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 1rem;
+  gap: 9px;
 }
 .colorButton,
 .selectedColorButton,
@@ -44,14 +45,14 @@
   color: white;
 }
 
-/* @media not screen and (max-width: 667px) {
+@media not screen and (max-width: 667px) {
   .colorButton,
   .selectedColorButton,
   .sizeButton,
   .selectedSizeButton {
-    width: 36px;
+    width: 48px;
   }
-  .input {
+  /* .input {
     font-size: 16px;
-  }
-} */
+  } */
+}

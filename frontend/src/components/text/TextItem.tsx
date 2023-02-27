@@ -34,6 +34,7 @@ type TextItemProps = {
 
 const TextItem = ({ id, texts, setTexts, colors, setColors }: TextItemProps) => {
   const [contents, setContents] = useRecoilState(textsAll(id));
+  const [placeholder] = useState(contents.content);
   const [rgb, setRgb] = useState<RGBColor>();
   const [colorModal, setColorModal] = useState(false);
 
@@ -78,8 +79,9 @@ const TextItem = ({ id, texts, setTexts, colors, setColors }: TextItemProps) => 
           setTexts([...texts]);
           handleTextChage(e.target.value ?? '');
           if (texts[id].length > 36) toast('📣 너무 길지 않을까요?', { autoClose: 2000, theme: 'colored' });
+          if (texts[id].length == 0) handleTextChage(placeholder);
         }}
-        placeholder={contents.content}
+        placeholder={placeholder}
         // style={{ color: getRGB(colors[id]) }}
       />
       <div className={styles.buttonGroup}>
@@ -94,7 +96,7 @@ const TextItem = ({ id, texts, setTexts, colors, setColors }: TextItemProps) => 
               handleColorChange(TEXT_WHITE);
             }}
           >
-            <BsCheck />
+            <BsCheck className={'tablet:text-[32px]'} />
           </button>
           <button
             className={colors[id] === TEXT_BLACK ? styles.selectedColorButton : styles.colorButton}
@@ -106,13 +108,18 @@ const TextItem = ({ id, texts, setTexts, colors, setColors }: TextItemProps) => 
               handleColorChange(TEXT_BLACK);
             }}
           >
-            <BsCheck style={{ color: 'white' }} />
+            <BsCheck className={'tablet:text-[32px]'} style={{ color: 'white' }} />
           </button>
           <span style={{ position: 'relative' }}>
             <button
               className={
                 colors[id] !== TEXT_BLACK && colors[id] !== TEXT_WHITE ? styles.selectedColorButton : styles.colorButton
               }
+              style={{
+                background: !colorModal
+                  ? 'conic-gradient(from 180deg at 50% 50%, #FF5151 0deg, #FFF850 115.5deg, #50FFA1 218.62deg, #6950FF 360deg)'
+                  : 'white',
+              }}
               onClick={() => {
                 setColors([...colors]);
                 setColorModal(!colorModal);
@@ -120,17 +127,19 @@ const TextItem = ({ id, texts, setTexts, colors, setColors }: TextItemProps) => 
             >
               {!colorModal ? (
                 <>
-                  <img src={PICKER} alt="컬러픽커 color picker" />
-                  <BsCheck style={{ position: 'absolute', zIndex: 1, color: 'black' }} />
+                  <BsCheck
+                    className={'tablet:text-[32px]'}
+                    style={{ position: 'absolute', zIndex: 1, color: 'black' }}
+                  />
                 </>
               ) : (
                 <p>
-                  <IoMdClose className={styles.closeBtn} />
+                  <IoMdClose className={`${styles.closeBtn} tablet:text-[32px]`} />
                 </p>
               )}
             </button>
             {colorModal && (
-              <div style={{ position: 'absolute', zIndex: 2, left: '100%', top: '-600%' }}>
+              <div style={{ position: 'absolute', zIndex: 2, left: '100%', top: '-400%' }}>
                 <ChromePicker
                   color={rgb}
                   onChange={(e) => {
