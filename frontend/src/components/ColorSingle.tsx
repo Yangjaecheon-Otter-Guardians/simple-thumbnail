@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { BsCheck } from 'react-icons/bs';
 import { ChromePicker } from 'react-color';
 import { useRecoilState, useSetRecoilState } from 'recoil';
-import { isImageBright, previewColor } from 'atom';
+import { isImageBright, previewColor, previewGradation } from 'atom';
 import { useEffect } from 'react';
 
 const singleColorArray = [
@@ -11,7 +11,7 @@ const singleColorArray = [
   [2, '#ffe03c', 'bg-backYellow'],
   [3, '#4fcf00', 'bg-backGreen'],
   [4, '#30cdff', 'bg-backBlue'],
-  [5, '#a873ff', 'bg-backPurple'],
+  [5, '#a873ff', 'bg-primary-100'],
   [6, '#ffffff', 'bg-bakcWhite'],
 ];
 
@@ -20,7 +20,8 @@ export const ColorSingle = () => {
   const [currentIndex, setCurrentIndex] = useState<number>(0);
   const [isPop, setIsPop] = useState(false);
   const setIsBright = useSetRecoilState(isImageBright);
-  console.log(currentColor);
+  const setCurrentGradation = useSetRecoilState(previewGradation);
+
   const onClick = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
     const pickedColor = (e.target as HTMLInputElement).value;
     const pickedIndex = Number((e.target as HTMLInputElement).id);
@@ -42,17 +43,18 @@ export const ColorSingle = () => {
   };
 
   useEffect(() => {
+    setCurrentGradation('');
     setCurrentColor('#ff3737');
     setIsBright(true);
   }, []);
   return (
-    <div className="flex">
+    <div className="flex justify-between">
       {singleColorArray.map((color, idx) => (
         <button
           id={String(color[0])}
           key={idx}
           value={color[1]}
-          className={`flex justify-center items-center rounded border w-6 h-6 ${color[2]} mr-2 ${
+          className={`flex justify-center items-center rounded border w-8 h-8 ${color[2]} mr-2 ${
             currentIndex === color[0] && 'border'
           }`}
           onClick={(e) => onClick(e)}
@@ -60,7 +62,14 @@ export const ColorSingle = () => {
           {currentIndex === idx && <BsCheck style={{ color: 'black' }} />}
         </button>
       ))}
-      <button className="w-6 h-6 rounded bg-gradient-to-r from-sky-400 via-rose-400 to-lime-400" onClick={pop}></button>
+      <button
+        className="w-8 h-8 rounded"
+        style={{
+          background:
+            'conic-gradient(from 180deg at 50% 50%, #FF5151 0deg, #FFF850 115.5deg, #50FFA1 218.62deg, #6950FF 360deg)',
+        }}
+        onClick={pop}
+      ></button>
       {isPop && (
         <div className="absolute z-10">
           <ChromePicker color={currentColor} onChange={(color) => onChange(color.hex)} />

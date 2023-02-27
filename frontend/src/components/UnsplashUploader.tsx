@@ -27,7 +27,7 @@ const UnsplashUploader = () => {
           </div>
         </div>
       </button>
-      <label className={`${isBright ? 'text-darken' : 'text-muted'} flex justify-start items-center`}>
+      <label className={`${isBright ? 'text-darken' : 'text-muted'} flex justify-start items-center mt-3`}>
         <input defaultChecked={!isBright} className="h-4 w-4" type="checkbox" onClick={brigthControl} />
         <span className="ml-[10px]">배경 어둡게</span>
       </label>

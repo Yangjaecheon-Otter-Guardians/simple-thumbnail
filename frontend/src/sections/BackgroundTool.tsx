@@ -10,9 +10,9 @@ function BackgroundTool() {
     setTab(currentTab);
   };
   return (
-    <div className="w-full border-solid border-2 border-indigo-600">
-      <div>배경</div>
-      <div className="w-full flex justify-between">
+    <div className="w-full">
+      <div className="mb-3 font-bold">배경</div>
+      <div className="w-full flex justify-between text-sm">
         <button
           className={`w-[106px] h-[36px] rounded-[50px] ${tab === '1' ? 'bg-primary-100' : 'bg-on-surface'} ${
             tab === '1' ? 'text-lighten' : 'text-darken'
