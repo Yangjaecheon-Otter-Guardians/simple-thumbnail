@@ -12,6 +12,7 @@ interface Props<T> {
 function Dropdown<T extends string>({ defaultValue: value, list, handleChange, styleList }: Props<T>) {
   const [isOpen, setIsOpen] = useState(false);
   const [title, setTitle] = useState(list[value ?? 0]);
+  const [titleStyle, setTitleStyle] = useState(styleList ? styleList[value ?? 0] : '');
   const [dropdownList, setDropdownList] = useState(
     list.map((elem, idx) => {
       return { content: elem, checked: idx === value ?? 0 ? true : false };
@@ -20,6 +21,7 @@ function Dropdown<T extends string>({ defaultValue: value, list, handleChange, s
 
   const handleLabelClose = (e: MouseEvent<HTMLLIElement>) => {
     const selectedContent = e.currentTarget.dataset.content as T;
+    const selectedStyle = e.currentTarget.dataset.style as string;
     setIsOpen(false);
     setDropdownList(
       dropdownList.map((elem) => {
@@ -28,6 +30,7 @@ function Dropdown<T extends string>({ defaultValue: value, list, handleChange, s
     );
     setTitle(selectedContent);
     handleChange(selectedContent);
+    setTitleStyle(selectedStyle);
   };
 
   return (
@@ -36,7 +39,7 @@ function Dropdown<T extends string>({ defaultValue: value, list, handleChange, s
         className="flex justify-between items-center px-4 border-1 border-black rounded-md h-11 text-sm"
         onClick={() => setIsOpen((prev) => !prev)}
       >
-        <div>{title}</div>
+        <div className={titleStyle}>{title}</div>
         <IoIosArrowDown />
       </div>
       {isOpen && (
@@ -47,6 +50,7 @@ function Dropdown<T extends string>({ defaultValue: value, list, handleChange, s
                 className={`flex justify-between ${styleList && styleList[idx]}`}
                 key={option.content}
                 data-content={option.content}
+                data-style={styleList ? styleList[idx] : ''}
                 onClick={handleLabelClose}
               >
                 <span className={'text-sm'}>{option.content}</span>
