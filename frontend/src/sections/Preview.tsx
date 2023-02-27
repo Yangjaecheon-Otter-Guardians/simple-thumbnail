@@ -1,8 +1,7 @@
+import { colorUploaderTab, isImageBright, previewColor, previewGradation, previewImage, ratioAtom } from 'atom';
 import TextPreview from 'components/TextPreview';
 import { useEffect, useRef, useState } from 'react';
-import { ratioAtom, previewImage, isImageBright, previewColor, previewGradation, colorUploaderTab } from 'atom';
 import { useRecoilValue } from 'recoil';
-import { previewFont } from 'atom';
 interface Props {
   previewRef: React.RefObject<HTMLDivElement>;
 }
@@ -15,7 +14,6 @@ export default function Preview({ previewRef }: Props) {
   const tab = useRecoilValue(colorUploaderTab);
   const preview = useRef<HTMLDivElement>(null);
   const previewRatio = useRecoilValue(ratioAtom);
-  const font = useRecoilValue(previewFont);
   const [previewWidth, setPreviewWidth] = useState<number>(
     window.innerWidth >= 764 ? INITIALHEIGHT.table : INITIALHEIGHT.mobile,
   );
