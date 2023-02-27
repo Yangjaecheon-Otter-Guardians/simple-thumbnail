@@ -5,9 +5,10 @@ import { BsCheck2 } from 'react-icons/bs';
 interface Props<T> {
   list: T[];
   handleChange: (selectedValue: T) => void;
+  styleList?: string[];
 }
 
-function Dropdown<T extends string>({ list, handleChange }: Props<T>) {
+function Dropdown<T extends string>({ list, handleChange, styleList }: Props<T>) {
   const [isOpen, setIsOpen] = useState(false);
   const [title, setTitle] = useState(list[0]);
   const [dropdownList, setDropdownList] = useState(
@@ -40,9 +41,9 @@ function Dropdown<T extends string>({ list, handleChange }: Props<T>) {
       {isOpen && (
         <div className="absolute top-full bg-white w-full border-1 border-black mt-2 flex flex-col rounded-md z-10">
           <ul className="[&>*]:px-4 [&>*]:h-11 [&>*]:flex [&>*]:items-center">
-            {dropdownList.map((option) => (
+            {dropdownList.map((option, idx) => (
               <li
-                className="flex justify-between"
+                className={`flex justify-between ${styleList && styleList[idx]}`}
                 key={option.content}
                 data-content={option.content}
                 onClick={handleLabelClose}
