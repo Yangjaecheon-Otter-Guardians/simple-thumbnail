@@ -39,17 +39,11 @@ const UnsplashUploader = () => {
         <div
           className={
             `${isLoading && 'bg-on-surface '}` +
-            'w-full h-12 border-input-border-default border-2 rounded-lg flex justify-center items-center'
+            'w-full h-12 border-input-border-default gap-2 border-2 rounded-lg flex justify-center items-center'
           }
         >
+          <Icon className={'w-6 h-6 ' + `${isLoading && `animate-spinner`}`} icon="tabler:refresh" vFlip={true} />
           <div>Unsplash 랜덤 이미지 삽입</div>
-          <div>
-            <Icon
-              className={'ml-2 w-6 h-6 ' + `${isLoading && `animate-spinner`}`}
-              icon="tabler:refresh"
-              vFlip={true}
-            />
-          </div>
         </div>
       </button>
       <label className={`${isBright ? 'text-darken' : 'text-muted'} flex justify-start items-center mt-3`}>

@@ -27,11 +27,9 @@ const ImageUploader = () => {
   return (
     <div className="md:w-full h-fit">
       <label className="cursor-pointer">
-        <div className="w-full h-12 border-input-border-default border-2 rounded-lg flex justify-center items-center md:cursor-pointer">
+        <div className="w-full gap-2  h-12 border-input-border-default border-2 rounded-lg flex justify-center items-center md:cursor-pointer">
+          <Icon className=" w-6 h-6" icon="ph:upload-simple" />
           <div>이미지 업로드</div>
-          <div>
-            <Icon className="ml-2 w-6 h-6" icon="ph:upload-simple" />
-          </div>
         </div>
         <input className="hidden" type="file" onChange={(e) => insertImage(e)} />
       </label>
