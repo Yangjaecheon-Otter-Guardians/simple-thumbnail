@@ -4,9 +4,8 @@
   padding: 12px 16px;
   border-radius: 6px;
   font-size: 14px;
-  font-weight: bold;
   box-sizing: border-box;
-  text-shadow: 0.1px 0.1px 0.1px var(--grey-40);
+  margin: 12px 0;
 }
 .buttonGroup {
   display: flex;
@@ -44,3 +43,15 @@
 .selectedSizeButton svg {
   color: white;
 }
+
+/* @media not screen and (max-width: 667px) {
+  .colorButton,
+  .selectedColorButton,
+  .sizeButton,
+  .selectedSizeButton {
+    width: 36px;
+  }
+  .input {
+    font-size: 16px;
+  }
+} */

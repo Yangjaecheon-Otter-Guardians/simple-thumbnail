@@ -10,8 +10,8 @@ function BackgroundTool() {
     setTab(currentTab);
   };
   return (
-    <div className="w-full border-solid border-2 border-indigo-600">
-      <div>배경</div>
+    <div className="w-full">
+      <div className="font-bold py-3">배경</div>
       <div className="w-full flex justify-between">
         <button
           className={`w-[106px] h-[36px] rounded-[50px] ${tab === '1' ? 'bg-primary-100' : 'bg-on-surface'} ${
@@ -29,7 +29,7 @@ function BackgroundTool() {
           value="2"
           onClick={(e) => tabChanger(e)}
         >
-          이미지 배경
+          랜덤 이미지
         </button>
         <button
           className={`font-SUIT w-[106px] h-[36px] rounded-[50px] ${tab === '3' ? 'bg-primary-100' : 'bg-on-surface'} ${

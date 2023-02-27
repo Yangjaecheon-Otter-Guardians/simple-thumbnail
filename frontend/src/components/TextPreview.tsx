@@ -1,4 +1,4 @@
-import { getRGB, LayoutPosition, textCountState, textsAll } from 'atom/textAtom';
+import { getRGB, layoutPositionState, textCountState, textsAll } from 'atom/textAtom';
 import { previewFont } from 'atom';
 import { useRecoilValue } from 'recoil';
 
@@ -6,17 +6,18 @@ const TextPreview = () => {
   const font = useRecoilValue(previewFont);
   const cnt = useRecoilValue(textCountState);
 
-  const pos = useRecoilValue(LayoutPosition);
+  const pos = useRecoilValue(layoutPositionState);
   const first = useRecoilValue(textsAll(0));
   const second = useRecoilValue(textsAll(1));
   const third = useRecoilValue(textsAll(2));
 
   const styles = {
-    container: `w-full h-full grid grid-cols-1 place-content-cneter p-4`,
+    container: `w-full h-full grid grid-cols-1 place-content-cneter p-5 overflow-hidden font-bold`,
     pos: `flex flex-col ${pos.justifyContent} ${pos.alignItems}`,
-    first: `${first.fontColor} ${first.fontSize}`,
-    second: `${second.fontColor} ${second.fontSize}`,
-    third: `${third.fontColor} ${third.fontSize}`,
+    sub: `flex flex-col w-full ${pos.justifyContent} ${pos.subAlignItems} `,
+    first: `break-all ${first.fontColor} ${first.fontSize}`,
+    second: `break-all ${second.fontColor} ${second.fontSize}`,
+    third: `break-all ${third.fontColor} ${third.fontSize}`,
   };
 
   return (
@@ -28,14 +29,16 @@ const TextPreview = () => {
           </span>
         )}
         {cnt > 1 && (
-          <span className={styles.second} style={{ color: getRGB(second.fontColor) }}>
-            {second.content}
-          </span>
-        )}
-        {cnt > 2 && (
-          <span className={styles.third} style={{ color: getRGB(third.fontColor) }}>
-            {third.content}
-          </span>
+          <div className={styles.sub}>
+            <span className={styles.second} style={{ color: getRGB(second.fontColor) }}>
+              {second.content}
+            </span>
+            {cnt > 2 && (
+              <span className={styles.third} style={{ color: getRGB(third.fontColor) }}>
+                {third.content}
+              </span>
+            )}
+          </div>
         )}
       </div>
     </div>

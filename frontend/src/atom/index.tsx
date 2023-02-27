@@ -32,7 +32,12 @@ const previewColor = atom({
   default: '',
 });
 
-export { previewImage, isImageBright, isEditState, previewColor };
+const previewGradation = atom({
+  key: 'previewGradation',
+  default: '',
+});
+
+export { previewImage, isImageBright, isEditState, previewColor, previewGradation };
 export const previewFont = atom({
   key: 'previewFont',
   default: FONT_LIST[0].value,
