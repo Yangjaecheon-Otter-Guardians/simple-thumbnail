@@ -6,7 +6,7 @@
 }
 .title {
   font-size: 16px;
-  font-weight: 900;
+  font-weight: 700;
   margin-bottom: 10px;
 }
 .subtitle {
@@ -53,6 +53,7 @@
   background-color: var(--bg-on-surface);
   color: var(--text-active);
   margin-bottom: 16px;
+  font-size: 14px;
 }
 .selectedCountButton {
   background-color: var(--bg-input-border-focus);

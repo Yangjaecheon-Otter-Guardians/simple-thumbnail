@@ -12,3 +12,5 @@ export const FONT_LIST = [
     value: 'samlip',
   },
 ];
+
+export const FONT_LIST_TO_TAILWIND = ['font-suit', 'font-agro', 'font-samlip'];
