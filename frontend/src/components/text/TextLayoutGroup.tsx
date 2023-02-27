@@ -1,5 +1,5 @@
 import { layoutPositionState, LayoutPositionType, textCountState } from 'atom/textAtom';
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { useRecoilValue, useSetRecoilState } from 'recoil';
 
 import styles from 'styles/TextTool.module.css';
@@ -10,8 +10,8 @@ const TextLayoutGroup = () => {
   const setLayoutPosition = useSetRecoilState(layoutPositionState);
 
   useEffect(() => {
-    setLayoutType('top');
-    setLayoutPosition(getLayoutTailwind('top'));
+    setLayoutType('center');
+    setLayoutPosition(getLayoutTailwind('center'));
   }, [count]);
 
   return (
@@ -175,15 +175,15 @@ export const getLayoutGroupList = (count: number) => {
     case 0:
       return [];
     case 1:
-      return ['top-left', 'top', 'top-right', 'left', 'center', 'right', 'bottom-left', 'bottom', 'bottom-right'];
+      return ['left', 'center', 'right', 'top-left', 'top', 'top-right', 'bottom-left', 'bottom', 'bottom-right'];
     case 2:
       return [
-        'top-left',
-        'top',
-        'top-right',
         'left',
         'center',
         'right',
+        'top-left',
+        'top',
+        'top-right',
         'bottom-left',
         'bottom',
         'bottom-right',
@@ -193,12 +193,12 @@ export const getLayoutGroupList = (count: number) => {
       ];
     case 3:
       return [
-        'top-left',
-        'top',
-        'top-right',
         'left',
         'center',
         'right',
+        'top-left',
+        'top',
+        'top-right',
         'bottom-left',
         'bottom',
         'bottom-right',
