@@ -17,7 +17,7 @@
 .selectedColorButton,
 .sizeButton,
 .selectedSizeButton {
-  width: 24px;
+  width: 32px;
   aspect-ratio: 1/1;
   border: 1px solid var(--grey-10);
   border-radius: 4px;
