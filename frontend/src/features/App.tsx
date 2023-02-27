@@ -1,3 +1,4 @@
+import DivideLine from 'components/common/DivideLine';
 import DownloadButton from 'components/DownloadButton';
 import { useRef } from 'react';
 import { ToastContainer } from 'react-toastify';
@@ -17,12 +18,16 @@ const App = () => {
       <Header />
       <InteractiveContainer>
         <Preview previewRef={previewRef} />
+      </InteractiveContainer>
+      <DivideLine />
+      <InteractiveContainer>
         <RatioTool />
         <BackgroundTool />
         <TextTool />
         <DownloadButton previewRef={previewRef} />
       </InteractiveContainer>
       <ToastContainer />
+      <DivideLine />
       <Footer />
     </>
   );
