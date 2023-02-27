@@ -20,6 +20,7 @@ const ColorSingle = () => {
   const [currentColor, setCurrentColor] = useRecoilState(previewColor);
   const [currentIndex, setCurrentIndex] = useState<number>(0);
   const [isPop, setIsPop] = useState(false);
+  const [isPicker, setIsPicker] = useState(false);
   const setIsBright = useSetRecoilState(isImageBright);
   const setCurrentGradation = useSetRecoilState(previewGradation);
 
@@ -33,6 +34,9 @@ const ColorSingle = () => {
     if (currentIndex !== pickedIndex) {
       setCurrentIndex(pickedIndex);
     }
+    if (isPicker) {
+      setIsPicker(false);
+    }
   };
   const onChange = (color: string) => {
     // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
@@ -40,6 +44,7 @@ const ColorSingle = () => {
       setCurrentIndex(NaN);
     }
     setCurrentColor(color);
+    setIsPicker(true);
   };
   const pop = () => {
     setIsPop((prev) => !prev);
@@ -51,6 +56,19 @@ const ColorSingle = () => {
     setCurrentColor('#ff3737');
     setIsBright(true);
   }, []);
+  // useEffect(() => {
+  //   function handleTitleClick() {
+  //     setIsPop((prev) => !prev);
+  //   }
+  //   if (isPop) {
+  //     const prompt = document.getElementById('notMove');
+  //     prompt.style.overflow = 'hidden';
+  //     document.body.style.overflow = 'hidden';
+  //     const prompt2 = document.body;
+  //     prompt2.addEventListener('click', handleTitleClick);
+  //     // document.body.onclick(setIsPop((prev) => !prev));
+  //   }
+  // }, [isPop]);
   return (
     <div className="flex justify-between relative">
       {singleColorArray.map((color, idx) => (
@@ -68,16 +86,18 @@ const ColorSingle = () => {
       ))}
       {!isPop && (
         <button
-          className="w-8 h-8 rounded"
+          className="w-8 h-8 rounded flex justify-center items-center"
           style={{
             background:
               'conic-gradient(from 180deg at 50% 50%, #FF5151 0deg, #FFF850 115.5deg, #50FFA1 218.62deg, #6950FF 360deg)',
           }}
           onClick={pop}
-        ></button>
+        >
+          {isPicker && <BsCheck style={{ color: 'black' }} />}
+        </button>
       )}
       {isPop && (
-        <div className="">
+        <div id="notMove">
           <div>
             <button className="w-8 h-8 rounded flex justify-center items-center bg-white border-2" onClick={pop}>
               <IoMdClose className="flex" />
