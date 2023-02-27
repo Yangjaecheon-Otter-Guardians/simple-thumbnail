@@ -1,11 +1,16 @@
 import { useRecoilState, useSetRecoilState } from 'recoil';
-import { isImageBright, previewImage } from '../atom';
+import { isImageBright, previewColor, previewGradation, previewImage } from '../atom';
 import { Icon } from '@iconify/react';
+import { useEffect } from 'react';
+import { useRef } from 'react';
 
 const UnsplashUploader = () => {
   let timer: NodeJS.Timer | null = null;
   const setImageSrc = useSetRecoilState(previewImage);
   const [isBright, setIsBright] = useRecoilState(isImageBright);
+  const setCurrentColor = useSetRecoilState(previewColor);
+  const setCurrentGradation = useSetRecoilState(previewGradation);
+  const mounted = useRef(false);
   const getRandomImage = async () => {
     if (!timer) {
       setImageSrc('https://source.unsplash.com/random/?time=' + new Date().getTime());
@@ -13,10 +18,17 @@ const UnsplashUploader = () => {
         timer = null;
       }, 1100);
     }
+    if (mounted) {
+      setCurrentColor('');
+      setCurrentGradation('');
+    }
   };
   const brigthControl = () => {
     setIsBright((prev) => !prev);
   };
+  useEffect(() => {
+    mounted.current = true;
+  }, []);
   return (
     <div className="w-full h-fit">
       <button className="cursor-pointer w-full" onClick={() => getRandomImage()}>

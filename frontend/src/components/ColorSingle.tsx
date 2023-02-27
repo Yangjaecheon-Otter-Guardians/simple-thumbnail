@@ -11,7 +11,7 @@ const singleColorArray = [
   [2, '#ffe03c', 'bg-backYellow'],
   [3, '#4fcf00', 'bg-backGreen'],
   [4, '#30cdff', 'bg-backBlue'],
-  [5, '#a873ff', 'bg-primary-100'],
+  [5, '#0E0E0E', 'bg-primary-100'],
   [6, '#ffffff', 'bg-bakcWhite'],
 ];
 
@@ -59,7 +59,7 @@ export const ColorSingle = () => {
           }`}
           onClick={(e) => onClick(e)}
         >
-          {currentIndex === idx && <BsCheck style={{ color: 'black' }} />}
+          {currentIndex === idx && <BsCheck style={{ color: idx === 5 ? 'white' : 'black' }} />}
         </button>
       ))}
       <button
