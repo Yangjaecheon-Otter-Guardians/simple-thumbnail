@@ -1,0 +1,14 @@
+title: "양재천 수달 보호 단체"
+labels: [Discussions]
+body:
+- type: textarea
+  id: Description
+  attributes:
+    label: Q&A Description
+    description: 궁금한 점을 작성해주세요 :)
+    value: |
+      궁금한 점
+      ...
+    render: bash
+  validations:
+    required: true
