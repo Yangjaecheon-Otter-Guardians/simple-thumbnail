@@ -7,8 +7,8 @@ body:
     label: Bugs Description
     description: 버그 상황에 대해 자세히 써주세요
     value: |
-      1. 버그 발생한 OS
-      2. 버그 상황 설명
+      버그 발생한 OS
+      버그 상황 설명
       ...
     render: bash
   validations:
@@ -19,8 +19,8 @@ body:
     label: BDD TASK
     description: BDD 작성은 given > when > then 순으로 작성해주세요 :)
     value: |
-      1. - [ ] 랜덤 이미지 배경 적용 후 다운로드시 정상적으로 이미지가 보인다.
-      2. ...
+      - [ ] 랜덤 이미지 배경 적용 후 다운로드시 정상적으로 이미지가 보인다.
+      ...
       ...
     render: bash
   validations:
