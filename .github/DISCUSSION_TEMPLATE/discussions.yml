@@ -11,6 +11,7 @@ body:
     description: 주제가 무엇인가요?
     options:
       - "Announcements"
+      - "Features"
       - "Bugs"
       - "Q&A"
       - "Show & Tell"
@@ -20,14 +21,14 @@ body:
 - type: textarea
   attributes:
     label: Body
-    description: 자유롭게 이야기를 나눠봐요!
+    description: 자유롭게 이야기를 나눠봐요 (ex. 기능 개발 제안, 질문 등등)!
   validations:
     required: true
 - type: checkboxes
   id: BDD-Check
   attributes:
-    label: 체크 목록!
+    label: BDD-Task!
     options:
-      - label: 구체적인 동작을 작성해주세요!
+      - label: 구체적인 동작을 작성해주세요(ex. 초기화 버튼을 누르면 디폴트 값으로 적용된다)!
         required: true
       - label: 구체적인 동작을 작성해주세요 - 2!
