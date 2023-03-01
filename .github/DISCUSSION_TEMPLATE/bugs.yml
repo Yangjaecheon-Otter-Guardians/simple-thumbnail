@@ -1,0 +1,23 @@
+title: "양재천 수달 보호 단체"
+labels: [Discussions]
+body:
+- type: textarea
+  id: Description
+  attributes:
+    label: Bugs Description
+    description: 버그 상황에 대해 자세히 써주세요
+    value: |
+      1. 버그 발생한 OS
+      2. 버그 상황 설명
+      ...
+    render: bash
+  validations:
+    required: true
+- type: checkboxes
+  id: BDD-Check
+  attributes:
+    label: BDD-Task!
+    options:
+      - label: 구체적인 버그 동작을 작성해주세요(ex. 랜덤 이미지 배경 적용 후 다운로드시 정상적으로 이미지가 보인다.)!
+        required: true
+      - label: 구체적인 버그 동작을 작성해주세요 - 2!
