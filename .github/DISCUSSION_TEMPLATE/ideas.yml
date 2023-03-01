@@ -22,8 +22,7 @@ body:
     label: BDD TASK
     description: BDD 작성은 given > when > then 순으로 작성해주세요 :)
     value: |
-      1. Features시 BDD 작성 부탁드립니다.
-      2. ...
+      - [ ] 랜덤 이미지 배경 적용 후 다운로드시 정상적으로 이미지가 보인다.
       ...
     render: bash
   validations:
