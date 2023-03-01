@@ -23,4 +23,11 @@ body:
     description: 자유롭게 이야기를 나눠봐요!
   validations:
     required: true
-
+- type: checkboxes
+  id: BDD-Check
+  attributes:
+    label: 체크 목록!
+    options:
+      - label: 구체적인 동작을 작성해주세요!
+        required: true
+      - label: 구체적인 동작을 작성해주세요 - 2!
