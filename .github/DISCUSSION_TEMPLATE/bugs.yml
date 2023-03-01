@@ -13,7 +13,15 @@ body:
     render: bash
   validations:
     required: true
-- type: markdown
-  attributes: 
+- type: textarea
+  id: BDD_TASK
+  attributes:
+    label: BDD TASK
+    description: BDD TASK
     value: |
-      - [ ] 구체적인 동작을 작성해주세요(ex. 초기화 버튼을 누르면 디폴트 값으로 적용된다)
+      1. BDD 작성은 given > when > then 순으로 작성해주세요 :)
+      2. ...
+      ...
+    render: bash
+  validations:
+    required: true
