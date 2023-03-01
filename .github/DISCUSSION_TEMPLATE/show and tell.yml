@@ -1,0 +1,14 @@
+title: "양재천 수달 보호 단체"
+labels: [Discussions]
+body:
+- type: textarea
+  id: Show_and_Tell
+  attributes:
+    label: Services Descriptions
+    description: "서비스 사용 경험을 간단히 공유해주시면 됩니다"
+    value: |
+     
+      ...
+    render: bash
+  validations:
+    required: true
