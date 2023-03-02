@@ -58,11 +58,11 @@ module.exports = {
         'always-red': '#FF3040',
       },
       fontSize: {
-        lg: '21px',
-        md1: '18px',
-        md2: '16px',
-        sm: '14px',
-        xsm: '12px',
+        lg: '1.3125rem',
+        md1: '1.125rem',
+        md2: '1rem',
+        sm: '0.875rem',
+        xsm: '0.75rem',
       },
       borderWidth: {
         1: '1px',
