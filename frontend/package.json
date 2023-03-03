@@ -1,7 +1,7 @@
 {
   "name": "frontend",
   "version": "0.1.0",
-  "homepage": "https://simple-thumbnail.com",
+  "homepage": "https://yangjaecheon-otter-guardians.github.io/qa-simple-thumbnail",
   "private": true,
   "dependencies": {
     "@types/node": "^17.0.45",
