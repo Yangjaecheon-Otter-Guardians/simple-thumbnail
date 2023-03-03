@@ -3,11 +3,11 @@ on:
     branches:
       - develop
 
-permissions: read-all|write-all
-
 jobs:
   deploy:
     runs-on: ubuntu-18.04
+    permissions:
+      actions: write
     env:
       working-directory: ./frontend
     steps:
