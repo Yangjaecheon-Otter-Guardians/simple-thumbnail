@@ -15,8 +15,12 @@ function DownloadButton({ previewRef }: Props) {
       setIsLoad(true);
       toPng(previewRef.current).then(() => {
         if (previewRef.current) {
-          toPng(previewRef.current).then((dataUrl2) => {
-            download(dataUrl2, 'thumbnail.png');
+          toPng(previewRef.current).then(() => {
+            if (previewRef.current) {
+              toPng(previewRef.current).then((dataUrl) => {
+                download(dataUrl, 'thumbnail.png');
+              });
+            }
           });
         }
       });
