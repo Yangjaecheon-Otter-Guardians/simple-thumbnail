@@ -1,10 +1,11 @@
+import { backgroundTab } from 'atom';
 import ColorUploader from 'components/ColorUploader';
 import UnsplashUploader from 'components/UnsplashUploader';
-import { useState } from 'react';
+import { useRecoilState } from 'recoil';
 import ImageUploader from '../components/ImageUploader';
 
 function BackgroundTool() {
-  const [tab, setTab] = useState('1');
+  const [tab, setTab] = useRecoilState(backgroundTab);
   const tabChanger = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
     const currentTab = (e.target as HTMLInputElement).value;
     setTab(currentTab);

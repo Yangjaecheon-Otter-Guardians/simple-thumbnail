@@ -52,9 +52,9 @@ export default function Preview({ previewRef }: Props) {
             style={{
               width: `${previewWidth}px`,
               height: '100%',
-              backgroundColor: `${currentColor}`,
-              // backgroundImage: `${currentGradation}`,
-              backgroundImage: tab === '1' ? (colorTab === '2' ? `${currentGradation}` : 'none') : `url(${imageSrc})`,
+              backgroundColor: `${tab === '1' ? currentColor.color : '#F0F0F0'}`,
+              backgroundImage:
+                tab !== '1' ? `url(${imageSrc})` : colorTab === '2' ? `${currentGradation.color}` : 'none',
               backgroundSize: 'cover',
               backgroundRepeat: 'no-repeat',
               backgroundPosition: 'center',
