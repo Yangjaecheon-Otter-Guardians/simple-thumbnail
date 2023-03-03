@@ -1,19 +1,14 @@
-import { colorUploaderTab, previewImage } from 'atom';
-import { useEffect } from 'react';
-import { useRecoilState, useSetRecoilState } from 'recoil';
+import { colorUploaderTab } from 'atom';
+import { useRecoilState } from 'recoil';
 import ColorGradation from './ColorGradation';
 import ColorSingle from './ColorSingle';
 
 const ColorUploader = () => {
   const [tab, setTab] = useRecoilState(colorUploaderTab);
-  const setImageSrc = useSetRecoilState(previewImage);
   const tabChanger = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
     const currentTab = (e.target as HTMLInputElement).value;
     setTab(currentTab);
   };
-  useEffect(() => {
-    setImageSrc('');
-  }, []);
   return (
     <div>
       <div className="flex text-sm font-medium">
@@ -32,10 +27,7 @@ const ColorUploader = () => {
           그라데이션 배경
         </button>
       </div>
-      <div className="py-3">
-        {tab === '1' && <ColorSingle />}
-        {tab === '2' && <ColorGradation />}
-      </div>
+      <div className="py-3">{tab === '1' ? <ColorSingle /> : <ColorGradation />}</div>
     </div>
   );
 };
