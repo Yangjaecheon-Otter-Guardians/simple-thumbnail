@@ -35,7 +35,7 @@ export default function Preview({ previewRef }: Props) {
   return (
     <>
       <div
-        className="w-full border-b-2"
+        className="w-full"
         style={{
           width: '100%',
           height: '100%',

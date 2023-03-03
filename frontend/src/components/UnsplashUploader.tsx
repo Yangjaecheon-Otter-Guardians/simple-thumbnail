@@ -24,7 +24,9 @@ const UnsplashUploader = () => {
     setIsBright((prev) => !prev);
   };
   useEffect(() => {
-    setImageSrc('https://source.unsplash.com/random');
+    fetch('https://source.unsplash.com/random').then((response) => {
+      setImageSrc(response.url);
+    });
     mounted.current = true;
   }, []);
   return (
