@@ -7,6 +7,7 @@ import {
   previewImage,
   ratioAtom,
 } from 'atom';
+import DivideLine from 'components/common/DivideLine';
 import TextPreview from 'components/TextPreview';
 import { useEffect, useRef, useState } from 'react';
 import { useRecoilValue } from 'recoil';
@@ -81,6 +82,7 @@ export default function Preview({ previewRef }: Props) {
             background: 'white',
           }}
         ></div>
+        <DivideLine />
       </div>
     </>
   );
