@@ -5,7 +5,7 @@ import { useEffect, useRef, useState } from 'react';
 
 const UnsplashUploader = () => {
   let timer: NodeJS.Timer | null = null;
-  const setImageSrc = useSetRecoilState(previewImage);
+  const [imageSrc, setImageSrc] = useRecoilState(previewImage);
   const [isBright, setIsBright] = useRecoilState(isImageBright);
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const mounted = useRef(false);
@@ -24,9 +24,11 @@ const UnsplashUploader = () => {
     setIsBright((prev) => !prev);
   };
   useEffect(() => {
-    fetch('https://source.unsplash.com/random').then((response) => {
-      setImageSrc(response.url);
-    });
+    if (imageSrc === '') {
+      fetch('https://source.unsplash.com/random').then((response) => {
+        setImageSrc(response.url);
+      });
+    }
     mounted.current = true;
   }, []);
   return (
