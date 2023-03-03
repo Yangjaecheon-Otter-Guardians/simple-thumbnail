@@ -51,7 +51,7 @@ const ColorSingle = () => {
             color.name
           } ${currentColor.color === color.hex && 'border'}`}
         >
-          {currentColor.color === color.hex && (
+          {currentColor.color === color.hex && !currentColor.isPicker && (
             <BsCheck className={'tablet:text-[32px]'} style={{ color: idx === 5 ? 'white' : 'black' }} />
           )}
         </button>
