@@ -17,6 +17,7 @@ const App = () => {
     <>
       <Header />
       <Preview previewRef={previewRef} />
+      <DivideLine />
       <InteractiveContainer>
         <RatioTool />
         <BackgroundTool />
