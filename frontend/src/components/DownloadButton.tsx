@@ -9,13 +9,22 @@ interface Props {
 
 function DownloadButton({ previewRef }: Props) {
   const [isLoad, setIsLoad] = useState(false);
+
   const handleClick = useCallback(async () => {
     if (previewRef.current) {
       setIsLoad(true);
-      download(await toPng(previewRef.current), 'thumbnail.png');
+      toPng(previewRef.current).then(() => {
+        if (previewRef.current) {
+          toPng(previewRef.current).then((dataUrl2) => {
+            download(dataUrl2, 'thumbnail.png');
+          });
+        }
+      });
+      // download(await toPng(previewRef.current), 'thumbnail.png');
       setIsLoad(false);
     }
   }, [previewRef?.current]);
+
   return (
     <>
       <button
