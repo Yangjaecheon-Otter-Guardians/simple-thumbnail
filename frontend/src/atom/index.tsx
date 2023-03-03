@@ -1,3 +1,4 @@
+import { gradationColorArray } from 'components/ColorGradation';
 import { singleColorArray } from 'components/ColorSingle';
 import { FONT_LIST } from 'constants/fonts';
 import { atom } from 'recoil';
@@ -25,7 +26,7 @@ const previewColor = atom({
 
 const previewGradation = atom({
   key: 'previewGradation',
-  default: '',
+  default: { color: gradationColorArray[0].color, isRandom: false },
 });
 
 // 1: 색상배경, 2: 랜덤 이미지, 3: 직접 업로드
