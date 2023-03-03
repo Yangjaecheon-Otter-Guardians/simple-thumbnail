@@ -4,7 +4,7 @@ import { FONT_LIST } from 'constants/fonts';
 import { atom } from 'recoil';
 const previewImage = atom({
   key: 'previewImage',
-  default: '',
+  default: 'https://source.unsplash.com/random',
 });
 
 const isImageBright = atom({
