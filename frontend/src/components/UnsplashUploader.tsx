@@ -1,4 +1,4 @@
-import { useRecoilState, useSetRecoilState } from 'recoil';
+import { useRecoilState } from 'recoil';
 import { isImageBright, previewImage } from '../atom';
 import { Icon } from '@iconify/react';
 import { useEffect, useRef, useState } from 'react';

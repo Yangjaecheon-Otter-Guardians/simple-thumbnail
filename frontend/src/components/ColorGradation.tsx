@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import { BsCheck } from 'react-icons/bs';
 import { useRecoilState } from 'recoil';
 import { previewGradation } from 'atom';
