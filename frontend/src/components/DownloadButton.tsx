@@ -13,18 +13,9 @@ function DownloadButton({ previewRef }: Props) {
   const handleClick = useCallback(async () => {
     if (previewRef.current) {
       setIsLoad(true);
-      toPng(previewRef.current).then(() => {
-        if (previewRef.current) {
-          toPng(previewRef.current).then(() => {
-            if (previewRef.current) {
-              toPng(previewRef.current).then((dataUrl) => {
-                download(dataUrl, 'thumbnail.png');
-              });
-            }
-          });
-        }
-      });
-      // download(await toPng(previewRef.current), 'thumbnail.png');
+      await toPng(previewRef.current);
+      await toPng(previewRef.current);
+      download(await toPng(previewRef.current), 'thumbnail.png');
       setIsLoad(false);
     }
   }, [previewRef?.current]);

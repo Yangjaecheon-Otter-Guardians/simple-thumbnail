@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import { BsCheck } from 'react-icons/bs';
 import { useRecoilState } from 'recoil';
 import { previewGradation } from 'atom';
@@ -45,7 +44,6 @@ export const ColorGradation = () => {
     <div className="flex justify-between tablet:justify-start " style={{ gap: '12px' }}>
       {gradationColorArray.map((gradation, idx) => (
         <button
-          id={String(idx)}
           key={idx}
           value={gradation.color}
           className={`flex justify-center items-center rounded border w-8 h-8 tablet:w-[48px] tablet:h-[48px]`}
