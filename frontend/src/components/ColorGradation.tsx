@@ -3,11 +3,7 @@ import { useRecoilState } from 'recoil';
 import { previewGradation } from 'atom';
 import { Icon } from '@iconify/react';
 
-interface gradation {
-  color: string;
-}
-
-export const gradationColorArray: gradation[] = [
+export const gradationColorArray = [
   { color: 'linear-gradient(134.01deg, #FFD9D9 9.35%, #FF2B2B 100%)' },
   { color: 'linear-gradient(135deg, #87FAA9 0.01%, #BB86DD 100%)' },
   { color: 'linear-gradient(137.82deg, #F8E92D 4.46%, #33E6F8 100%)' },

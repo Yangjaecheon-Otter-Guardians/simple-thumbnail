@@ -5,12 +5,7 @@ import { previewColor } from 'atom';
 import { IoMdClose } from 'react-icons/io';
 import { BsCheck } from 'react-icons/bs';
 
-interface color {
-  hex: string;
-  name: string;
-}
-
-export const singleColorArray: color[] = [
+export const singleColorArray = [
   { hex: '#ff3737', name: 'bg-backRed' },
   { hex: '#ff9549', name: 'bg-backOrange' },
   { hex: '#ffe03c', name: 'bg-backYellow' },
