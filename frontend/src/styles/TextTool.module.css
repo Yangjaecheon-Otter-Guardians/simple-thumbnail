@@ -5,12 +5,12 @@
   flex-direction: column;
 }
 .title {
-  font-size: 16px;
+  font-size: 1rem;
   font-weight: 700;
   margin-bottom: 10px;
 }
 .subtitle {
-  font-size: 14px;
+  font-size: 0.875rem;
   font-weight: 500;
   margin-bottom: 12px;
 }
@@ -53,7 +53,7 @@
   background-color: var(--bg-on-surface);
   color: var(--text-active);
   margin-bottom: 16px;
-  font-size: 14px;
+  font-size: 0.875rem;
 }
 .selectedCountButton {
   background-color: var(--bg-input-border-focus);
