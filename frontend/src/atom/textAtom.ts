@@ -4,15 +4,15 @@ import { atom, atomFamily } from 'recoil';
 export const TEXT_WHITE: RGBColor = { r: 251, g: 251, b: 251, a: 1 };
 export const TEXT_BLACK: RGBColor = { r: 10, g: 10, b: 10, a: 1 };
 
-export const TEXT_LG = 'text-lg';
-export const TEXT_MD = 'text-md2';
-export const TEXT_SM = 'text-sm';
-export type TextSizeType = 'text-lg' | 'text-md1' | 'text-md2' | 'text-sm' | 'text-xsm';
+export const TEXT_LG = 'tablet:text-[34px] text-[21px]';
+export const TEXT_MD = 'tablet:text-[26px] text-[16px]';
+export const TEXT_SM = 'tablet:text-[22px] text-[14px]';
+export type TextSizeType = string;
 
 export type TextType = {
   id: number;
   content: string;
-  fontSize: TextSizeType;
+  fontSize: string;
   fontColor: RGBColor;
 };
 
@@ -32,19 +32,19 @@ const texts: TextType[] = [
   {
     id: 0,
     content: '제목을 입력하세요.',
-    fontSize: 'text-lg',
+    fontSize: 'tablet:text-[34px] text-[21px]',
     fontColor: TEXT_WHITE,
   },
   {
     id: 1,
     content: '내용을 입력하세요.',
-    fontSize: 'text-md2',
+    fontSize: 'tablet:text-[26px] text-[16px]',
     fontColor: TEXT_WHITE,
   },
   {
     id: 2,
     content: '내용을 입력하세요.',
-    fontSize: 'text-sm',
+    fontSize: 'tablet:text-[22px] text-[14px]',
     fontColor: TEXT_WHITE,
   },
 ];
