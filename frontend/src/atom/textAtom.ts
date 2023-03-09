@@ -7,7 +7,10 @@ export const TEXT_BLACK: RGBColor = { r: 10, g: 10, b: 10, a: 1 };
 export const TEXT_LG = 'tablet:text-[34px] text-[21px]';
 export const TEXT_MD = 'tablet:text-[26px] text-[16px]';
 export const TEXT_SM = 'tablet:text-[22px] text-[14px]';
-export type TextSizeType = string;
+export type TextSizeType =
+  | 'tablet:text-[34px] text-[21px]'
+  | 'tablet:text-[26px] text-[16px]'
+  | 'tablet:text-[22px] text-[14px]';
 
 export type TextType = {
   id: number;
