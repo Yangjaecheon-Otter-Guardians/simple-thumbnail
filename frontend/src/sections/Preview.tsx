@@ -1,4 +1,13 @@
-import { colorUploaderTab, isImageBright, previewColor, previewGradation, previewImage, ratioAtom } from 'atom';
+import {
+  backgroundTab,
+  colorUploaderTab,
+  isImageBright,
+  previewColor,
+  previewGradation,
+  previewImage,
+  ratioAtom,
+} from 'atom';
+import DivideLine from 'components/common/DivideLine';
 import TextPreview from 'components/TextPreview';
 import { useEffect, useRef, useState } from 'react';
 import { useRecoilValue } from 'recoil';
@@ -11,7 +20,8 @@ export default function Preview({ previewRef }: Props) {
   const isBright = useRecoilValue(isImageBright);
   const currentColor = useRecoilValue(previewColor);
   const currentGradation = useRecoilValue(previewGradation);
-  const tab = useRecoilValue(colorUploaderTab);
+  const tab = useRecoilValue(backgroundTab);
+  const colorTab = useRecoilValue(colorUploaderTab);
   const preview = useRef<HTMLDivElement>(null);
   const previewRatio = useRecoilValue(ratioAtom);
   const [previewWidth, setPreviewWidth] = useState<number>(
@@ -26,7 +36,7 @@ export default function Preview({ previewRef }: Props) {
   return (
     <>
       <div
-        className="w-full border-b-2"
+        className="w-full"
         style={{
           width: '100%',
           height: '100%',
@@ -43,9 +53,9 @@ export default function Preview({ previewRef }: Props) {
             style={{
               width: `${previewWidth}px`,
               height: '100%',
-              // background: `${currentGradation}`,
-              backgroundColor: `${currentColor}`,
-              backgroundImage: tab === '1' ? `url(${imageSrc})` : `${currentGradation}`,
+              backgroundColor: `${tab === '1' ? currentColor.color : '#F0F0F0'}`,
+              backgroundImage:
+                tab !== '1' ? `url(${imageSrc})` : colorTab === '2' ? `${currentGradation.color}` : 'none',
               backgroundSize: 'cover',
               backgroundRepeat: 'no-repeat',
               backgroundPosition: 'center',
@@ -60,7 +70,7 @@ export default function Preview({ previewRef }: Props) {
                 zIndex: 97,
                 width: `${previewWidth}px`,
                 height: '100%',
-                background: `${isBright ? 'transparent' : 'rgba(0, 0, 0, 0.3)'}`,
+                background: `${isBright || tab === '1' ? 'transparent' : 'rgba(0, 0, 0, 0.3)'}`,
               }}
             ></div>
           </div>
@@ -72,6 +82,7 @@ export default function Preview({ previewRef }: Props) {
             background: 'white',
           }}
         ></div>
+        <DivideLine />
       </div>
     </>
   );

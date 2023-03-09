@@ -1,3 +1,5 @@
+import { gradationColorArray } from 'components/ColorGradation';
+import { singleColorArray } from 'components/ColorSingle';
 import { FONT_LIST } from 'constants/fonts';
 import { atom } from 'recoil';
 const previewImage = atom({
@@ -7,7 +9,7 @@ const previewImage = atom({
 
 const isImageBright = atom({
   key: 'isImageBright',
-  default: false,
+  default: true,
 });
 
 const INITIALRATIO = 4 / 3;
@@ -19,14 +21,21 @@ export const ratioAtom = atom({
 
 const previewColor = atom({
   key: 'previewColor',
-  default: '',
+  default: { color: singleColorArray[0].hex, isPicker: false },
 });
 
 const previewGradation = atom({
   key: 'previewGradation',
-  default: '',
+  default: { color: gradationColorArray[0].color, isRandom: false },
 });
 
+// 1: 색상배경, 2: 랜덤 이미지, 3: 직접 업로드
+const backgroundTab = atom({
+  key: 'backgroundTab',
+  default: '1',
+});
+
+// 1: 단색, 2: 그라데이션
 const colorUploaderTab = atom({
   key: 'colorUploaderTab',
   default: '1',
@@ -37,4 +46,4 @@ export const previewFont = atom({
   default: FONT_LIST[0].value,
 });
 
-export { previewImage, isImageBright, previewColor, previewGradation, colorUploaderTab };
+export { previewImage, isImageBright, previewColor, previewGradation, colorUploaderTab, backgroundTab };
