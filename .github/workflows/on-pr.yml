@@ -1,9 +1,9 @@
 name: eslint check
 
 on:
-  pull_request:
+  push:
     branches:
-      - develop
+      - test/workflow
 
 jobs:
   build:
@@ -24,6 +24,6 @@ jobs:
 
       - name: npm install, build, and test
         run: |
-          npm install
+          npm ci
           CI="false" npm run lint
         working-directory: ${{ env.working-directory }}
