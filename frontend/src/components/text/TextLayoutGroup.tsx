@@ -19,12 +19,13 @@ const TextLayoutGroup = () => {
       {getLayoutGroupList(count).map((item, index) => {
         return (
           <button
-            key={index}
+            key={item}
             className={`${layoutType !== item ? styles.commonStyle : styles.selectedStyle} ${layoutHandler(item)}`}
             onClick={() => {
               setLayoutType(item);
               setLayoutPosition(getLayoutTailwind(item));
             }}
+            aria-label={item}
           >
             <p className={styles.greyBar} />
             {count > 1 && (
