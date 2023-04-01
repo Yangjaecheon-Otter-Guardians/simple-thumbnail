@@ -92,6 +92,7 @@ const TextItem = ({ id, texts, setTexts, colors, setColors }: TextItemProps) => 
               setColorModal(false);
               handleColorChange(TEXT_WHITE);
             }}
+            aria-label="하양"
           >
             <BsCheck className={'tablet:text-[32px]'} />
           </button>
@@ -105,6 +106,7 @@ const TextItem = ({ id, texts, setTexts, colors, setColors }: TextItemProps) => 
               setColorModal(false);
               handleColorChange(TEXT_BLACK);
             }}
+            aria-label="검정"
           >
             <BsCheck className={'tablet:text-[32px]'} style={{ color: 'white' }} />
           </button>
@@ -123,6 +125,7 @@ const TextItem = ({ id, texts, setTexts, colors, setColors }: TextItemProps) => 
                 setColors([...colors]);
                 setColorModal(!colorModal);
               }}
+              aria-label="컬러픽커"
             >
               {!colorModal ? (
                 <>
@@ -162,6 +165,7 @@ const TextItem = ({ id, texts, setTexts, colors, setColors }: TextItemProps) => 
             onClick={() => {
               handleSizeChange(TEXT_LG);
             }}
+            aria-label="글자크기-크게"
           >
             <FaFont />
           </button>
@@ -172,6 +176,7 @@ const TextItem = ({ id, texts, setTexts, colors, setColors }: TextItemProps) => 
             onClick={() => {
               handleSizeChange(TEXT_MD);
             }}
+            aria-label="글자크기-중간"
           >
             <FaFont />
           </button>
@@ -182,6 +187,7 @@ const TextItem = ({ id, texts, setTexts, colors, setColors }: TextItemProps) => 
             onClick={() => {
               handleSizeChange(TEXT_SM);
             }}
+            aria-label="글자크기-작게"
           >
             <FaFont />
           </button>
