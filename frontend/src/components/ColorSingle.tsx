@@ -72,6 +72,7 @@ const ColorSingle = () => {
     <div className="flex justify-between tablet:justify-start relative" style={{ gap: '12px' }}>
       {singleColorArray.map((color, idx) => (
         <button
+          type="button"
           id={String(color[0])}
           key={idx}
           value={color[1]}
@@ -87,6 +88,7 @@ const ColorSingle = () => {
       ))}
       {!isPop && (
         <button
+          type="button"
           className="w-8 h-8 rounded flex justify-center items-center tablet:w-[48px] tablet:h-[48px]"
           style={{
             background:
@@ -100,6 +102,7 @@ const ColorSingle = () => {
       {isPop && (
         <div>
           <button
+            type="button"
             className="w-8 h-8 rounded border flex justify-center items-center tablet:w-[48px] tablet:h-[48px]"
             style={{
               background: 'white',

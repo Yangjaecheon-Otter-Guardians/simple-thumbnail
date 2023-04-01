@@ -15,7 +15,11 @@ function Header() {
       className="w-full flex-center bg-surface py-[12px]"
     >
       <div className="w-full px-5 flex flex-row justify-between align-items-center tablet:w-[768px] tablet:px-10">
-        <button className="w-[100px] text-left disabled:opacity-50 hover:font-bold" onClick={handleInitial}>
+        <button
+          type="button"
+          className="w-[100px] text-left disabled:opacity-50 hover:font-bold"
+          onClick={handleInitial}
+        >
           초기화
         </button>
         <TEXT_LOGO style={{ height: '24px' }} />

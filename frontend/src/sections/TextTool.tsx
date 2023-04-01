@@ -22,6 +22,7 @@ function TextTool() {
     return textCount.map((item, index) => {
       return (
         <button
+          type="button"
           key={index}
           className={count !== index ? styles.countButton : styles.selectedCountButton}
           onClick={() => setCount(index)}

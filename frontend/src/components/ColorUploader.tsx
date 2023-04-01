@@ -18,6 +18,7 @@ const ColorUploader = () => {
     <div>
       <div className="flex text-sm font-medium">
         <button
+          type="button"
           className={`text-sm ${tab === '1' ? 'text-darken' : 'text-muted'}`}
           value="1"
           onClick={(e) => tabChanger(e)}
@@ -25,6 +26,7 @@ const ColorUploader = () => {
           단색 배경
         </button>
         <button
+          type="button"
           className={`text-sm ml-3 ${tab === '2' ? 'text-darken' : 'text-muted'}`}
           value="2"
           onClick={(e) => tabChanger(e)}

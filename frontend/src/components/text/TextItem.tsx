@@ -83,6 +83,7 @@ const TextItem = ({ id, texts, setTexts, colors, setColors }: TextItemProps) => 
       <div className={styles.buttonGroup}>
         <div className={styles.buttonGroup}>
           <button
+            type="button"
             className={colors[id] === TEXT_WHITE ? styles.selectedColorButton : styles.colorButton}
             style={{ background: getRGB(TEXT_WHITE) }}
             onClick={() => {
@@ -95,6 +96,7 @@ const TextItem = ({ id, texts, setTexts, colors, setColors }: TextItemProps) => 
             <BsCheck className={'tablet:text-[32px]'} />
           </button>
           <button
+            type="button"
             className={colors[id] === TEXT_BLACK ? styles.selectedColorButton : styles.colorButton}
             style={{ background: getRGB(TEXT_BLACK) }}
             onClick={() => {
@@ -108,6 +110,7 @@ const TextItem = ({ id, texts, setTexts, colors, setColors }: TextItemProps) => 
           </button>
           <span style={{ position: 'relative' }}>
             <button
+              type="button"
               className={
                 colors[id] !== TEXT_BLACK && colors[id] !== TEXT_WHITE ? styles.selectedColorButton : styles.colorButton
               }
@@ -153,6 +156,7 @@ const TextItem = ({ id, texts, setTexts, colors, setColors }: TextItemProps) => 
         </div>
         <div className={styles.buttonGroup}>
           <button
+            type="button"
             className={contents.fontSize === TEXT_LG ? styles.selectedSizeButton : styles.sizeButton}
             style={{ fontSize: '20px' }}
             onClick={() => {
@@ -162,6 +166,7 @@ const TextItem = ({ id, texts, setTexts, colors, setColors }: TextItemProps) => 
             <FaFont />
           </button>
           <button
+            type="button"
             className={contents.fontSize === TEXT_MD ? styles.selectedSizeButton : styles.sizeButton}
             style={{ fontSize: '16px' }}
             onClick={() => {
@@ -171,6 +176,7 @@ const TextItem = ({ id, texts, setTexts, colors, setColors }: TextItemProps) => 
             <FaFont />
           </button>
           <button
+            type="button"
             className={contents.fontSize === TEXT_SM ? styles.selectedSizeButton : styles.sizeButton}
             style={{ fontSize: '12px' }}
             onClick={() => {
