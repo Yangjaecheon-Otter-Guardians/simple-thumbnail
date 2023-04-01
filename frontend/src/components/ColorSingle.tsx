@@ -6,13 +6,13 @@ import { IoMdClose } from 'react-icons/io';
 import { useRecoilState, useSetRecoilState } from 'recoil';
 
 const singleColorArray = [
-  [0, '#ff3737', 'bg-backRed'],
-  [1, '#ff9549', 'bg-backOrange'],
-  [2, '#ffe03c', 'bg-backYellow'],
-  [3, '#4fcf00', 'bg-backGreen'],
-  [4, '#30cdff', 'bg-backBlue'],
-  [5, '#0E0E0E', 'bg-primary-100'],
-  [6, '#ffffff', 'bg-bakcWhite'],
+  [0, '#ff3737', 'bg-backRed', '빨강'],
+  [1, '#ff9549', 'bg-backOrange', '주황'],
+  [2, '#ffe03c', 'bg-backYellow', '노랑'],
+  [3, '#4fcf00', 'bg-backGreen', '초록'],
+  [4, '#30cdff', 'bg-backBlue', '하늘'],
+  [5, '#0E0E0E', 'bg-primary-100', '검정'],
+  [6, '#ffffff', 'bg-bakcWhite', '하양'],
 ];
 
 const ColorSingle = () => {
@@ -80,6 +80,7 @@ const ColorSingle = () => {
             color[2]
           } ${currentIndex === color[0] && 'border'}`}
           onClick={(e) => onClick(e)}
+          aria-label={color[3]}
         >
           {currentIndex === idx && (
             <BsCheck className={'tablet:text-[32px]'} style={{ color: idx === 5 ? 'white' : 'black' }} />
@@ -95,6 +96,7 @@ const ColorSingle = () => {
               'conic-gradient(from 180deg at 50% 50%, #FF5151 0deg, #FFF850 115.5deg, #50FFA1 218.62deg, #6950FF 360deg)',
           }}
           onClick={pop}
+          aria-label="컬러픽커"
         >
           {Number.isNaN(currentIndex) && <BsCheck className={'tablet:text-[32px]'} style={{ color: 'black' }} />}
         </button>

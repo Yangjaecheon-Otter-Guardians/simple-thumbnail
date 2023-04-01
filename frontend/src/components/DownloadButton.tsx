@@ -22,6 +22,7 @@ function DownloadButton({ previewRef }: Props) {
         type="button"
         className="bg-primary-100 text-lighten text-md2 px-[20px] py-[10px] rounded-[100px] w-full flex flex-row justify-center gap-[5px] items-center mt-24 mb-16"
         onClick={handleClick}
+        aria-label="이미지-다운로드"
       >
         {isLoad ? <Loading /> : null}
         이미지 다운로드
