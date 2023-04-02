@@ -1,16 +1,13 @@
-import { useRecoilState, useSetRecoilState } from 'recoil';
-import { colorUploaderTab, isImageBright, previewColor, previewGradation, previewImage } from '../atom';
+import { useRecoilState } from 'recoil';
+import { isImageBright, previewImage } from '../atom';
 import { Icon } from '@iconify/react';
 import { useEffect, useRef, useState } from 'react';
 
 const UnsplashUploader = () => {
   let timer: NodeJS.Timer | null = null;
-  const setImageSrc = useSetRecoilState(previewImage);
+  const [imageSrc, setImageSrc] = useRecoilState(previewImage);
   const [isBright, setIsBright] = useRecoilState(isImageBright);
   const [isLoading, setIsLoading] = useState<boolean>(false);
-  const setCurrentColor = useSetRecoilState(previewColor);
-  const setCurrentGradation = useSetRecoilState(previewGradation);
-  const setTab = useSetRecoilState(colorUploaderTab);
   const mounted = useRef(false);
   const getRandomImage = async () => {
     if (!timer) {
@@ -22,16 +19,16 @@ const UnsplashUploader = () => {
         setIsLoading(false);
       }, 1100);
     }
-    if (mounted) {
-      setCurrentColor('');
-      setCurrentGradation('');
-      setTab('1');
-    }
   };
   const brigthControl = () => {
     setIsBright((prev) => !prev);
   };
   useEffect(() => {
+    if (imageSrc === '') {
+      fetch('https://source.unsplash.com/random').then((response) => {
+        setImageSrc(response.url);
+      });
+    }
     mounted.current = true;
   }, []);
   return (

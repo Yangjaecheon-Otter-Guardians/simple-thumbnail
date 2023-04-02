@@ -1,0 +1,29 @@
+title: "양재천 수달 보호 단체"
+labels: [Discussions]
+body:
+- type: dropdown
+  attributes:
+    label: 주제
+    description: 주제가 무엇인가요?
+    options:
+      - "Features"
+      - "General"
+  validations:
+    required: true
+- type: textarea
+  attributes:
+    label: Body
+    description: 자유롭게 이야기를 나눠봐요 (ex. 기능 개발 제안, 질문 등등)!
+  validations:
+    required: true
+- type: textarea
+  id: BDD_TASK
+  attributes:
+    label: BDD TASK
+    description: BDD 작성은 given > when > then 순으로 작성해주세요 :)
+    value: |
+      - [ ] 랜덤 이미지 배경 적용 후 다운로드시 정상적으로 이미지가 보인다.
+      ...
+    render: bash
+  validations:
+    required: false
