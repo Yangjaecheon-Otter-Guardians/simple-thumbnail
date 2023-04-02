@@ -22,7 +22,7 @@ function Header() {
         >
           초기화
         </button>
-        <TEXT_LOGO role="logo" style={{ height: '24px' }} />
+        <TEXT_LOGO role="img" style={{ height: '24px' }} />
         <div className="w-[100px]" />
       </div>
     </div>
