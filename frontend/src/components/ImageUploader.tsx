@@ -1,7 +1,6 @@
 import { Icon } from '@iconify/react';
 import { useRecoilState, useSetRecoilState } from 'recoil';
 import { isImageBright, previewImage } from '../atom';
-import heic2jpeg from 'heic2any';
 import heic2any from 'heic2any';
 
 const ImageUploader = () => {

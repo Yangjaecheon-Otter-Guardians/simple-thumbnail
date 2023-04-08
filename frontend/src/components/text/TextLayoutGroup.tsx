@@ -16,7 +16,7 @@ const TextLayoutGroup = () => {
 
   return (
     <div className={styles.layoutButtonGroup}>
-      {getLayoutGroupList(count).map((item, index) => {
+      {getLayoutGroupList(count).map((item) => {
         return (
           <button
             key={item}
