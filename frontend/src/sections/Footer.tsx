@@ -9,7 +9,7 @@ function Footer() {
         <span>© 2023 Simple Thumbnail all rights reserved.</span>
         <a href="https://github.com/Yangjaecheon-Otter-Guardians/simple-thumbnail" target="_blank">
           <div className="flex-center gap-1 font-bold">
-            <img src={github} alt="github icon" width="16rem" />
+            <img src={github} alt="깃허브" width="16rem" />
             <span>simple-thumbnail</span>
           </div>
         </a>

@@ -83,6 +83,7 @@ const TextItem = ({ id, texts, setTexts, colors, setColors }: TextItemProps) => 
       <div className={styles.buttonGroup}>
         <div className={styles.buttonGroup}>
           <button
+            type="button"
             className={colors[id] === TEXT_WHITE ? styles.selectedColorButton : styles.colorButton}
             style={{ background: getRGB(TEXT_WHITE) }}
             onClick={() => {
@@ -91,10 +92,12 @@ const TextItem = ({ id, texts, setTexts, colors, setColors }: TextItemProps) => 
               setColorModal(false);
               handleColorChange(TEXT_WHITE);
             }}
+            aria-label="하양"
           >
             <BsCheck className={'tablet:text-[32px]'} />
           </button>
           <button
+            type="button"
             className={colors[id] === TEXT_BLACK ? styles.selectedColorButton : styles.colorButton}
             style={{ background: getRGB(TEXT_BLACK) }}
             onClick={() => {
@@ -103,11 +106,13 @@ const TextItem = ({ id, texts, setTexts, colors, setColors }: TextItemProps) => 
               setColorModal(false);
               handleColorChange(TEXT_BLACK);
             }}
+            aria-label="검정"
           >
             <BsCheck className={'tablet:text-[32px]'} style={{ color: 'white' }} />
           </button>
           <span style={{ position: 'relative' }}>
             <button
+              type="button"
               className={
                 colors[id] !== TEXT_BLACK && colors[id] !== TEXT_WHITE ? styles.selectedColorButton : styles.colorButton
               }
@@ -120,6 +125,7 @@ const TextItem = ({ id, texts, setTexts, colors, setColors }: TextItemProps) => 
                 setColors([...colors]);
                 setColorModal(!colorModal);
               }}
+              aria-label="컬러픽커"
             >
               {!colorModal ? (
                 <>
@@ -153,29 +159,35 @@ const TextItem = ({ id, texts, setTexts, colors, setColors }: TextItemProps) => 
         </div>
         <div className={styles.buttonGroup}>
           <button
+            type="button"
             className={contents.fontSize === TEXT_LG ? styles.selectedSizeButton : styles.sizeButton}
             style={{ fontSize: '20px' }}
             onClick={() => {
               handleSizeChange(TEXT_LG);
             }}
+            aria-label="글자크기-크게"
           >
             <FaFont />
           </button>
           <button
+            type="button"
             className={contents.fontSize === TEXT_MD ? styles.selectedSizeButton : styles.sizeButton}
             style={{ fontSize: '16px' }}
             onClick={() => {
               handleSizeChange(TEXT_MD);
             }}
+            aria-label="글자크기-중간"
           >
             <FaFont />
           </button>
           <button
+            type="button"
             className={contents.fontSize === TEXT_SM ? styles.selectedSizeButton : styles.sizeButton}
             style={{ fontSize: '12px' }}
             onClick={() => {
               handleSizeChange(TEXT_SM);
             }}
+            aria-label="글자크기-작게"
           >
             <FaFont />
           </button>

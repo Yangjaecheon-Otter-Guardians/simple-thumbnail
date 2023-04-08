@@ -15,6 +15,7 @@ function BackgroundTool() {
       <div className="font-bold py-3">배경</div>
       <div className="w-full flex gap-[9px] justify-between text-sm">
         <button
+          type="button"
           className={`grow h-[36px] rounded-[50px] ${tab === '1' ? 'bg-primary-100' : 'bg-on-surface'} ${
             tab === '1' ? 'text-lighten' : 'text-darken'
           }`}
@@ -24,6 +25,7 @@ function BackgroundTool() {
           색상 배경
         </button>
         <button
+          type="button"
           className={`h-[36px] grow rounded-[50px] ${tab === '2' ? 'bg-primary-100' : 'bg-on-surface'} ${
             tab === '2' ? 'text-lighten' : 'text-darken'
           }`}
@@ -33,6 +35,7 @@ function BackgroundTool() {
           랜덤 이미지
         </button>
         <button
+          type="button"
           className={`font-SUIT grow h-[36px] rounded-[50px] ${tab === '3' ? 'bg-primary-100' : 'bg-on-surface'} ${
             tab === '3' ? 'text-lighten' : 'text-darken'
           }`}

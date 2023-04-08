@@ -50,14 +50,14 @@
   height: 36px;
   flex-grow: 1;
   border-radius: 50px;
-  background-color: var(--bg-on-surface);
-  color: var(--text-active);
+  background-color: var(--bg-on-surface) !important;
+  color: var(--text-active) !important;
   margin-bottom: 16px;
   font-size: 0.875rem;
 }
 .selectedCountButton {
-  background-color: var(--bg-input-border-focus);
-  color: var(--text-lighten);
+  background-color: var(--bg-input-border-focus) !important;
+  color: var(--text-lighten) !important;
 }
 .commonStyle,
 .selectedStyle {

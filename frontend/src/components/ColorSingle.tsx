@@ -6,13 +6,13 @@ import { IoMdClose } from 'react-icons/io';
 import { BsCheck } from 'react-icons/bs';
 
 export const singleColorArray = [
-  { hex: '#ff3737', name: 'bg-backRed' },
-  { hex: '#ff9549', name: 'bg-backOrange' },
-  { hex: '#ffe03c', name: 'bg-backYellow' },
-  { hex: '#4fcf00', name: 'bg-backGreen' },
-  { hex: '#30cdff', name: 'bg-backBlue' },
-  { hex: '#0E0E0E', name: 'bg-primary-100' },
-  { hex: '#ffffff', name: 'bg-bakcWhite' },
+  { hex: '#ff3737', name: 'bg-backRed', label: '빨강' },
+  { hex: '#ff9549', name: 'bg-backOrange', label: '주황' },
+  { hex: '#ffe03c', name: 'bg-backYellow', label: '노랑' },
+  { hex: '#4fcf00', name: 'bg-backGreen', label: '초록' },
+  { hex: '#30cdff', name: 'bg-backBlue', label: '하늘' },
+  { hex: '#0E0E0E', name: 'bg-primary-100', label: '검정' },
+  { hex: '#ffffff', name: 'bg-bakcWhite', label: '하양' },
 ];
 
 const ColorSingle = () => {
@@ -39,12 +39,13 @@ const ColorSingle = () => {
       {singleColorArray.map((color, idx) => (
         <button
           id={String(idx)}
-          key={idx}
+          key={color.hex}
           value={color.hex}
           onClick={(e) => onClick(e)}
           className={`flex justify-center items-center rounded border w-8 h-8 tablet:w-[48px] tablet:h-[48px] ${
             color.name
           } ${currentColor.color === color.hex && 'border'}`}
+          aria-label={color.label}
         >
           {currentColor.color === color.hex && !currentColor.isPicker && (
             <BsCheck className={'tablet:text-[32px]'} style={{ color: idx === 5 ? 'white' : 'black' }} />
@@ -56,6 +57,7 @@ const ColorSingle = () => {
           <button
             className="w-8 h-8 rounded border flex justify-center items-center tablet:w-[48px] tablet:h-[48px] bg-white"
             onClick={pop}
+            aria-label="컬러픽커"
           >
             <IoMdClose className={'tablet:text-[32px]'} style={{ color: 'black' }} />
           </button>
