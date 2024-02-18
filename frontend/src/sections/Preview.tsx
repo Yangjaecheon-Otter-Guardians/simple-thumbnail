@@ -48,31 +48,32 @@ export default function Preview({ previewRef }: Props) {
         }}
       >
         <div className="w-full h-[200px] tablet:h-[320px] flex justify-center items-center" ref={preview}>
-          <div
-            ref={previewRef}
-            style={{
-              width: `${previewWidth}px`,
-              height: '100%',
-              backgroundColor: `${tab === '1' ? currentColor.color : '#F0F0F0'}`,
-              backgroundImage:
-                tab !== '1' ? `url(${imageSrc})` : colorTab === '2' ? `${currentGradation.color}` : 'none',
-              backgroundSize: 'cover',
-              backgroundRepeat: 'no-repeat',
-              backgroundPosition: 'center',
-              borderRadius: '5px',
-            }}
-          >
-            <TextPreview />
+          <div className="rounded-[5px] h-full overflow-hidden">
             <div
+              ref={previewRef}
               style={{
-                position: 'relative',
-                bottom: '100%',
-                zIndex: 97,
                 width: `${previewWidth}px`,
                 height: '100%',
-                background: `${isBright || tab === '1' ? 'transparent' : 'rgba(0, 0, 0, 0.3)'}`,
+                backgroundColor: `${tab === '1' ? currentColor.color : '#F0F0F0'}`,
+                backgroundImage:
+                  tab !== '1' ? `url(${imageSrc})` : colorTab === '2' ? `${currentGradation.color}` : 'none',
+                backgroundSize: 'cover',
+                backgroundRepeat: 'no-repeat',
+                backgroundPosition: 'center',
               }}
-            ></div>
+            >
+              <TextPreview />
+              <div
+                style={{
+                  position: 'relative',
+                  bottom: '100%',
+                  zIndex: 97,
+                  width: `${previewWidth}px`,
+                  height: '100%',
+                  background: `${isBright || tab === '1' ? 'transparent' : 'rgba(0, 0, 0, 0.3)'}`,
+                }}
+              ></div>
+            </div>
           </div>
         </div>
         <div
