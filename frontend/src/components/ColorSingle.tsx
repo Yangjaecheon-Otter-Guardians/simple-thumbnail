@@ -4,6 +4,7 @@ import { useRecoilState } from 'recoil';
 import { previewColor } from 'atom';
 import { IoMdClose } from 'react-icons/io';
 import { BsCheck } from 'react-icons/bs';
+import Popover from './common/Popover';
 
 export const singleColorArray = [
   { hex: '#ff3737', name: 'bg-backRed', label: '빨강' },
@@ -61,9 +62,9 @@ const ColorSingle = () => {
           >
             <IoMdClose className={'tablet:text-[32px]'} style={{ color: 'black' }} />
           </button>
-          <div className="absolute z-10 right-12 ">
+          <Popover onClose={pop} className="absolute z-10 right-12 ">
             <ChromePicker color={currentColor.color} onChange={(color) => onChange(color.hex)} />
-          </div>
+          </Popover>
         </div>
       ) : (
         <button

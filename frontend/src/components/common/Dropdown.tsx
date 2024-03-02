@@ -1,6 +1,7 @@
-import React, { useState, MouseEvent } from 'react';
+import { useState, MouseEvent } from 'react';
 import { IoIosArrowDown } from 'react-icons/io';
 import { BsCheck2 } from 'react-icons/bs';
+import Popover from './Popover';
 
 interface Props<T> {
   defaultValue?: number;
@@ -34,7 +35,7 @@ function Dropdown<T extends string>({ defaultValue: value, list, handleChange, s
   };
 
   return (
-    <div className="relative">
+    <Popover onClose={() => setIsOpen(false)} className="relative">
       <div
         className="flex justify-between items-center px-4 border-1 border-black rounded-md h-11 text-sm"
         onClick={() => setIsOpen((prev) => !prev)}
@@ -60,7 +61,7 @@ function Dropdown<T extends string>({ defaultValue: value, list, handleChange, s
           </ul>
         </div>
       )}
-    </div>
+    </Popover>
   );
 }
 export default Dropdown;
