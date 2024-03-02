@@ -1,12 +1,12 @@
 import React, { useEffect } from 'react';
 
-type TProps = {
+interface Props {
   className?: string;
   children: React.ReactNode;
   onClose: () => void;
-};
+}
 
-const Popover: React.FC<TProps> = ({ className, children, onClose }) => {
+const Popover = ({ className, children, onClose }: Props) => {
   const wrapperRef = React.useRef<HTMLDivElement>(null);
 
   useEffect(() => {
