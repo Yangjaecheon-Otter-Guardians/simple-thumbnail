@@ -1,4 +1,4 @@
-import React, { useState, MouseEvent, useRef, useEffect } from 'react';
+import { useState, MouseEvent } from 'react';
 import { IoIosArrowDown } from 'react-icons/io';
 import { BsCheck2 } from 'react-icons/bs';
 import Popover from './Popover';
