@@ -12,7 +12,7 @@
     </tr>
     <tr>
         <th>배포</th>
-        <td><a href="https://simple-thumbnail.com">simple thumbnail</a></td>
+        <td><a href="#">🛠️simple thumbnail🛠️</a></td>
     </tr>
     <tr>
         <th>디자인</th>
