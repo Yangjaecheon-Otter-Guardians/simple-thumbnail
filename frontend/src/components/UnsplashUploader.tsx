@@ -11,7 +11,7 @@ const UnsplashUploader = () => {
   const mounted = useRef(false);
   const getRandomImage = async () => {
     if (!timer) {
-      const response = await fetch('https://source.unsplash.com/random');
+      const response = await fetch(`https://picsum.photos/${280}/${280}?random=${Date.now()}`);
       setIsLoading(true);
       timer = setTimeout(function () {
         timer = null;
@@ -25,7 +25,7 @@ const UnsplashUploader = () => {
   };
   useEffect(() => {
     if (imageSrc === '') {
-      fetch('https://source.unsplash.com/random').then((response) => {
+      fetch(`https://picsum.photos/${280}/${280}?random=${Date.now()}`).then((response) => {
         setImageSrc(response.url);
       });
     }
