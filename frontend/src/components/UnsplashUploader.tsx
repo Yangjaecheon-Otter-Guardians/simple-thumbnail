@@ -1,17 +1,22 @@
-import { useRecoilState } from 'recoil';
-import { isImageBright, previewImage } from '../atom';
 import { Icon } from '@iconify/react';
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
+import { useRecoilState, useRecoilValue } from 'recoil';
+import { isImageBright, previewImage, ratioAtom } from '../atom';
+
+const HEIGHT = 280;
 
 const UnsplashUploader = () => {
   let timer: NodeJS.Timer | null = null;
   const [imageSrc, setImageSrc] = useRecoilState(previewImage);
   const [isBright, setIsBright] = useRecoilState(isImageBright);
+  const previewRatio = useRecoilValue(ratioAtom);
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const mounted = useRef(false);
+  const width = useMemo(() => Math.round(HEIGHT * previewRatio), [previewRatio]);
+
   const getRandomImage = async () => {
     if (!timer) {
-      const response = await fetch('https://source.unsplash.com/random');
+      const response = await fetch(`https://picsum.photos/${width}/${HEIGHT}?random=${Date.now()}`);
       setIsLoading(true);
       timer = setTimeout(function () {
         timer = null;
@@ -25,7 +30,7 @@ const UnsplashUploader = () => {
   };
   useEffect(() => {
     if (imageSrc === '') {
-      fetch('https://source.unsplash.com/random').then((response) => {
+      fetch(`https://picsum.photos/${width}/${HEIGHT}?random=${Date.now()}`).then((response) => {
         setImageSrc(response.url);
       });
     }
@@ -41,7 +46,7 @@ const UnsplashUploader = () => {
           }
         >
           <Icon className={'w-6 h-6 ' + `${isLoading && `animate-spinner`}`} icon="tabler:refresh" vFlip={true} />
-          <div className="text-sm">Unsplash 랜덤 이미지 삽입</div>
+          <div className="text-sm">PICSUM 랜덤 이미지 삽입</div>
         </div>
       </button>
       <label className={`${isBright ? 'text-darken' : 'text-muted'} flex justify-start items-center mt-3`}>
