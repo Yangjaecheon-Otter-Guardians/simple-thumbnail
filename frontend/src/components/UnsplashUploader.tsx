@@ -1,17 +1,21 @@
-import { useRecoilState } from 'recoil';
-import { isImageBright, previewImage } from '../atom';
+import { useRecoilState, useRecoilValue } from 'recoil';
+import { isImageBright, previewImage, ratioAtom } from '../atom';
 import { Icon } from '@iconify/react';
 import { useEffect, useRef, useState } from 'react';
+
+const FIXED_HEIGHT = 280;
 
 const UnsplashUploader = () => {
   let timer: NodeJS.Timer | null = null;
   const [imageSrc, setImageSrc] = useRecoilState(previewImage);
   const [isBright, setIsBright] = useRecoilState(isImageBright);
+  const previewRatio = useRecoilValue(ratioAtom);
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const mounted = useRef(false);
+  
   const getRandomImage = async () => {
     if (!timer) {
-      const response = await fetch(`https://picsum.photos/${280}/${280}?random=${Date.now()}`);
+      const response = await fetch(`https://picsum.photos/${FIXED_HEIGHT * previewRatio}/${FIXED_HEIGHT}?random=${Date.now()}`);
       setIsLoading(true);
       timer = setTimeout(function () {
         timer = null;
@@ -25,7 +29,7 @@ const UnsplashUploader = () => {
   };
   useEffect(() => {
     if (imageSrc === '') {
-      fetch(`https://picsum.photos/${280}/${280}?random=${Date.now()}`).then((response) => {
+      fetch(`https://picsum.photos/${FIXED_HEIGHT * previewRatio}/${FIXED_HEIGHT}?random=${Date.now()}`).then((response) => {
         setImageSrc(response.url);
       });
     }
